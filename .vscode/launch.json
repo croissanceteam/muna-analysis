@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RegidesoApplication<regideso>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.datavisualzer.regideso.RegidesoApplication",
+            "projectName": "regideso",
+            "args": ""
+        }
+    ]
+}
