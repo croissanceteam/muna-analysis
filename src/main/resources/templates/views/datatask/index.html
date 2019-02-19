@@ -200,7 +200,7 @@ th{
     </script>
   </head>
   
-<body  ng-app="indicator" ng-controller="indicatorCtrl">
+<body  ng-app="datatask" ng-controller="datataskCtrl">
 
 <form action="/export/exportdataraw" method="post" >
   <dialog id="dialogexport" class="mdl-dialog" style="width:40%;">
@@ -248,7 +248,7 @@ th{
  <div class="mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-color--teal-700" style="color:white;">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title" style="color:white;font-weight:lighter;">List Indicators</span>
+      <span class="mdl-layout-title" style="color:white;font-weight:lighter;">Data exportations</span>
       <div class="mdl-layout-spacer"></div>
           <div class="mdl-layout__header-row" >
           <div class="mdl-layout-spacer"></div>
@@ -296,17 +296,20 @@ th{
 </div>
 <div id="indicatorContainer" style="display:none;margin-top:4em;padding:2em;">
   <a id="link" style="display:none;">GOOGLE</a>
+  <br/><br/>
   <table  class="display"  id="TDataView" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">
       <thead>
         <tr>
           <!-- class "mdl-data-table__cell--non-numeric", align values to left -->
 
-          <th style="text-align:left">Keyname Indicator</th>
-          <th style="text-align:left">Indicator name</th>
-          <th style="text-align:left">Date Indicateur</th>
-          <th style="text-align:left">Keyname Typefile</th>
-          <th style="text-align:left">Typefile</th>
-          <th style="text-align:left">Date formulaire</th>
+          <th style="text-align:left">Id Data Export</th>
+          <th style="text-align:left">Mois de collect</th>
+          <th style="text-align:left">Année de collect</th>
+          <th style="text-align:left">Date Exportation</th>
+          <th style="text-align:left">Usine</th>
+          <th style="text-align:left">DataSize Exported(Kb)</th>
+          <th style="text-align:left">Status export</th>
+          <th style="text-align:left">Action</th>
           
         </tr>
       </thead>
@@ -317,21 +320,22 @@ th{
   </table>
   </div>
 <div id="view-source" style="display:none;">
-  <button style="padding:1.2em;display:none;" id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700 mdl-js-button mdl-button--icon" type="button">
+  <button style="padding:1.2em;" id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700 mdl-js-button mdl-button--icon" type="button">
     <i class="material-icons">format_align_justify</i>
   </button>
 
-  <ul style="display:none;" class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+  <ul  class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
       for="demo-menu-lower-right">
-    <li class="mdl-menu__item" ng-click="controlView('graph')"><i class="material-icons" style="float:left">timeline</i> <span style="float:left;width:auto;margin-top:-10px;"> Graph</span></li>
-    <li class="mdl-menu__item" ng-click="controlView('geo')" ><i class="material-icons" style="float:left">location_on</i> <span style="float:left;width:auto;margin-top:-10px;"> Geo Chart</span></li>
-    <li class="mdl-menu__item" ng-click="controlView('table')" ><i class="material-icons" style="float:left">table_chart</i> <span style="float:left;width:auto;margin-top:-10px;"> TableView</span></li>
+    <li class="mdl-menu__item" ng-click="getStatusData(true)"><i class="material-icons" style="float:left">done_all</i> <span style="float:left;width:auto;margin-top:-10px;"> Sync</span></li>
+    <li class="mdl-menu__item" ng-click="getStatusData(false)" ><i class="material-icons" style="float:left">clear</i> <span style="float:left;width:auto;margin-top:-10px;"> Not Sync</span></li>
+    <li class="mdl-menu__item" ng-click="controlView('table')" ><i class="material-icons" style="float:left">date_range</i> <span style="float:left;width:auto;margin-top:-10px;"> By Year</span></li>
+    <li class="mdl-menu__item" ng-click="Init()" > <i class="material-icons" style="float:left">cached</i> <span style="float:left;width:auto;margin-top:-10px;" >Intialize</span></li>
   </ul>
       <br/>
   
       <br/>
       <button id="show-dialog" type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700">
-      	<i class="material-icons" id="iconButton">add</i>
+      	<i class="material-icons" id="iconButton">cached</i>
       </button>   
 </div>
 
@@ -341,6 +345,8 @@ th{
         /*<![CDATA[*/
         
         var orgunitLogName = [[${orgunitkey}]];
+        var dataExport=[[${dataexport}]];
+        console.log('data Export :',dataExport)
 
         
         /*]]>*/
@@ -350,7 +356,7 @@ th{
       <script src="/js/datatables.js"></script>
       <script src="/js/angular.min.js"></script>
       <script src="/js/angular-route.min.js"></script>      
-      <script src="/js/indicatorController.js"></script>
+      <script src="/js/datataskController.js"></script>
       <script src="/js/getmdl-select.min.js"></script>
       <script src="/js/polyfill.js"></script>
       <script src="/js/moment.min.js"></script>

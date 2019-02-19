@@ -208,7 +208,7 @@ th{
    			 Ajouter un indicateur   <hr/>
     </h4>
   
-    <div class="mdl-dialog__content" style="border:1px solid red;">
+    <div class="mdl-dialog__content">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">       
         <label  style="float:left;color:rgb(0, 188, 212);"><i class="material-icons" style="font-size:16px;">font_download</i> Indicator keyname</label>
         <input class="mdl-textfield__input" type="text" required ng-model="keyname" name="keyname" id="keyname">
@@ -277,7 +277,7 @@ th{
   <div class="mdl-layout__drawer" id="drawer" style="display:normal;">
     <span class="mdl-layout-title" style="color:#00897b;font-size:20px;font-weight:lighter;" th:text="${username}"></span>
     <nav class="mdl-navigation" style="font-weight:lighter;">
-      <a class="mdl-navigation__link" href="#" style="font-weight:lighter;"><i class="material-icons">home</i> Dashboard</a>
+      <a class="mdl-navigation__link" href="/dashboard/index.do" style="font-weight:lighter;"><i class="material-icons">home</i> Dashboard</a>
       <a ng-hide="visible_config" class="mdl-navigation__link" href="/admin" style="font-weight:lighter;"><i class="material-icons" >data_usage</i> Configuration</a>
       <a class="mdl-navigation__link" href="/factory/views.do" style="font-weight:lighter;"><i class="material-icons">people</i> Usines</a>
       <a class="mdl-navigation__link" href="#" style="font-weight:lighter;"><i class="material-icons">trending_up</i> Tracker datas</a>
