@@ -910,8 +910,8 @@ var tester2='Hornel'
         var options = {
 		  region: 'CD',
 		  resolution:'provinces',
-           width: 840, 
-		   height: 480,
+           width: 800, 
+		   height: 600,
 		   tooltip: {
             isHtml: true
         }
@@ -957,8 +957,8 @@ var tester2='Hornel'
         var options = {
 		  region: 'CD',
 		  resolution:'provinces',
-           width: 840, 
-		   height: 480,
+           width: 800, 
+		   height: 600,
 		   tooltip: {
             isHtml: true
         }
