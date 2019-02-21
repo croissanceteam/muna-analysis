@@ -66,7 +66,45 @@ public class ApiDashboard {
 					factories2.add(fChild);
 					for(
 							DataExportation dataExportation:
-							dataExportRepository.getDataExportation(fChild, Calendar.getInstance().get(Calendar.YEAR))
+							dataExportRepository.getDataExportation(fChild,2018)
+						) {
+							exportations.add(dataExportation);
+						
+					}
+				}
+			}
+		}
+		 
+		return exportations;
+	}
+
+	@RequestMapping
+	(
+			value="api/dashboard/{town}/{year}",
+			method=RequestMethod.GET,
+			produces="application/json"
+	)
+	
+	public List<DataExportation>viewDashboardByTownAndYear(@PathVariable String town,@PathVariable String year){
+		List<DataExportation>exportations=new LinkedList<>();
+		Factory org=factoryRepository.findBykeyentity(town);
+		List<Factory>factories=(List<Factory>)factoryRepository.findByidparent(org);
+		List<Factory>factories2=new LinkedList<>();
+		for(Factory f:factories) {
+			if (((List<Factory>)factoryRepository.findByidparent(f)).size()==0) {
+				for(
+						DataExportation dataExportation:
+						dataExportRepository.getDataExportation(f,Integer.parseInt(year))
+					) {
+						exportations.add(dataExportation);
+					
+				}
+			} else {
+				for(Factory fChild:factoryRepository.findByidparent(f)) {
+					factories2.add(fChild);
+					for(
+							DataExportation dataExportation:
+							dataExportRepository.getDataExportation(fChild,Integer.parseInt(year))
 						) {
 							exportations.add(dataExportation);
 						

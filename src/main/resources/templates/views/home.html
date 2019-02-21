@@ -299,9 +299,12 @@ th{
     <div class="mdl-dialog__actions">
       <button type="submit" class="mdl-button mdl-color--teal-700" style="color:white;">Exporter</button>
       <button type="button" class="mdl-button close" style="color:#008080">fermer</button>
-    </div>
-  </dialog>
 <input type="text" id="datajson" name="datajson" style="display:none"/>
+    </div>
+<input type="text" id="datajson" name="datajson" style="display:none"/>
+</dialog>
+     
+</form>
  <div class="mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-color--teal-700" style="color:white;">
     <div class="mdl-layout__header-row">
@@ -465,13 +468,12 @@ th{
       	<i class="material-icons" id="iconButton">attachment</i>
       </button>
       <br/>
-      <a href="#" ng-click="controlView()"  id="view-source1" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700">
+      <a href="#" ng-click="controlView()" style="display:none;"  id="view-source1" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700">
       	<i class="material-icons" id="iconButton">search</i>
       </a>   
 </div>
 
-     
-      </form>
+
       <script th:inline="javascript">
         /*<![CDATA[*/
         

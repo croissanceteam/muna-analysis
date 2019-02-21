@@ -1204,7 +1204,13 @@ var tester2='Hornel'
 
 					} );
 				} else {
-					$http.get('/api/dashboard/'+town.keyentity)
+					
+					if ($scope.yearFilter!='') {
+						url='/api/dashboard/'+town.keyentity+'/'+$scope.yearFilter
+					}else{
+						url='/api/dashboard/'+town.keyentity
+					}
+					$http.get(url)
 					.then(function(response){
 						response.data.forEach(function(e){
 							   e.content=JSON.parse(e.content.replace('"\"',""));
@@ -1370,13 +1376,13 @@ var tester2='Hornel'
 			var tabLabels=[];
 			var datasetLists=[];
 			var colors=[
-				'#008080',
-				'#800080',
-				'#800000',
-				'#000080',
-				'#808000',
-				'#008000',
-				'#CD5C5C'
+				'rgba(0, 128, 128, 0.60)',
+				'rgba(128, 0, 128, 0.60)',
+				'rgba(128, 0, 0, 0.60)',
+				'rgba(0, 0, 128, 0.60)',
+				'rgba(128, 128, 0, 0.60)',
+				'rgba(0, 128, 0, 0.60)',
+				'rgba(205, 92, 92, 0.60)'
 			];
 			var borders=[
 				'#008080',
@@ -1531,6 +1537,9 @@ var tester2='Hornel'
 						}]
 					},
 					tooltips: {
+						enabled:true,
+						position:'average',
+						mode: 'point',
 						callbacks: {
 							label: function(tooltipItem, data) {
 								var label = data.datasets[tooltipItem.datasetIndex].label || '';
@@ -1542,8 +1551,684 @@ var tester2='Hornel'
 								return label;
 							}
 						}
+
+					},
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: $scope.townCurrent
+					},
+					hover: {
+						mode: 'nearest',
+						intersect: true
 					}
 				}
 			});
 		}
+
+		var searchText=document.querySelector('#search');
+			searchText.onkeypress=function (e) {
+				if (e.keyCode==13) {
+					console.log('value is :',searchText.value.toString().trim())
+					if (isNaN(searchText.value.toString().trim())) {
+						console.log('Is Not a Numeric')
+					} else {
+						$scope.loadDataFilterYear(searchText.value.toString().trim());
+						$scope.yearFilter=searchText.value.toString().trim();
+						console.log('Is a Numeric')
+					}
+				}
+			}
+
+			$scope.loadDataFilterYear=function(year){
+				$http.get('/api/export/data/'+year)
+					 .then(function(response){
+						 $scope.dataCountry=response.data;
+						 $scope.townCurrent="RD Congo";
+						 console.log('Test Country :',$scope.dataCountry);
+						 $scope.graphicsDrawIntra('rdc');
+						 $("#TdatafileCountry").dataTable().fnDestroy()
+						 $('#TdatafileCountry').DataTable({
+							 oLanguage:{
+								 sSearch:''
+							 },
+							 aaData:$scope.dataCountry,
+							 bAutoWidth:false,
+							 responsive:'true',
+							 aoColumns:[
+								 
+								 { "data": "province"},
+								 { "data": "agefloc" },
+								 { "data": "chaux" },
+								 { "data": "chlore" },
+								 { "data": "gasoil" },
+								 { "data": "kwh" },
+								 { "data": "sel" },
+								 { "data": "sulfate" }
+								 
+							 ],
+							 
+							 "footerCallback": function ( row, data, start, end, display ) {
+								 var api = this.api(), data;
+								 var result=0.0;
+								 // Remove the formatting to get integer data for summation
+								 var intVal = function ( i ) {
+									 return typeof i === 'string' ?
+										 i.replace(/[\$,]/g, '')*1 :
+										 typeof i === 'number' ?
+										 i : 0;
+								 };
+	  
+								 // Total over all pages
+								
+								 // Total over this page
+								 pageTotalagflc = api
+									 .column( 1, { page: 'current'} )
+									 .data()
+									 .reduce( function (a, b) {
+										 return parseFloat(a) + parseFloat(b);
+									 }, 0 );
+								 
+								 pageTotalchaux = api
+								 .column( 2, { page: 'current'} )
+								 .data()
+								 .reduce( function (a, b) {
+									 return parseFloat(a) + parseFloat(b);
+								 }, 0 );
+								 
+								 pageTotalchlore = api
+								 .column( 3, { page: 'current'} )
+								 .data()
+								 .reduce( function (a, b) {
+									 return parseFloat(a) + parseFloat(b);
+								 }, 0 );
+								 
+								 pageTotalgasoil = api
+								 .column( 4, { page: 'current'} )
+								 .data()
+								 .reduce( function (a, b) {
+									 return parseFloat(a) + parseFloat(b);
+								 }, 0 );
+								 
+								 pageTotalkwh = api
+								 .column( 5, { page: 'current'} )
+								 .data()
+								 .reduce( function (a, b) {
+									 return parseFloat(a) + parseFloat(b);
+								 }, 0 );
+								 
+								 pageTotalsel = api
+								 .column( 6, { page: 'current'} )
+								 .data()
+								 .reduce( function (a, b) {
+									 return parseFloat(a) + parseFloat(b);
+								 }, 0 );
+								 
+								 pageTotalsulfate = api
+								 .column( 7, { page: 'current'} )
+								 .data()
+								 .reduce( function (a, b) {
+									 return parseFloat(a) + parseFloat(b);
+								 }, 0 );
+	  
+								 // Update footer
+							  
+								 $( api.column(1).footer() ).html(
+									 //'$'+pageTotal +' ( $'+ total +' total)'
+										 pageTotalagflc
+								 );
+								 
+								 $( api.column(2).footer() ).html(
+										 //'$'+pageTotal +' ( $'+ total +' total)'
+											 pageTotalchaux
+									 );
+								 $( api.column(3).footer() ).html(
+										 //'$'+pageTotal +' ( $'+ total +' total)'
+											 pageTotalchlore
+									 );
+									 $( api.column(4).footer() ).html(
+										//'$'+pageTotal +' ( $'+ total +' total)'
+										pageTotalgasoil
+									);
+									
+									$( api.column(5).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+											pageTotalkwh
+										);
+									$( api.column(6).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+											pageTotalsel
+										);
+										$( api.column(7).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+											pageTotalsulfate
+										);
+								
+								 
+								 
+							 }
+						 });
+						 console.log("dashboard country :",$scope.tabDefaultDataTableCountry);
+					 },function(error){
+	
+					 });
+				if (typeof localStorage!='undefined') {
+					console.log('Local storrage!!!')
+					if (localStorage.getItem('defaultData')==null) {
+						$http.get("/api/dashboard/"+year)
+					 .then(function(response) {
+						 $scope.dataResponse=response.data[0];
+						 
+						 response.data.forEach(function(e){
+							e.content=JSON.parse(e.content.replace('"\"',""));
+							$scope.tabDefault.push(e)
+							$scope.tabDefaultDataTable=$scope.tabDefaultDataTable.concat(e.content)
+						 });
+		
+						console.log($scope.tabDefaultDataTable)
+						$scope.graphicsDrawIntra('rdc');
+							$(document).ready(function() {
+						try{
+							localStorage.setItem('defaultData',JSON.stringify($scope.tabDefaultDataTable))
+							$("#Tdatafile").dataTable().fnDestroy()
+							var table=$('#Tdatafile').DataTable({
+								oLanguage:{
+									sSearch:''
+								},
+								aaData:$scope.tabDefaultDataTable,
+								bAutoWidth:false,
+								responsive:'true',
+								aoColumns:[
+									
+									{ "data": "week" },
+									{ "data": "month" },
+									{ "data": "year"},
+									{ "data": "aflc" },
+									{ "data": "chaux" },
+									{ "data": "Chlore" },
+									{ "data": "Gasoil" },
+									{ "data": "Kwh" },
+									{ "data": "Sel" },
+									{ "data": "Sulfate" },
+									{ "data": "FactoryName" }
+									
+								],
+								
+								"footerCallback": function ( row, data, start, end, display ) {
+									var api = this.api(), data;
+									var result=0.0;
+									// Remove the formatting to get integer data for summation
+									var intVal = function ( i ) {
+										return typeof i === 'string' ?
+											i.replace(/[\$,]/g, '')*1 :
+											typeof i === 'number' ?
+											i : 0;
+									};
+		 
+									// Total over all pages
+								   
+									// Total over this page
+									pageTotalagflc = api
+										.column( 3, { page: 'current'} )
+										.data()
+										.reduce( function (a, b) {
+											return parseFloat(a) + parseFloat(b);
+										}, 0 );
+									
+									pageTotalchaux = api
+									.column( 4, { page: 'current'} )
+									.data()
+									.reduce( function (a, b) {
+										return parseFloat(a) + parseFloat(b);
+									}, 0 );
+									
+									pageTotalchlore = api
+									.column( 5, { page: 'current'} )
+									.data()
+									.reduce( function (a, b) {
+										return parseFloat(a) + parseFloat(b);
+									}, 0 );
+									
+									pageTotalgasoil = api
+									.column( 6, { page: 'current'} )
+									.data()
+									.reduce( function (a, b) {
+										return parseFloat(a) + parseFloat(b);
+									}, 0 );
+									
+									pageTotalkwh = api
+									.column( 7, { page: 'current'} )
+									.data()
+									.reduce( function (a, b) {
+										return parseFloat(a) + parseFloat(b);
+									}, 0 );
+									
+									pageTotalsel = api
+									.column( 8, { page: 'current'} )
+									.data()
+									.reduce( function (a, b) {
+										return parseFloat(a) + parseFloat(b);
+									}, 0 );
+									
+									pageTotalsulfate = api
+									.column( 9, { page: 'current'} )
+									.data()
+									.reduce( function (a, b) {
+										return parseFloat(a) + parseFloat(b);
+									}, 0 );
+		 
+									// Update footer
+								 
+									$( api.column(3).footer() ).html(
+										//'$'+pageTotal +' ( $'+ total +' total)'
+											pageTotalagflc
+									);
+									
+									$( api.column(4).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+												pageTotalchaux
+										);
+									$( api.column(5).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+												pageTotalchlore
+										);
+									$( api.column(6).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+												pageTotalgasoil
+										);
+									$( api.column(7).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+												pageTotalkwh
+										);
+									
+									$( api.column(8).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+												pageTotalsel
+										);
+									$( api.column(9).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+												pageTotalsulfate
+										);
+									
+									
+								}
+							});
+							/*$('#datatables-orgunit tbody').on('click', 'tr', function (e) {
+								var data = table.data();
+								var index=e.target._DT_CellIndex.row;
+								//console.log(data);
+							//    alert( 'You clicked on '+data[index].id+'\'s row' );
+								console.log(data);
+								
+						} );
+						*/
+								
+							//	tjson.value=JSON.stringify($scope.tabDefaultDataTable);
+								//console.log(tjson.value)
+								
+						}catch(e){
+							console.log(e)
+						}
+		
+					} );
+						$scope.isVisible=true;
+						$scope.controlVisible=true;	
+					},function(error){
+						console.error(error)
+					});
+	
+					// Get data for DRC Cartography data intra
+	
+					$http.get("/api/geo/"+year)
+						 .then(function(data){
+							console.log('Data carto :',data.data);
+							$scope.cartoCountry=data.data;
+							localStorage.setItem('cartoCountry',JSON.stringify(data.data));
+							document.querySelector('#drawer').style="normal";
+							document.querySelector('#view-source').style="normal";
+							document.querySelector('#contentView').style="normal";
+							document.querySelector('#pb').style="display:none";
+						 },function(error){
+							console.error(error)
+						 });
+						 
+					} else {
+						$(document).ready(function() {
+							try{
+								
+								$scope.dataLocalStorage=JSON.parse(localStorage.getItem('defaultData').toString());
+								$scope.cartoCountry=JSON.parse(localStorage.getItem('cartoCountry').toString());
+								console.log('data LocalStorage :',$scope.dataLocalStorage)
+								$scope.graphicsDrawIntra('rdc');
+								$("#Tdatafile").dataTable().fnDestroy()
+								var table=$('#Tdatafile').DataTable({
+									oLanguage:{
+										sSearch:''
+									},
+									aaData:$scope.dataLocalStorage,
+									bAutoWidth:false,
+									responsive:'true',
+									aoColumns:[
+										
+										{ "data": "week" },
+										{ "data": "month" },
+										{ "data": "year"},
+										{ "data": "aflc" },
+										{ "data": "chaux" },
+										{ "data": "Chlore" },
+										{ "data": "Gasoil" },
+										{ "data": "Kwh" },
+										{ "data": "Sel" },
+										{ "data": "Sulfate" },
+										{ "data": "FactoryName" }
+										
+									],
+									
+									"footerCallback": function ( row, data, start, end, display ) {
+										var api = this.api(), data;
+										var result=0.0;
+										// Remove the formatting to get integer data for summation
+										var intVal = function ( i ) {
+											return typeof i === 'string' ?
+												i.replace(/[\$,]/g, '')*1 :
+												typeof i === 'number' ?
+												i : 0;
+										};
+			 
+										// Total over all pages
+									   
+										// Total over this page
+										pageTotalagflc = api
+											.column( 3, { page: 'current'} )
+											.data()
+											.reduce( function (a, b) {
+												return parseFloat(a) + parseFloat(b);
+											}, 0 );
+										
+										pageTotalchaux = api
+										.column( 4, { page: 'current'} )
+										.data()
+										.reduce( function (a, b) {
+											return parseFloat(a) + parseFloat(b);
+										}, 0 );
+										
+										pageTotalchlore = api
+										.column( 5, { page: 'current'} )
+										.data()
+										.reduce( function (a, b) {
+											return parseFloat(a) + parseFloat(b);
+										}, 0 );
+										
+										pageTotalgasoil = api
+										.column( 6, { page: 'current'} )
+										.data()
+										.reduce( function (a, b) {
+											return parseFloat(a) + parseFloat(b);
+										}, 0 );
+										
+										pageTotalkwh = api
+										.column( 7, { page: 'current'} )
+										.data()
+										.reduce( function (a, b) {
+											return parseFloat(a) + parseFloat(b);
+										}, 0 );
+										
+										pageTotalsel = api
+										.column( 8, { page: 'current'} )
+										.data()
+										.reduce( function (a, b) {
+											return parseFloat(a) + parseFloat(b);
+										}, 0 );
+										
+										pageTotalsulfate = api
+										.column( 9, { page: 'current'} )
+										.data()
+										.reduce( function (a, b) {
+											return parseFloat(a) + parseFloat(b);
+										}, 0 );
+			 
+										// Update footer
+									 
+										$( api.column(3).footer() ).html(
+											//'$'+pageTotal +' ( $'+ total +' total)'
+												pageTotalagflc
+										);
+										
+										$( api.column(4).footer() ).html(
+												//'$'+pageTotal +' ( $'+ total +' total)'
+													pageTotalchaux
+											);
+										$( api.column(5).footer() ).html(
+												//'$'+pageTotal +' ( $'+ total +' total)'
+													pageTotalchlore
+											);
+										$( api.column(6).footer() ).html(
+												//'$'+pageTotal +' ( $'+ total +' total)'
+													pageTotalgasoil
+											);
+										$( api.column(7).footer() ).html(
+												//'$'+pageTotal +' ( $'+ total +' total)'
+													pageTotalkwh
+											);
+										
+										$( api.column(8).footer() ).html(
+												//'$'+pageTotal +' ( $'+ total +' total)'
+													pageTotalsel
+											);
+										$( api.column(9).footer() ).html(
+												//'$'+pageTotal +' ( $'+ total +' total)'
+													pageTotalsulfate
+											);
+										
+										
+									}
+								});
+									console.log('')
+								/*$('#datatables-orgunit tbody').on('click', 'tr', function (e) {
+									var data = table.data();
+									var index=e.target._DT_CellIndex.row;
+									//console.log(data);
+								//    alert( 'You clicked on '+data[index].id+'\'s row' );
+									console.log(data);
+									
+							} );
+							*/
+									
+								//	tjson.value=JSON.stringify($scope.tabDefaultDataTable);
+									//console.log(tjson.value)
+						
+							}catch(e){
+								console.log(e)
+							}
+			
+						} );
+					}
+					document.querySelector('#drawer').style="normal";
+					document.querySelector('#view-source').style="normal";
+					document.querySelector('#contentView').style="normal";
+					document.querySelector('#pb').style="display:none";
+					$scope.isVisible=true;
+					$scope.controlVisible=true;	
+					console.log('can view drawer....')
+				} else {
+					$http.get("/api/dashboard/"+year)
+					.then(function(response) {
+						$scope.dataResponse=response.data[0];
+						
+						response.data.forEach(function(e){
+						   e.content=JSON.parse(e.content.replace('"\"',""));
+						   $scope.tabDefault.push(e)
+						   $scope.tabDefaultDataTable=$scope.tabDefaultDataTable.concat(e.content)
+						});
+	   
+					   console.log($scope.tabDefaultDataTable)
+					   $scope.graphicsDrawIntra('rdc');
+						   $(document).ready(function() {
+					   try{
+						   localStorage.setItem('defaultData',JSON.stringify($scope.tabDefaultDataTable))
+						   $("#Tdatafile").dataTable().fnDestroy()
+						   var table=$('#Tdatafile').DataTable({
+							   oLanguage:{
+								   sSearch:''
+							   },
+							   aaData:$scope.tabDefaultDataTable,
+							   bAutoWidth:false,
+							   responsive:'true',
+							   aoColumns:[
+								   
+								   { "data": "week" },
+								   { "data": "month" },
+								   { "data": "year"},
+								   { "data": "aflc" },
+								   { "data": "chaux" },
+								   { "data": "Chlore" },
+								   { "data": "Gasoil" },
+								   { "data": "Kwh" },
+								   { "data": "Sel" },
+								   { "data": "Sulfate" },
+								   { "data": "FactoryName" }
+								   
+							   ],
+							   
+							   "footerCallback": function ( row, data, start, end, display ) {
+								   var api = this.api(), data;
+								   var result=0.0;
+								   // Remove the formatting to get integer data for summation
+								   var intVal = function ( i ) {
+									   return typeof i === 'string' ?
+										   i.replace(/[\$,]/g, '')*1 :
+										   typeof i === 'number' ?
+										   i : 0;
+								   };
+		
+								   // Total over all pages
+								  
+								   // Total over this page
+								   pageTotalagflc = api
+									   .column( 3, { page: 'current'} )
+									   .data()
+									   .reduce( function (a, b) {
+										   return parseFloat(a) + parseFloat(b);
+									   }, 0 );
+								   
+								   pageTotalchaux = api
+								   .column( 4, { page: 'current'} )
+								   .data()
+								   .reduce( function (a, b) {
+									   return parseFloat(a) + parseFloat(b);
+								   }, 0 );
+								   
+								   pageTotalchlore = api
+								   .column( 5, { page: 'current'} )
+								   .data()
+								   .reduce( function (a, b) {
+									   return parseFloat(a) + parseFloat(b);
+								   }, 0 );
+								   
+								   pageTotalgasoil = api
+								   .column( 6, { page: 'current'} )
+								   .data()
+								   .reduce( function (a, b) {
+									   return parseFloat(a) + parseFloat(b);
+								   }, 0 );
+								   
+								   pageTotalkwh = api
+								   .column( 7, { page: 'current'} )
+								   .data()
+								   .reduce( function (a, b) {
+									   return parseFloat(a) + parseFloat(b);
+								   }, 0 );
+								   
+								   pageTotalsel = api
+								   .column( 8, { page: 'current'} )
+								   .data()
+								   .reduce( function (a, b) {
+									   return parseFloat(a) + parseFloat(b);
+								   }, 0 );
+								   
+								   pageTotalsulfate = api
+								   .column( 9, { page: 'current'} )
+								   .data()
+								   .reduce( function (a, b) {
+									   return parseFloat(a) + parseFloat(b);
+								   }, 0 );
+		
+								   // Update footer
+								
+								   $( api.column(3).footer() ).html(
+									   //'$'+pageTotal +' ( $'+ total +' total)'
+										   pageTotalagflc
+								   );
+								   
+								   $( api.column(4).footer() ).html(
+										   //'$'+pageTotal +' ( $'+ total +' total)'
+											   pageTotalchaux
+									   );
+								   $( api.column(5).footer() ).html(
+										   //'$'+pageTotal +' ( $'+ total +' total)'
+											   pageTotalchlore
+									   );
+								   $( api.column(6).footer() ).html(
+										   //'$'+pageTotal +' ( $'+ total +' total)'
+											   pageTotalgasoil
+									   );
+								   $( api.column(7).footer() ).html(
+										   //'$'+pageTotal +' ( $'+ total +' total)'
+											   pageTotalkwh
+									   );
+								   
+								   $( api.column(8).footer() ).html(
+										   //'$'+pageTotal +' ( $'+ total +' total)'
+											   pageTotalsel
+									   );
+								   $( api.column(9).footer() ).html(
+										   //'$'+pageTotal +' ( $'+ total +' total)'
+											   pageTotalsulfate
+									   );
+								   
+								   
+							   }
+						   });
+	
+						   //document.querySelector('#drawer').getElementsByClassName.display="normal";
+						   /*$('#datatables-orgunit tbody').on('click', 'tr', function (e) {
+							   var data = table.data();
+							   var index=e.target._DT_CellIndex.row;
+							   //console.log(data);
+						   //    alert( 'You clicked on '+data[index].id+'\'s row' );
+							   console.log(data);
+							   
+					   } );
+					   */
+							   
+						   //	tjson.value=JSON.stringify($scope.tabDefaultDataTable);
+							   //console.log(tjson.value)
+							   
+					   }catch(e){
+						   console.log(e)
+					   }
+	   
+				   } );
+					   $scope.isVisible=true;
+					   $scope.controlVisible=true;	
+				   },function(error){
+					   console.error(error)
+				   });
+	
+				   $http.get("/api/geo/"+year)
+						 .then(function(data){
+							console.log('Data carto :',data.data);
+							$scope.cartoCountry=data.data;
+							document.querySelector('#drawer').style="normal";
+							document.querySelector('#view-source').style="normal";
+							document.querySelector('#contentView').style="normal";
+							document.querySelector('#pb').style="display:none";
+							//localStorage.setItem('cartoCountry',JSON.stringify(data.data));						document.querySelector('#drawer').getElementsByClassName.display="normal";
+						 },function(error){
+							console.error(error)
+						 });
+				}
+			}
 	});
