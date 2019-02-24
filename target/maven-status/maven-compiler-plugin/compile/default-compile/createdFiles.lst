@@ -21,6 +21,7 @@ com\datavisualzer\regideso\models\Factory.class
 com\datavisualzer\regideso\web\ApiDataSync.class
 com\datavisualzer\regideso\process\FactoryProcess.class
 com\datavisualzer\regideso\web\typeFileController.class
+com\datavisualzer\regideso\web\dataTask.class
 com\datavisualzer\regideso\models\TypeFileIndicators.class
 com\datavisualzer\regideso\models\Users.class
 com\datavisualzer\regideso\models\DataFile.class

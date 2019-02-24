@@ -6,7 +6,7 @@
 	<groupId>com.datavisualzer</groupId>
 	<artifactId>regideso</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>muna</name>
 	<description>Demo project for Spring Boot</description>
