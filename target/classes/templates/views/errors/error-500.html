@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -203,7 +203,10 @@ th{
 </svg>
 <div class="message-box">
 <h1>500</h1>
-<p>Wrong process</p>
+<p>Wrong process
+
+  <span th:text='${message}'></span>
+</p>
 <div class="buttons-con">
   <div class="action-link-wrap">
     <a onclick="history.back(-1)" class="link-button link-back-button">Go Back</a>
