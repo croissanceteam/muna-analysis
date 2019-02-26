@@ -47,6 +47,9 @@ public class HomeController{
 		if(session.getAttribute("login")!=null){
 			model.put("login", "failed");
 		}
+		if (session.getAttribute("bugs")!=null) {
+			model.put("bugs", session.getAttribute("bugs").toString());
+		}
     	/*Users users=new Users();
     	users.setId(1); 
     	users.setUsername("@Lama");
@@ -85,7 +88,7 @@ public class HomeController{
 		}
 	} catch (Exception e) {
 		session.setAttribute("bugs",e.getMessage());
-		model.put("bugs",e.getMessage());
+		
 		//TODO: handle exception
 	}
     	
