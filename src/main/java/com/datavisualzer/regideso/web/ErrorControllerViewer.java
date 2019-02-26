@@ -2,6 +2,7 @@ package com.datavisualzer.regideso.web;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ErrorControllerViewer implements ErrorController{
 
     @RequestMapping(value="/error")
-    public String errorviewpage(HttpServletRequest request,ModelMap model){
+    public String errorviewpage(HttpServletRequest request,ModelMap model,HttpSession session){
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
      
     if (status != null) {
@@ -26,8 +27,8 @@ public class ErrorControllerViewer implements ErrorController{
             return "views/errors/error-404";
         }
         else if(statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-            model.put("message",HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
-            return "views/errors/error-500";
+            model.put("message",session.getAttribute("bug"));
+            return "views/errors/error-500"; 
         }
     }
         return "views/errors/error-403";

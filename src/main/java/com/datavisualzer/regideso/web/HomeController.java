@@ -68,19 +68,25 @@ public class HomeController{
 	public String doLogin(@RequestParam String username, @RequestParam String password,
 	HttpServletRequest req,
 	HttpSession session,ModelMap model) {
-        Users user=userRepository.findByusernameAndpassword(username,password);
-    	if(user!=null) {
-			PermissionTypeFileOrgunitUser permissionTypeFileOrgunitUser=permissionTypeFileOrgunitUserRepository.findByidUsers(user);
-    		session.setAttribute("uid", user.getId());
-			session.setAttribute("username", user.getFullname());
-			session.setAttribute("orgunit", permissionTypeFileOrgunitUser.getIdFactory().getLabelentity());
-			session.setAttribute("orgunitkey", permissionTypeFileOrgunitUser.getIdFactory().getKeyentity());
-			session.setAttribute("rule", permissionTypeFileOrgunitUser.getIdPermission().getRole());
-			session.removeAttribute("login");
-    		return "redirect:/dashboard/index.do";
-    	}else{
-			session.setAttribute("login", "failed");
+		Users user=userRepository.findByusernameAndpassword(username,password);
+		try {
+			if(user!=null) {
+				PermissionTypeFileOrgunitUser permissionTypeFileOrgunitUser=permissionTypeFileOrgunitUserRepository.findByidUsers(user);
+				session.setAttribute("uid", user.getId());
+				session.setAttribute("username", user.getFullname());
+				session.setAttribute("orgunit", permissionTypeFileOrgunitUser.getIdFactory().getLabelentity());
+				session.setAttribute("orgunitkey", permissionTypeFileOrgunitUser.getIdFactory().getKeyentity());
+				session.setAttribute("rule", permissionTypeFileOrgunitUser.getIdPermission().getRole());
+				session.removeAttribute("login");
+				return "redirect:/dashboard/index.do";
+			}else{
+				session.setAttribute("login", "failed");
+			}
+		} catch (Exception e) {
+			session.setAttribute("bug",e.getMessage());
+			throw e;
 		}
+    	
     	
     	return ROOT;
     }
