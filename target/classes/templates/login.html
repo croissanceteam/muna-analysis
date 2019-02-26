@@ -165,6 +165,14 @@
     </ul>
   </div>
 </footer>
+<script th:inline="javascript">
+  /*<![CDATA[*/
+  
+  var bugs = [[${bug}]];
+ console.log('Eror bug:',bugs)
+  
+  /*]]>*/
+  </script>
 <script src="js/material.js"></script>
 <script src="js/angular.min.js"></script>
 <script src="js/angular-cookies.min.js"></script>

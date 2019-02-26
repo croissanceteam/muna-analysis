@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * ErrorControllerViewer
  */
 @Controller
-public class ErrorControllerViewer{
+public class ErrorControllerViewer implements ErrorController{
 
     @RequestMapping(value="/error")
     public String errorviewpage(HttpServletRequest request,ModelMap model,HttpSession session){
@@ -33,10 +33,9 @@ public class ErrorControllerViewer{
     }
         return "views/errors/error-403";
     }
-/*
+
     @Override
     public String getErrorPath() {
         return null;
     }
-    */
 }
