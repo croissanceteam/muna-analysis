@@ -27,7 +27,7 @@ public class ErrorControllerViewer implements ErrorController{
             return "views/errors/error-404";
         }
         else if(statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-            model.put("message",session.getAttribute("bug"));
+            model.put("message",session.getAttribute("bugs"));
             return "views/errors/error-500"; 
         }
     }

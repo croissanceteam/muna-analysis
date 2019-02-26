@@ -68,8 +68,9 @@ public class HomeController{
 	public String doLogin(@RequestParam String username, @RequestParam String password,
 	HttpServletRequest req,
 	HttpSession session,ModelMap model) {
-        Users user=userRepository.findByusernameAndpassword(username,password);
+        
     try {
+		Users user=userRepository.findByusernameAndpassword(username,password);
 		if(user!=null) {
 			PermissionTypeFileOrgunitUser permissionTypeFileOrgunitUser=permissionTypeFileOrgunitUserRepository.findByidUsers(user);
     		session.setAttribute("uid", user.getId());
@@ -83,6 +84,7 @@ public class HomeController{
 			session.setAttribute("login", "failed");
 		}
 	} catch (Exception e) {
+		session.setAttribute("bugs",e.getMessage());
 		model.put("bugs",e.getMessage());
 		//TODO: handle exception
 	}
