@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <title>MUNA | Home</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <link rel="icon" sizes="192x192" href="/images/icon.png"/>
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="/Material Design Lite"/>
+    <link rel="apple-touch-icon-precomposed" href="/images/icon.png"/>
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+    <meta name="msapplication-TileColor" content="#3372DF"/>
+
+    <link rel="shortcut icon" href="/images/icon.png"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="/css/datatables.css"/>
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="/css/material.cyan-light_blue.min.css"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/datatables.css"/>
+    <link rel="stylesheet" href="/css/getmdl-selec.min.css"/>
+    <link rel="stylesheet" href="/css/polyfill.css"/>
+    <link rel="stylesheet" href="/css/mdDateTimePicker.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 10px;
+      margin-bottom: 40px;
+      z-index: 900;
+      float:left;
+    }
+    
+    /*Vertical Tabs*/
+.mdl-tabs__panel {
+  display: none;
+}
+.vertical-mdl-tabs {
+    margin-top: 30px;
+}
+.vertical-mdl-tabs .mdl-tabs__tab-bar {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 35px;
+    height: inherit;
+    border-bottom: none;
+    border-right: 1px solid rgba(10, 11, 49, 0.20);
+}
+
+.vertical-mdl-tabs .mdl-tabs__tab {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+.vertical-mdl-tabs .mdl-tabs__tab:hover {
+  background: rgba(158, 158, 158, 0.34);
+  color: black;
+}
+
+.vertical-mdl-tabs.mdl-tabs.is-upgraded a.mdl-tabs__tab.is-active {
+    border-right: 3px solid #00897b;
+}
+.vertical-mdl-tabs.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+    content: inherit;
+    height: 0;
+}
+
+.vertical-mdl-tabs.mdl-tabs.is-upgraded .mdl-tabs__panel.is-active, .mdl-tabs__panel {
+    padding: 0 30px;
+}
+
+.vertical-mdl-tabs.mdl-tabs .mdl-tabs__tab {
+    text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
+   color: #00897b;
+}
+th{
+	padding:.5em;
+	text-align:left;
+	padding-left:0;
+}
+    /* Progress Bar */
+.progress {
+  position: relative;
+  height: 4px;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 2px;
+  background-clip: padding-box;
+  margin: 0.5rem 0 1rem 0;
+  overflow: hidden; }
+  .progress .determinate {
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    bottom: 0;
+    background-color: #5bc0de;
+    transition: width .3s linear; }
+  .progress .indeterminate {
+    background-color: #5bc0de; }
+    .progress .indeterminate:before {
+      content: '';
+      position: absolute;
+      background-color: inherit;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      will-change: left, right;
+      -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+              animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
+    .progress .indeterminate:after {
+      content: '';
+      position: absolute;
+      background-color: inherit;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      will-change: left, right;
+      -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+              animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+      -webkit-animation-delay: 1.15s;
+              animation-delay: 1.15s; }
+
+@-webkit-keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%; }
+  60% {
+    left: 100%;
+    right: -90%; }
+  100% {
+    left: 100%;
+    right: -90%; } }
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%; }
+  60% {
+    left: 100%;
+    right: -90%; }
+  100% {
+    left: 100%;
+    right: -90%; } }
+@-webkit-keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%; }
+  60% {
+    left: 107%;
+    right: -8%; }
+  100% {
+    left: 107%;
+    right: -8%; } }
+@keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%; }
+  60% {
+    left: 107%;
+    right: -8%; }
+  100% {
+    left: 107%;
+    right: -8%; } }
+    </style>
+  
+    <script type="text/javascript">
+
+     
+    </script>
+  </head>
+  
+<body  ng-app="datatask" ng-controller="datataskCtrl">
+
+<form action="/export/exportdataraw" method="post" >
+  <dialog id="dialogexport" class="mdl-dialog" style="width:40%;">
+    <h4>
+   			 Ajouter un indicateur   <hr/>
+    </h4>
+  
+    <div class="mdl-dialog__content">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">       
+        <label  style="float:left;color:rgb(0, 188, 212);"><i class="material-icons" style="font-size:16px;">font_download</i> Indicator keyname</label>
+        <input class="mdl-textfield__input" type="text" required ng-model="keyname" name="keyname" id="keyname">
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+            <label  style="float:left;color:rgb(0, 188, 212);"><i class="material-icons" style="font-size:16px;">font_download</i> Indicator name</label>    
+            <input class="mdl-textfield__input" type="text" required ng-model="indicatorname" name="indicatorname" id="indicatorname">
+        </div>
+        <div id="date_container" style="display:normal;width:100%;" class="mdl-textfield mdl-js-textfield">
+          <label  style="float:left;color:rgb(0, 188, 212);"><i class="material-icons" style="font-size:16px;">date_range</i> Begin date validity</label>    
+          <input class="mdl-textfield__input" type="text" id="datefilter1" name="datefilter1" required readonly />     
+        </div>
+
+        <div id="date_container" style="display:normal;width:100%;" class="mdl-textfield mdl-js-textfield">
+          <label  style="float:left;color:rgb(0, 188, 212);"><i class="material-icons" style="font-size:16px;">date_range</i> End date validity</label>    
+          <input class="mdl-textfield__input" type="text" id="datefilter2" name="datefilter2" required readonly />     
+        </div>
+        <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width:100%">
+          <input type="text"ng-model="monthdatasync" class="mdl-textfield__input" id="sample2" readonly>
+          <input type="hidden"  value="" name="month">
+          
+          <label for="sample2" class="mdl-textfield__label"><i class="material-icons" style="font-size:16px;">list</i>Typefile list</label>
+          <ul for="sample2"  class="mdl-menu mdl-menu--bottom-left mdl-js-menu" ng-model="monthdatasync" style="height:150px;overflow:auto;font-weight:lighter;">
+              <li ng-repeat="data in datatypefiles" class="mdl-menu__item" >
+                {{data.typefilename}}
+              </li>
+              
+          </ul>
+      </div>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="submit" class="mdl-button mdl-color--teal-700" style="color:white;">AJOUTER</button>
+      <button type="button" class="mdl-button close" style="color:#008080">fermer</button>
+    </div>
+  </dialog>
+<input type="text" id="datajson" name="datajson" style="display:none"/>
+ <div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-color--teal-700" style="color:white;">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title" style="color:white;font-weight:lighter;">Data exportations</span>
+      <div class="mdl-layout-spacer"></div>
+          <div class="mdl-layout__header-row" >
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search">
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+          <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="color:white;" id="hdrbtn">
+            <i style="color:white;" class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+            <li class="mdl-menu__item">About</li>
+            <li class="mdl-menu__item">Contact</li>
+            <hr/>
+            <li class="mdl-menu__item"><a href="../logout.do">Deconnexion</a></li>
+          </ul>
+        </div>
+    </div>
+    
+  </header>
+  <div class="mdl-layout__drawer" id="drawer" style="display:normal;">
+    <span class="mdl-layout-title" style="color:#00897b;font-size:20px;font-weight:lighter;" th:text="${username}"></span>
+    <nav class="mdl-navigation" style="font-weight:lighter;">
+      <a class="mdl-navigation__link" href="/dashboard/index.do" style="font-weight:lighter;"><i class="material-icons">home</i> Dashboard</a>
+      <a ng-hide="visible_config" class="mdl-navigation__link" href="/admin" style="font-weight:lighter;"><i class="material-icons" >data_usage</i> Configuration</a>
+      <a class="mdl-navigation__link" href="/factory/views.do" style="font-weight:lighter;"><i class="material-icons">people</i> Usines</a>
+      <a class="mdl-navigation__link" href="#" style="font-weight:lighter;"><i class="material-icons">trending_up</i> Tracker datas</a>
+      <a class="mdl-navigation__link" href="#" style="font-weight:lighter;"><i class="material-icons">assignment</i> Data Storage</a>
+    </nav>
+    <span class="mdl-layout-title" style="color:#00897b;font-size:15px;font-weight:lighter;padding:0;position:fixed;bottom:0;width:100%;" th:text="${orgunit}"></span>
+
+  </div>
+  </div>
+  <br/>
+   <div style="width:100%;display:inline-block;margin-top:20%;" id="pb">
+                  <h5 style="text-align:center;font-weight:lighter;color:#00897b;">Chargement des données</h5>
+                  <div class="progress" id="pbar" style="width:50%;margin:0 auto;display:normal;">
+                           <div class="indeterminate"></div>
+                    </div>
+</div>
+<div id="indicatorContainer" style="display:none;margin-top:4em;padding:2em;">
+  <a id="link" style="display:none;">GOOGLE</a>
+  <br/><br/>
+  <table  class="display"  id="TDataView" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">
+      <thead>
+        <tr>
+          <!-- class "mdl-data-table__cell--non-numeric", align values to left -->
+
+          <th style="text-align:left">Id Data Export</th>
+          <th style="text-align:left">Mois de collect</th>
+          <th style="text-align:left">Année de collect</th>
+          <th style="text-align:left">Date Exportation</th>
+          <th style="text-align:left">Usine</th>
+          <th style="text-align:left">DataSize Exported(Kb)</th>
+          <th style="text-align:left">Status export</th>
+          <th style="text-align:left">Action</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+          
+      </tbody>
+  
+  </table>
+  </div>
+<div id="view-source" style="display:none;">
+  <button style="padding:1.2em;" id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700 mdl-js-button mdl-button--icon" type="button">
+    <i class="material-icons">format_align_justify</i>
+  </button>
+
+  <ul  class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+      for="demo-menu-lower-right">
+    <li class="mdl-menu__item" ng-click="getStatusData(true)"><i class="material-icons" style="float:left">done_all</i> <span style="float:left;width:auto;margin-top:-10px;"> Sync</span></li>
+    <li class="mdl-menu__item" ng-click="getStatusData(false)" ><i class="material-icons" style="float:left">clear</i> <span style="float:left;width:auto;margin-top:-10px;"> Not Sync</span></li>
+    <li class="mdl-menu__item" ng-click="controlView('table')" ><i class="material-icons" style="float:left">date_range</i> <span style="float:left;width:auto;margin-top:-10px;"> By Year</span></li>
+    <li class="mdl-menu__item" ng-click="Init()" > <i class="material-icons" style="float:left">cached</i> <span style="float:left;width:auto;margin-top:-10px;" >Intialize</span></li>
+  </ul>
+      <br/>
+  
+      <br/>
+      <button id="show-dialog" type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700">
+      	<i class="material-icons" id="iconButton">cached</i>
+      </button>   
+</div>
+
+     
+      </form>
+      <script th:inline="javascript">
+        /*<![CDATA[*/
+        
+        var orgunitLogName = [[${orgunitkey}]];
+        var dataExport=[[${dataexport}]];
+        console.log('data Export :',dataExport)
+
+        
+        /*]]>*/
+        </script>
+ <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> 
+     <script src="/js/jquery.js"></script>
+      <script src="/js/datatables.js"></script>
+      <script src="/js/angular.min.js"></script>
+      <script src="/js/angular-route.min.js"></script>      
+      <script src="/js/datataskController.js"></script>
+      <script src="/js/getmdl-select.min.js"></script>
+      <script src="/js/polyfill.js"></script>
+      <script src="/js/moment.min.js"></script>
+<!--load locales i.e. german(deutsch), french, etc.-->
+    <script src="/js/lang/de.js"></script>
+    <script src="/js/lang/fr.js"></script>
+    <script src="/js/lang/af.js"></script>
+    <script src="/js/lang/zh-cn.js"></script>
+    <script src="/js/scroll-into-view-if-needed.min.js"></script>
+    <script src="/js/draggabilly.pkgd.min.js"></script>
+    <script src="/js/mdDateTimePicker.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script>
+    var dialog = document.querySelector('#dialogexport');
+    var showDialogButton = document.querySelector('#show-dialog');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+
+</script>
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      
+
+      (function() {
+        // load language from hash
+              var hash = location.hash.replace('#', '');
+              var locale = hash ? hash : 'en';
+              moment.locale(locale);
+              // rest of the demo logic
+              var x = new mdDateTimePicker.default({
+                  type: 'date'
+              });
+
+              var x2 = new mdDateTimePicker.default({
+                type: 'date'
+            });
+              var y = new mdDateTimePicker.default({
+                  type: 'date',
+                  init: moment('2016-02-29', 'YYYY-MM-DD')
+              });
+              var z = new mdDateTimePicker.default({
+                  type: 'date',
+                  init: moment('2016-03-3', 'YYYY-MM-DD'),
+                  orientation: 'PORTRAIT'
+              });
+              var date1=document.getElementById('datefilter1');
+              date1.style="z-index:9999;"
+              
+              date1.addEventListener('click', function() {
+                dialog.style="z-index:1010;width:40%;";
+                  x.toggle();
+                  });
+                  var date2=document.getElementById('datefilter2');
+                  date2.style="z-index:9999;"
+                  date2.addEventListener('click', function() {
+                    dialog.style="z-index:1010;width:40%;";
+                      x2.toggle();
+                      });
+                      
+              
+      
+              // dispatch event test
+              x.trigger = date1;
+              date1.addEventListener('onOk', function() {
+              
+                  this.value =x.time.toString();
+                  //dateCurrent.getDate()+'-'+dateCurrent.getMonth()+'-'+dateCurrent.getFullYear() ;
+              });
+      
+              x2.trigger = date2;
+              date2.addEventListener('onOk', function() {
+              
+                  this.value =x2.time.toString();
+                  //dateCurrent.getDate()+'-'+dateCurrent.getMonth()+'-'+dateCurrent.getFullYear() ;
+              });
+              
+      
+              // language selector
+      
+      }).call(this);
+    </script>
+
+  </body>
+</html>

@@ -47,10 +47,12 @@ public class HomeController{
 		if(session.getAttribute("login")!=null){
 			model.put("login", "failed");
 		}
+	
 		if (session.getAttribute("bugs")!=null) {
 			model.put("bugs", session.getAttribute("bugs").toString());
 		}
-    	/*Users users=new Users();
+			/*
+    	Users users=new Users();
     	users.setId(1); 
     	users.setUsername("@Lama");
     	users.setPassword("@@@@");
