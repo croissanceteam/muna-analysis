@@ -1205,11 +1205,12 @@ var tester2='Hornel'
 					} );
 				} else {
 					
-					if ($scope.yearFilter!='') {
+					if ($scope.yearFilter!=undefined) {
 						url='/api/dashboard/'+town.keyentity+'/'+$scope.yearFilter
 					}else{
 						url='/api/dashboard/'+town.keyentity
 					}
+					console.log('URL IS :',url)
 					$http.get(url)
 					.then(function(response){
 						response.data.forEach(function(e){

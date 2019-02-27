@@ -88,8 +88,8 @@ public class ExportController {
 			//return e.getMessage();
 		}
 		try {
-			response.sendRedirect("https://www.google.cd");
-		} catch (IOException e) {
+			//response.sendRedirect("https://www.google.cd");
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
