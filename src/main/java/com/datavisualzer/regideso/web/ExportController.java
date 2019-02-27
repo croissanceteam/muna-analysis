@@ -32,7 +32,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class ExportController {
 
-	public static String FILNAME;
+	public static String FILNAME="datacompletness.xlsx";
 	private final static String USINES="kin,kng,bdd,kat,eqt,kao,kac,nkv,skv,por,man";
 	@Autowired
 	private FactoryRepository factoryRepository;
@@ -76,6 +76,13 @@ public class ExportController {
 				        outputStream.write(data, 0, nRead);
 				    }
 				};
+			}else {
+				try {
+					response.sendRedirect("https://www.google.cd");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
@@ -87,12 +94,7 @@ public class ExportController {
 			// TODO Auto-generated catch block
 			//return e.getMessage();
 		}
-		try {
-			//response.sendRedirect("https://www.google.cd");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		return null;
 	}
 }
