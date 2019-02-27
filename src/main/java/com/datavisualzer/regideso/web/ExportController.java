@@ -32,13 +32,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Controller
 public class ExportController {
 
-	public static String FILNAME="datacompletness.xlsx";
+	public static String FILNAME;
 	private final static String USINES="kin,kng,bdd,kat,eqt,kao,kac,nkv,skv,por,man";
 	@Autowired
 	private FactoryRepository factoryRepository;
 	@Autowired
 	private DataExportRepository dataExportRepository;
-	private boolean result;
+	private String result;
 	@RequestMapping(value= {"/export/exportdataraw"},method=RequestMethod.POST,produces="application/json")
 	@ResponseBody
 	public StreamingResponseBody exportDataRaw
@@ -63,10 +63,10 @@ public class ExportController {
 			}
 			
 			result=new ExportFile().getDataFileOrgunit(factoryRepository, jsonDecode);
-			if (result) {
+			if (!result.equals("No result")) {
 				response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-				response.setHeader("Content-Disposition", "attachment; filename=\"datacompletness.xlsx\"");
-				InputStream inputStream = new FileInputStream(new File(FILNAME));
+				response.setHeader("Content-Disposition", "attachment; filename="+result);
+				InputStream inputStream = new FileInputStream(new File(result));
 			
 				return outputStream -> {
 				    int nRead;

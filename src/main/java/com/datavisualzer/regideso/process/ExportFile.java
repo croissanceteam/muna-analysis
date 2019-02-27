@@ -25,7 +25,8 @@ public class ExportFile {
 	private Sheet sheet=null;
 	private ExportTypeFile exportTypeFile;
 	
-	public boolean getDataFileOrgunit(FactoryRepository factoryRepository,List<Map<String, Object>> listJSON) {
+	public String getDataFileOrgunit(FactoryRepository factoryRepository,List<Map<String, Object>> listJSON) {
+		String fullpath="";
 		try {
 			List<orgunits>IOrgunits=new LinkedList<>();
 			Factory factory1=factoryRepository.findById(1).get();
@@ -146,21 +147,22 @@ public class ExportFile {
 			}
 			FileOutputStream fileOut=null;
 		
-				String str=this.getClass().getClassLoader().getResource("").getPath();
+				String str=this.getClass().getClassLoader().getResource("/var/lib/tomcat8/webapps/ROOT/").getPath();
 				String filename="data"+System.currentTimeMillis() % 1000+".xlsx";
-				String fullpath=filename;
+				 fullpath=str+filename;
 				fileOut = new FileOutputStream(fullpath);
-				ExportController.FILNAME=fullpath;
+			
 				workbook.write(fileOut);
 				workbook.close();
 				fileOut.close();
+				
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			return false;
+			fullpath="No result";
 			
 		}
-		return true;
+		return fullpath;
 	}
 	
 	public Boolean readXlsForm(String path) {
