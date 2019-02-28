@@ -111,7 +111,7 @@ public class ExportController {
 	@RequestMapping(value="/download/excel",method=RequestMethod.GET)
 	public StreamingResponseBody getExcel(HttpServletResponse response) throws IOException {
 		response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-		response.setHeader("Content-Disposition", "attachment; filename="+result);
+		response.setHeader("Content-Disposition", "attachment; filename=temp.xlsx");
 		Workbook workbook = new XSSFWorkbook();
 		 
 		Sheet sheet = workbook.createSheet("Persons");
