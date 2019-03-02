@@ -58,10 +58,10 @@ public class ExportController {
 			HttpServletRequest request,
 			HttpServletResponse response,
 			@RequestParam String year
-	) {
+	) throws JsonParseException, JsonMappingException, IOException {
 		ObjectMapper mapData=new ObjectMapper();
 		
-		try {
+	
 			int y=(year.split(",")[0]==null?Integer.parseInt(year):Integer.parseInt(year.split(",")[0]));
 			List<Map<String,Object>> jsonDecode=new LinkedList<>();
 			List<DataExportation>exportDatas=dataExportRepository.getExportDatas(y);
@@ -74,9 +74,8 @@ public class ExportController {
 			}
 			
 			result=new ExportFile().getDataFileOrgunit(factoryRepository, jsonDecode);
-			if (!result.equals("No result")) {
 				response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-				response.setHeader("Content-Disposition", "attachment; filename="+result);
+				response.setHeader("Content-Disposition", "attachment; filename=datacompletness.xls");
 				InputStream inputStream = new FileInputStream(new File(result));
 			
 				return outputStream -> {
@@ -87,26 +86,8 @@ public class ExportController {
 				        outputStream.write(data, 0, nRead);
 				    }
 				};
-			}else {
-				try {
-					response.sendRedirect("https://www.google.cd");
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			//return e.getMessage();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			//return e.getMessage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			//return e.getMessage();
-		}
-	
-		return null;
+			
+		
 	}
 	@RequestMapping(value="/download/excel",method=RequestMethod.GET)
 	public StreamingResponseBody getExcel(HttpServletResponse response) throws IOException {

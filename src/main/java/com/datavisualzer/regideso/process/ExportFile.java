@@ -1,5 +1,7 @@
 package com.datavisualzer.regideso.process;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,9 +27,9 @@ public class ExportFile {
 	private Sheet sheet=null;
 	private ExportTypeFile exportTypeFile;
 	
-	public String getDataFileOrgunit(FactoryRepository factoryRepository,List<Map<String, Object>> listJSON) {
+	public String getDataFileOrgunit(FactoryRepository factoryRepository,List<Map<String, Object>> listJSON) throws IOException {
 		String fullpath="";
-		try {
+
 			List<orgunits>IOrgunits=new LinkedList<>();
 			Factory factory1=factoryRepository.findById(1).get();
 			Iterable<Factory> iFactories=factoryRepository.findByidparent(factory1);
@@ -147,7 +149,7 @@ public class ExportFile {
 			}
 			FileOutputStream fileOut=null;
 		
-				String str=this.getClass().getClassLoader().getResource("/var/lib/tomcat8/webapps/ROOT/").getPath();
+				String str=this.getClass().getClassLoader().getResource("").getPath();
 				String filename="data"+System.currentTimeMillis() % 1000+".xlsx";
 				 fullpath=str+filename;
 				fileOut = new FileOutputStream(fullpath);
@@ -157,11 +159,7 @@ public class ExportFile {
 				fileOut.close();
 				
 			
-		} catch (Exception e) {
-			// TODO: handle exception
-			fullpath="No result";
-			
-		}
+		
 		return fullpath;
 	}
 	
