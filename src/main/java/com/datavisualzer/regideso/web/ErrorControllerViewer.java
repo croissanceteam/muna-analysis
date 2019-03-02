@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * ErrorControllerViewer
-
+*/
 @Controller
 public class ErrorControllerViewer implements ErrorController{
 
@@ -39,4 +39,4 @@ public class ErrorControllerViewer implements ErrorController{
         return null;
     }
 }
- */
+ 
