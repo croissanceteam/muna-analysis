@@ -46,6 +46,24 @@ public class indicatorController {
 
 		return "redirect:/";
 	}
+	
+	
+	@RequestMapping(value = "/indicators/index",method=RequestMethod.POST)
+	public String doPost(HttpSession session, HttpServletRequest request, ModelMap model) {
+		if (session.getAttribute("uid") != null) {
+			model.put("uid", session.getAttribute("uid").toString());
+			model.put("username", session.getAttribute("username").toString());
+			model.put("orgunitkey", session.getAttribute("orgunitkey").toString());
+			model.put("orgunit", session.getAttribute("orgunit").toString());
+			if (!session.getAttribute("orgunitkey").toString().equals("rdc")
+					&& !session.getAttribute("rule").toString().equals("superadmin")) {
+				return "views/errors/error-403";
+			}
+			return "views/indicators/home";
+		}
+
+		return "redirect:/";
+	}
 
 	@RequestMapping(value = "api/indicators")
 	@ResponseBody

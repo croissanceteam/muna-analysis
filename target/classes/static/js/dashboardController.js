@@ -209,12 +209,13 @@ var tester2='Hornel'
 			    }
 
 			];
+		//	alert(rules)
 		$scope.visible_config=false;
 		$scope.DataOrgunitsFilter=[];
 		$scope.DataOrgunits.forEach(function(elt){
-			if (orgunitLogName.toString().toUpperCase()=="RDC") {
+			if (orgunitLogName.toString().toUpperCase()=="RDC" && rules.toString().toLowerCase()=="superadmin") {
 				$scope.DataOrgunitsFilter=$scope.DataOrgunits;
-				console.log('Congooo')
+		
 				
 			}else if(orgunitLogName.toString().toUpperCase()==elt.keyentity.toString().toUpperCase()){
 				$scope.visible_config=true;
@@ -234,6 +235,9 @@ var tester2='Hornel'
 			        "embedcard": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034481.1963436545!2d13.111191255508894!3d-5.168489726406542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a5c44661bfb245d%3A0x4a2f95d685920f4b!2sBas-Congo!5e0!3m2!1sfr!2scd!4v1532890744872\" width=\"800\" height=\"600\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>"
 			    });
 				$scope.DataOrgunitsFilter.push(elt);
+			}else{
+				$scope.DataOrgunitsFilter=$scope.DataOrgunits;
+				$scope.visible_config=true;
 			}
 		})
 		$scope.loadDataDefault=function(){

@@ -20,6 +20,7 @@ com\datavisualzer\regideso\repositories\DataFileRepository.class
 com\datavisualzer\regideso\models\Factory.class
 com\datavisualzer\regideso\web\ApiDataSync.class
 com\datavisualzer\regideso\process\FactoryProcess.class
+com\datavisualzer\regideso\process\CryptoSHA512.class
 com\datavisualzer\regideso\web\typeFileController.class
 com\datavisualzer\regideso\web\dataTask.class
 com\datavisualzer\regideso\models\TypeFileIndicators.class

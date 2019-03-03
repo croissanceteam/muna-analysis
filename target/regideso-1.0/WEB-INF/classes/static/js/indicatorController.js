@@ -56,6 +56,8 @@ app.controller('indicatorCtrl',function($scope,$http) {
     $http.get('/api/statustypefiles/1').then(function(response){
         $scope.datatypefiles=response.data;
         console.log('TypeFiles :',$scope.datatypefiles)
+        var li=document.createElement('li');
+        var ul=document.querySelector('#sample2');
     },function(error){
         console.error(error)
     });

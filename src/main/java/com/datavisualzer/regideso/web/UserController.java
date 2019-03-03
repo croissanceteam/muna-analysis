@@ -1,5 +1,6 @@
 package com.datavisualzer.regideso.web;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
@@ -21,6 +22,7 @@ import com.datavisualzer.regideso.models.Factory;
 import com.datavisualzer.regideso.models.PermissionTypeFileOrgunitUser;
 import com.datavisualzer.regideso.models.Permissions;
 import com.datavisualzer.regideso.models.Users;
+import com.datavisualzer.regideso.process.CryptoSHA512;
 import com.datavisualzer.regideso.repositories.FactoryRepository;
 import com.datavisualzer.regideso.repositories.PermissionRepository;
 import com.datavisualzer.regideso.repositories.PermissionTypeFileOrgunitUserRepository;
@@ -104,7 +106,7 @@ public class UserController {
 	 @RequestParam String area,
 	 @RequestParam String rules,
 	 @RequestParam String statusNumber,
-	 @RequestParam String iduser)
+	 @RequestParam String iduser) throws NoSuchAlgorithmException
 	{
 		Permissions permissions=null;
 		Factory factory=null;
@@ -117,10 +119,9 @@ public class UserController {
 		if(statusNumber==""){
 			users.setFullname(fullname);
 			users.setUsername(user);
-			users.setPassword(pwd);
+			users.setPassword(CryptoSHA512.getPassWord(pwd));
 			users.setStatus(1);
 			userRepository.save(users);
-			
 			permissions=permissionRepository.findByRole(rules);
 			factory=factoryRepository.findBykeyentity(area);
 			//users.setId(users.getId());

@@ -1,5 +1,6 @@
 package com.datavisualzer.regideso.web;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.datavisualzer.regideso.models.PermissionTypeFileOrgunitUser;
 import com.datavisualzer.regideso.models.Users;
+import com.datavisualzer.regideso.process.CryptoSHA512;
 import com.datavisualzer.regideso.repositories.PermissionTypeFileOrgunitUserRepository;
 import com.datavisualzer.regideso.repositories.UserRepository;
 
@@ -75,7 +77,8 @@ public class HomeController{
 	HttpSession session,ModelMap model) {
         
     try {
-		Users user=userRepository.findByusernameAndpassword(username,password);
+    	
+		Users user=userRepository.findByusernameAndpassword(username,CryptoSHA512.getPassWord(password));
 		if(user!=null) {
 			PermissionTypeFileOrgunitUser permissionTypeFileOrgunitUser=permissionTypeFileOrgunitUserRepository.findByidUsers(user);
     		session.setAttribute("uid", user.getId());
@@ -104,6 +107,7 @@ public class HomeController{
     		model.put("username", session.getAttribute("username").toString());
     		model.put("orgunit", session.getAttribute("orgunit").toString());
     		model.put("orgunitkey", session.getAttribute("orgunitkey").toString());
+    		model.put("rule", session.getAttribute("rule").toString());
     		return url;
     	}
     	return "redirect:/";
