@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps."/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
-    <title>DataVisualizer | Home</title>
+    <title>MUNA | DataSync</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes"/>
@@ -175,15 +175,12 @@
     left: 107%;
     right: -8%; } }
 
-.dataTables_filter input{ 
-
-  float:left;
-}
     
    .mdl-button-group{
   position: relative;
   display: inline-block;
   vertical-align: middle;
+   }
   
   button{
     background-color: #eee;
@@ -198,7 +195,7 @@
   color: green;
   }
    
-}
+
     </style>
 
   </head>
@@ -256,14 +253,21 @@
 	 <div class="container-filter" style="float:right;">
 	 <fieldset style="border:1px solid silver; padding:1.5em">
 	 <legend style="font-size:18px;font-family:Roboto;font-weight:Light;">
-	 		Query filter
+	 		Critères de recherche
 	 </legend>
-	
-    
-    <div id="date_container" style="display:none;" class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="datefilter" readonly />
-    <label class="mdl-textfield__label" id="date_label" for="date">Date</label>
-  </div>
+         <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width:100%">
+             <input type="text"ng-model="yearmodel" class="mdl-textfield__input" id="yearsample" readonly>
+             <input type="hidden"  value="" name="year">
+
+             <label for="yearsample" class="mdl-textfield__label"><i class="material-icons" style="font-size:16px;">calendar_today</i> Année de collecte
+             </label>
+             <ul for="sample2"  class="mdl-menu mdl-menu--bottom-left mdl-js-menu" ng-model="yearmodel" style="height:150px;overflow:auto;font-weight:lighter;">
+                 <li class="mdl-menu__item" data-val="2019">2019</li>
+                 <li class="mdl-menu__item" data-val="2018">2018</li>
+
+             </ul>
+         </div>
+
   <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width:100%">
         <input type="text"ng-model="monthdatasync" class="mdl-textfield__input" id="sample2" readonly>
         <input type="hidden"  value="" name="month">
@@ -296,7 +300,7 @@
         <div class="indeterminate"></div>
     </div>
 	  <div style="">
-  <table class="display" id="Tdatafile" border="0.2" style="cursor:pointer;width:60%;float:left">
+  <table class="display" id="Tdatafile" border="0.2" style="cursor:pointer;width:100%;float:left">
   <thead>
     <tr>
       <!-- class "mdl-data-table__cell--non-numeric", align values to left -->

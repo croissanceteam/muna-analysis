@@ -1778,6 +1778,13 @@ $scope.getFullNameFactory=function(keyname){
 	
 	
 	$scope.getRunProcess=function(){
+		var year_collected='';
+		if($scope.yearmodel!=undefined){
+			var year_collected=$scope.yearmodel.toString().trim();
+			console.log('year collected :',year_collected)
+		}
+		
+		
 		$scope.tabDataSync=[];
 	
 		$scope.indexMonth=0;
@@ -1795,19 +1802,31 @@ $scope.getFullNameFactory=function(keyname){
 		var url='';
 		switch($scope.orgunitSelected.category){
 			case 'town':
-				if ($scope.indexMonth==0) {
+				if ($scope.indexMonth==0 && year_collected=='') {
 					url="/api/datasync/town/"+$scope.orgunitSelected.keyname;
-				} else {
-					url="/api/datasync/town/"+$scope.orgunitSelected.keyname+ '/'+$scope.indexMonth;
+				} else if($scope.indexMonth!=0 && year_collected!=''){
+					url="/api/datasync/town/"+$scope.orgunitSelected.keyname+ '/'+$scope.indexMonth+'/'+year_collected;
+				}else{
+					if($scope.indexMonth!=0){
+						url="/api/datasync/town/month/"+$scope.orgunitSelected.keyname+ '/'+$scope.indexMonth;
+					}else{
+						url="/api/datasync/town/year/"+$scope.orgunitSelected.keyname+ '/'+year_collected;
+					}
 				}
 				
 				
 				break;
 			case 'factory':
-				if ($scope.monthdatasync!=undefined) {
-					url="/api/datasync/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname+"/"+$scope.indexMonth
-				}else {
-					
+				if ($scope.monthdatasync!=undefined && year_collected!='') {
+					url="/api/datasync/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname+"/"+$scope.indexMonth+'/'+year_collected;
+				}else if($scope.monthdatasync==undefined && year_collected==''){
+					url="/api/datasync/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname
+				}else{
+					if($scope.monthdatasync!=undefined){
+						url="/api/datasync/month/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname+"/"+$scope.indexMonth
+					}else{
+						url="/api/datasync/year/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname+"/"+year_collected;
+					}
 				}
 				
 				console.log(url)

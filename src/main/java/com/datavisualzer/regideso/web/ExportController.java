@@ -57,14 +57,20 @@ public class ExportController {
 			@RequestParam String datajson,
 			HttpServletRequest request,
 			HttpServletResponse response,
-			@RequestParam String year
+			@RequestParam String year,
+			@RequestParam String datafactory
 	) throws JsonParseException, JsonMappingException, IOException {
 		ObjectMapper mapData=new ObjectMapper();
 		
 	
 			int y=(year.split(",")[0]==null?Integer.parseInt(year):Integer.parseInt(year.split(",")[0]));
 			List<Map<String,Object>> jsonDecode=new LinkedList<>();
-			List<DataExportation>exportDatas=dataExportRepository.getExportDatas(y);
+			List<DataExportation>exportDatas=null;
+			if(datafactory.equals("RDC")) {
+				exportDatas=dataExportRepository.getExportDatas(y);
+			}else {
+				exportDatas=dataExportRepository.getExportDatasByParentOrgunit(y,factoryRepository.findBykeyentity(datafactory));
+			}
 			for(DataExportation data:exportDatas) {
 				String formatJSON=data.getContent();
 				List<Map<String,Object>> arrayJSON=(List<Map<String,Object>>)mapData.readValue(formatJSON,List.class);

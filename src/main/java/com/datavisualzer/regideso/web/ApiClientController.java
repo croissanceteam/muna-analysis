@@ -114,13 +114,98 @@ public class ApiClientController {
 		return jsonNode;
 	}
 	
-	@RequestMapping(value="api/datasync/town/{town}/{month}",method=RequestMethod.GET,produces="application/json")
-	public JsonNode getDataSyncByProvince(@PathVariable String town,@PathVariable String month) {
+	@RequestMapping(value="api/datasync/town/{town}/{month}/{year}",method=RequestMethod.GET,produces="application/json")
+	public JsonNode getDataSyncByProvince(@PathVariable String town,@PathVariable String month,@PathVariable String year) {
+		String response="";
+		try {
+		
+			System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
+			URL url = new URL("https://api.ona.io/api/v1/data/366269?query={\"dp_prd_chq\":\""+town+"\",\"mois_prd_chq\":\""+month+"\",\"year_prd_chq\":\""+year+"\"}") ;
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+
+			if (conn.getResponseCode() != 200) {
+				throw new RuntimeException("Failed : HTTP error code : "
+						+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+				(conn.getInputStream())));
+			String output;
+			System.out.println("Output from Server .... \n");
+			while ((output = br.readLine()) != null) {
+				response+=output;
+			}
+			conn.disconnect();
+			 //Gson gson;
+				ObjectMapper mapper=new ObjectMapper();
+				jsonNode=mapper.readTree(response);
+			//	String orgunitName=jsonNode.get(0).get("ctr_kin").textValue();
+			//	factory=FactoryRepository.findBykeyentity(orgunitName);
+				
+
+				
+			//Map<String,String> data=gson.fromJson(response, Map.class);
+           // httpCnx.disconnect();
+		} catch (Exception e) {
+			response="Exception:"+e.getMessage();
+		}
+		//DataFile dataFile=new DataFile();
+		//dataFile.setOrgunitid(factory);
+		return jsonNode;
+	}
+	
+	@RequestMapping(value="api/datasync/town/month/{town}/{month}",method=RequestMethod.GET,produces="application/json")
+	public JsonNode getDataSyncByProvinceMonth(@PathVariable String town,@PathVariable String month) {
 		String response="";
 		try {
 		
 			System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
 			URL url = new URL("https://api.ona.io/api/v1/data/366269?query={\"dp_prd_chq\":\""+town+"\",\"mois_prd_chq\":\""+month+"\"}") ;
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+
+			if (conn.getResponseCode() != 200) {
+				throw new RuntimeException("Failed : HTTP error code : "
+						+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+				(conn.getInputStream())));
+			String output;
+			System.out.println("Output from Server .... \n");
+			while ((output = br.readLine()) != null) {
+				response+=output;
+			}
+			conn.disconnect();
+			 //Gson gson;
+				ObjectMapper mapper=new ObjectMapper();
+				jsonNode=mapper.readTree(response);
+			//	String orgunitName=jsonNode.get(0).get("ctr_kin").textValue();
+			//	factory=FactoryRepository.findBykeyentity(orgunitName);
+				
+
+				
+			//Map<String,String> data=gson.fromJson(response, Map.class);
+           // httpCnx.disconnect();
+		} catch (Exception e) {
+			response="Exception:"+e.getMessage();
+		}
+		//DataFile dataFile=new DataFile();
+		//dataFile.setOrgunitid(factory);
+		return jsonNode;
+	}
+	@RequestMapping(value="api/datasync/town/year/{town}/{year}",method=RequestMethod.GET,produces="application/json")
+	public JsonNode getDataSyncByProvinceYear(@PathVariable String town,@PathVariable String year) {
+		String response="";
+		try {
+		
+			System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
+			URL url = new URL("https://api.ona.io/api/v1/data/366269?query={\"dp_prd_chq\":\""+town+"\",\"year_prd_chq\":\""+year+"\"}") ;
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
 			conn.setRequestMethod("GET");
@@ -201,13 +286,13 @@ public class ApiClientController {
 	}
 	
 	
-	@RequestMapping(value="api/datasync/{town}/{factory}/{month}",method=RequestMethod.GET,produces="application/json")
-	public JsonNode getDataSyncByFactory(@PathVariable String town,@PathVariable String factory,@PathVariable String month) {
+	@RequestMapping(value="api/datasync/{town}/{factory}/{month}/{year}",method=RequestMethod.GET,produces="application/json")
+	public JsonNode getDataSyncByFactory(@PathVariable String town,@PathVariable String factory,@PathVariable String month,@PathVariable String year) {
 		String response="";
 		try {
 		
 			System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
-			URL url = new URL("https://api.ona.io/api/v1/data/366269?query={\""+town+"\":\""+factory+"\",\"mois_prd_chq\":\""+month+"\"}"); ;
+			URL url = new URL("https://api.ona.io/api/v1/data/366269?query={\""+town+"\":\""+factory+"\",\"mois_prd_chq\":\""+month+"\",\"year_prd_chq\":\""+year+"\"}"); ;
 			
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			
@@ -245,6 +330,93 @@ public class ApiClientController {
 		return jsonNode;
 	}
 	
+	@RequestMapping(value="api/datasync/year/{town}/{factory}/{year}",method=RequestMethod.GET,produces="application/json")
+	public JsonNode getDataSyncByFactoryYear(@PathVariable String town,@PathVariable String factory,@PathVariable String year) {
+		String response="";
+		try {
+		
+			System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
+			URL url = new URL("https://api.ona.io/api/v1/data/366269?query={\""+town+"\":\""+factory+"\",\"year_prd_chq\":\""+year+"\"}"); ;
+			
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+
+			if (conn.getResponseCode() != 200) {
+				throw new RuntimeException("Failed : HTTP error code : "
+						+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+				(conn.getInputStream())));
+			String output;
+			System.out.println("Output from Server .... \n");
+			while ((output = br.readLine()) != null) {
+				response+=output;
+			}
+			conn.disconnect();
+			 //Gson gson;
+				ObjectMapper mapper=new ObjectMapper();
+				jsonNode=mapper.readTree(response);
+			//	String orgunitName=jsonNode.get(0).get("ctr_kin").textValue();
+			//	factory=FactoryRepository.findBykeyentity(orgunitName);
+				
+
+				
+			//Map<String,String> data=gson.fromJson(response, Map.class);
+           // httpCnx.disconnect();
+		} catch (Exception e) {
+			response="Exception:"+e.getMessage();
+		}
+		//DataFile dataFile=new DataFile();
+		//dataFile.setOrgunitid(factory);
+		return jsonNode;
+	}
+	
+	@RequestMapping(value="api/datasync/month/{town}/{factory}/{month}",method=RequestMethod.GET,produces="application/json")
+	public JsonNode getDataSyncByFactoryMonth(@PathVariable String town,@PathVariable String factory,@PathVariable String month) {
+		String response="";
+		try {
+		
+			System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
+			URL url = new URL("https://api.ona.io/api/v1/data/366269?query={\""+town+"\":\""+factory+"\",\"mois_prd_chq\":\""+month+"\"}");
+			
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+
+			if (conn.getResponseCode() != 200) {
+				throw new RuntimeException("Failed : HTTP error code : "
+						+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+				(conn.getInputStream())));
+			String output;
+			System.out.println("Output from Server .... \n");
+			while ((output = br.readLine()) != null) {
+				response+=output;
+			}
+			conn.disconnect();
+			 //Gson gson;
+				ObjectMapper mapper=new ObjectMapper();
+				jsonNode=mapper.readTree(response);
+			//	String orgunitName=jsonNode.get(0).get("ctr_kin").textValue();
+			//	factory=FactoryRepository.findBykeyentity(orgunitName);
+				
+
+				
+			//Map<String,String> data=gson.fromJson(response, Map.class);
+           // httpCnx.disconnect();
+		} catch (Exception e) {
+			response="Exception:"+e.getMessage();
+		}
+		//DataFile dataFile=new DataFile();
+		//dataFile.setOrgunitid(factory);
+		return jsonNode;
+	}
 	
 	@RequestMapping(value="api/datasync/alls",method=RequestMethod.GET,produces="application/json")
 	public String getListMembership() {

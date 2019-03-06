@@ -136,7 +136,7 @@ public class UserController {
 			Users uid=userRepository.findById(Long.parseLong(iduser)).get();
 			uid.setFullname(formatFullname(fullname));
 			uid.setUsername(user.toLowerCase());
-			uid.setPassword(pwd);
+			uid.setPassword(CryptoSHA512.getPassWord(pwd));
 			uid.setStatus(Integer.parseInt(statusNumber));
 			userRepository.save(users);
 			//return uid.getFullname();
