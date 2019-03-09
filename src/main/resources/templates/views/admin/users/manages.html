@@ -38,7 +38,6 @@
     <link rel="stylesheet" href="../../css/getmdl-select.min.css"/>
     <link rel="stylesheet" href="../../css/polyfill.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
     <style>
     #view-source {
       position: fixed;
@@ -192,6 +191,53 @@ th{
   100% {
     left: 107%;
     right: -8%; } }
+    
+        .loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+}
+.loading-wheel {
+    width: 20px;
+    height: 20px;
+    margin-top: -40px;
+    margin-left: -40px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    border-width: 30px;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+}
+.style-2 .loading-wheel {
+    border-style: double;
+    border-color: #ccc transparent;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+.textSize{
+	font-size:10px;
+}
+.dataTables_wrapper {
+    font-family: Roboto;
+    font-size: 12px;
+    clear: both;
+    *zoom:.9;
+    zoom: .9;
+}
     </style>
   
     <script type="text/javascript">
@@ -201,7 +247,12 @@ th{
   </head>
   
 <body  ng-app="userCtrl" ng-controller="userCtrl">
-
+<div id="pb" class="loading style-2">
+		<div class="loading-wheel">
+		
+		</div>
+		
+</div>
 <form action="" method="post">
   <dialog id="dialogexport" class="mdl-dialog">
     <h4>
@@ -326,14 +377,9 @@ th{
   </div>
   </div>
   <br/>
-   <div style="width:100%;display:inline-block;margin-top:20%;" id="pb">
-                  <h5 style="text-align:center;font-weight:lighter;color:#00897b;">Chargement des données</h5>
-                  <div class="progress" id="pbar" style="width:50%;margin:0 auto;display:normal;">
-                           <div class="indeterminate"></div>
-                    </div>
-</div>
+  
 					<div id="userContainer" style="display:none;padding:2em;margin-top:4em;">
-                      <table  class="display"  id="Tusers" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">
+                      <table  class="display dataTables_wrapper"  id="Tusers" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">
 												  <thead>
 												    <tr>
 												      <!-- class "mdl-data-table__cell--non-numeric", align values to left -->

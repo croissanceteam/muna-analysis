@@ -38,8 +38,8 @@ app.controller('indicatorCtrl',function($scope,$http) {
                             
                         ]
                      });
-                     document.querySelector('#pb').style="width:100%;display:none;margin-top:20%;"
-                     document.querySelector('#indicatorContainer').style="display:normal;margin-top:4em;padding:2em;"
+                     document.querySelector('#pb').style="display:none;"
+                     document.querySelector('#indicatorContainer').style="margin-top:4em;padding:2em;display:normal;"
                      document.querySelector('#view-source').style="display:normal";
     },function (error) {
         console.error(error)

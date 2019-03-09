@@ -192,6 +192,33 @@ th{
   100% {
     left: 107%;
     right: -8%; } }
+    
+   .loading-wheel {
+    width: 20px;
+    height: 20px;
+    margin-top: -40px;
+    margin-left: -40px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    border-width: 30px;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+}
+.style-2 .loading-wheel {
+    border-style: double;
+    border-color: #ccc transparent;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
     </style>
   
     <script type="text/javascript">
@@ -201,7 +228,11 @@ th{
   </head>
   
 <body  ng-app="datatask" ng-controller="datataskCtrl">
-
+<div id="pb" class="loading style-2">
+		<div class="loading-wheel">
+		
+		</div>
+</div>
 <form action="/export/exportdataraw" method="post" >
   <dialog id="dialogexport" class="mdl-dialog" style="width:40%;">
     <h4>
@@ -288,13 +319,8 @@ th{
   </div>
   </div>
   <br/>
-   <div style="width:100%;display:inline-block;margin-top:20%;" id="pb">
-                  <h5 style="text-align:center;font-weight:lighter;color:#00897b;">Chargement des données</h5>
-                  <div class="progress" id="pbar" style="width:50%;margin:0 auto;display:normal;">
-                           <div class="indeterminate"></div>
-                    </div>
-</div>
-<div id="indicatorContainer" style="display:none;margin-top:4em;padding:2em;">
+  
+<div id="dataTaskContainer" style="display:none;margin-top:4em;padding:2em;padding-top:0;border:1px solid red;">
   <a id="link" style="display:none;">GOOGLE</a>
   <br/><br/>
   <table  class="display"  id="TDataView" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">

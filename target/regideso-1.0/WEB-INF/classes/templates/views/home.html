@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="/css/material.cyan-light_blue.min.css"/>
     <link rel="stylesheet" href="/css/styles.css"/>
     <link rel="stylesheet" href="/css/datatables.css"/>
-    <link rel="stylesheet" href="/css/getmdl-selec.min.css"/>
+    <link rel="stylesheet" href="/css/getmdl-select.min.css"/>
     <link rel="stylesheet" href="/css/polyfill.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <style>
@@ -191,6 +191,54 @@ th{
   100% {
     left: 107%;
     right: -8%; } }
+    
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+}
+.loading-wheel {
+    width: 20px;
+    height: 20px;
+    margin-top: -40px;
+    margin-left: -40px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    border-width: 30px;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+}
+.style-2 .loading-wheel {
+    border-style: double;
+    border-color: #ccc transparent;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+.textSize{
+	font-size:10px;
+}
+.dataTables_wrapper {
+    font-family: Roboto;
+    font-size: 12px;
+    clear: both;
+    *zoom:.9;
+    zoom: .9;
+}
+
     </style>
   
     <script type="text/javascript">
@@ -200,7 +248,11 @@ th{
   </head>
   
 <body  ng-app="dashboard" ng-controller="dashCtrl">
-
+<div id="pb" class="loading style-2">
+		<div class="loading-wheel">
+		
+		</div>
+</div> 
 <form action="/export/exportdataraw" method="post" >
   <dialog id="dialogexport" class="mdl-dialog">
     <h4>
@@ -349,18 +401,14 @@ th{
   </div>
   </div>
   <br/>
-   <div style="width:100%;display:inline-block;margin-top:20%;" id="pb">
-                  <h5 style="text-align:center;font-weight:lighter;color:#00897b;">Chargement des données</h5>
-                  <div class="progress" id="pbar" style="width:50%;margin:0 auto;display:normal;">
-                           <div class="indeterminate"></div>
-                    </div>
-</div>
+
+
 <div class="mdl-tabs vertical-mdl-tabs mdl-js-tabs mdl-js-ripple-effect" style="width:60% margin:0 auto;margin-top:4em;" ng-show="isVisible">
 										  <div class="mdl-grid mdl-grid--no-spacing" id="contentView" style="display:none;">
 										    <div class="mdl-cell mdl-cell--2-col">
 											      <div class="mdl-tabs__tab-bar" >
 											           
-											         <a  class="mdl-tabs__tab"  style="font-weight:lighter | bold;" id="{{data.keyentity}}" href="#{{data.keyentity}}-panel" ng-repeat="data in DataOrgunitsFilter" ng-click="selectTown(data)">
+											         <a  class="mdl-tabs__tab textSize"  style="font-weight:lighter | bold;" id="{{data.keyentity}}" href="#{{data.keyentity}}-panel" ng-repeat="data in DataOrgunitsFilter" ng-click="selectTown(data)">
 											      	      <span class="hollow-circle"></span>
 											      	      {{data.labelentity}}
 											          </a>
@@ -368,11 +416,12 @@ th{
 											     </div>
 											   </div>
 											   <div class="mdl-cell mdl-cell--10-col">
-												      <div class="mdl-tabs__panel is-active" id="tab1-panel">
-                      <div ng-show="controlGeoVisible" id="visualization" style="margin: 1em;padding-left:3em;"></div>
+												      <div class="" id="tab1-panel">
+												     
+<div ng-show="controlGeoVisible" id="visualization" style="margin: 1em;padding-left:3em;"></div>
 											<canvas ng-show="controlGraphVisible" id="myChart" style="margin: 0 auto;width:100%;height:500px"></canvas>
 											<div id="countryContainer" style="display:normal;" ng-show="controlVisibleCountry">
-                      <table  class="display"  id="TdatafileCountry" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">
+                      <table  class="display dataTables_wrapper"  id="TdatafileCountry" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">
 												  <thead>
 												    <tr>
 												      <!-- class "mdl-data-table__cell--non-numeric", align values to left -->
@@ -406,7 +455,7 @@ th{
 											</table>
                       </div>
                       <div ng-show="controlVisible" id="townContainer" style="display:none;">
-                     <table  class="display" id="Tdatafile" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">
+                     <table  class="display dataTables_wrapper" id="Tdatafile" border="0.2" style="cursor:pointer;width:100%;float:left;font-weight:lighter|bold;font-size:12px;">
 												  <thead>
 												    <tr>
 												      <!-- class "mdl-data-table__cell--non-numeric", align values to left -->
@@ -448,11 +497,12 @@ th{
 											</div>
 												      </div>
 									
-      												<p style='color:#00897b;font-size:20px;text-align:center;font-weight:lighter'>{{townCurrent}}</p>
-											    </div>
+      												<p style='color:#00897b;font-size:12px;text-align:center;font-weight:lighter'>{{townCurrent}}</p>
+											    		</div>
 										  </div>
 									</div>
-
+    
+                   
 <div id="view-source" style="display:none;">
   <button style="padding:1.2em;" id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700 mdl-js-button mdl-button--icon" type="button">
     <i class="material-icons">format_align_justify</i>
@@ -485,7 +535,7 @@ th{
         
         /*]]>*/
         </script>
- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> 
+ <script defer src="/js/material.js"></script> 
      <script src="/js/jquery.js"></script>
       <script src="/js/datatables.js"></script>
       <script src="/js/angular.min.js"></script>
@@ -493,7 +543,7 @@ th{
       <script src="/js/dashboardController.js"></script>
       <script src="/js/getmdl-select.min.js"></script>
       <script src="/js/polyfill.js"></script>
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+ <script type="text/javascript" src="/js/Chart.2.7.2.min.js"></script>
     <script>
     var dialog = document.querySelector('#dialogexport');
     var showDialogButton = document.querySelector('#show-dialog');

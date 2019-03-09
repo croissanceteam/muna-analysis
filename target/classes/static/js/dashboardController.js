@@ -273,7 +273,39 @@ var tester2='Hornel'
 							 { "data": "sulfate" }
 							 
 						 ],
-						 
+						 "rowCallback": function(row, data, index){
+							 
+							  	if(data.agefloc>10000){
+							    	$(row).find('td:eq(1)').css('background-color', 'rgba(1, 178, 16, 0.68)');
+							    	//$(row).find('td:eq(1)').css('color', 'white');
+							    }
+							  	
+							  	if(data.chaux>10000){
+							    	$(row).find('td:eq(2)').css('background-color', 'rgba(6, 117, 0, 1)');
+							    	//$(row).find('td:eq(2)').css('color', 'white');
+							    }
+							  	if(data.chlore>10000){
+							    	$(row).find('td:eq(3)').css('background-color', 'rgba(9, 179, 0, 0.55)');
+							    	//$(row).find('td:eq(3)').css('color', 'white');
+							    }
+							  	if(data.gasoil>10000){
+							    	$(row).find('td:eq(4)').css('background-color', 'rgba(1, 152, 13, 0.46)');
+							    	//$(row).find('td:eq(4)').css('color', 'white');
+							    }
+							  	if(data.kwh>10000){
+							    	$(row).find('td:eq(5)').css('background-color', 'rgba(1, 152, 13, 0.30)');
+							    	//$(row).find('td:eq(5)').css('color', 'white');
+							    }
+							  	if(data.sel>10000){
+							    	$(row).find('td:eq(6)').css('background-color', 'rgba(6, 117, 0, 1)');
+							    	//$(row).find('td:eq(6)').css('color', 'black');
+							    }
+							  	if(data.sulfate>10000){
+							    	$(row).find('td:eq(7)').css('background-color', 'rgba(1, 152, 13, 0.10)');
+							    //	$(row).find('td:eq(7)').css('color', 'black');
+							    }
+							  
+							  },
 						 "footerCallback": function ( row, data, start, end, display ) {
 							 var api = this.api(), data;
 							 var result=0.0;
@@ -894,6 +926,8 @@ var tester2='Hornel'
 						console.error(error)
 					 });
 			}
+			
+			
 		}
 		$scope.tabDefault=[];
 		$scope.tabDefaultDataTable=[];
@@ -924,12 +958,34 @@ var tester2='Hornel'
 		   height: 600,
 		   tooltip: {
             isHtml: true
-        }
+        },
+        colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+        backgroundColor: '#81d4fa',
+        datalessRegionColor: '#f8bbd0',
+        defaultColor: '#f5f5f5'
 		   
         };
-
+        
         var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
-
+        function myClickHandler(){
+            var selection = chart.getSelection();
+            var message = '';
+            for (var i = 0; i < selection.length; i++) {
+                var item = selection[i];
+                if (item.row != null && item.column != null) {
+                    message += '{row:' + item.row + ',column:' + item.column + '}';
+                } else if (item.row != null) {
+                    message += '{row:' + item.row + '}';
+                } else if (item.column != null) {
+                    message += '{column:' + item.column + '}';
+                }
+            }
+            if (message == '') {
+                message = 'nothing';
+            }
+            alert('You selected ' + message);
+        }
+        google.visualization.events.addListener(chart, 'select', myClickHandler);
 		chart.draw(data, options);
 		if ($scope.townCurrent=="Rd Congo") {
 			
@@ -937,6 +993,7 @@ var tester2='Hornel'
 			
 		}
 	  }
+	
 	  $scope.drawRegionsMapByTown=function(town) {
 		//console.log('Header to String:',JSON.parse({role: 'tooltip', p:{html:true}}));
 		
@@ -1048,15 +1105,20 @@ var tester2='Hornel'
 			
 			if (typeof(town)=="object") {
 			$scope.townCurrent=town.labelentity;
-			
+			//document.querySelector('#containerLoader').style="background-color: rgba(255, 0, 0, 0.5);dispaly:inline-block;border:1px solid red;";
+			document.querySelector('#countryContainer').style="display:none";
+			document.querySelector('#townContainer').style="display:none";
+			document.querySelector('#pb').style="display:normal"
 				if (linkCurrent==undefined) {
 					linkCurrent=document.querySelector('#'+town.keyentity);
 					linkCurrent.className="mdl-tabs__tab is-active";
 				} else {
-					linkCurrent.className="mdl-tabs__tab";
+					linkCurrent.className="mdl-tabs__tab textSize";
+					
 					linkCurrent=document.querySelector('#'+town.keyentity);
 					linkCurrent.className="mdl-tabs__tab is-active";
 				}
+			/*
 				if ($scope.townCurrent=='RD Congo') {
 				//	alert($scope.townCurrent)
 					document.querySelector('#countryContainer').style="display:normal";
@@ -1065,6 +1127,7 @@ var tester2='Hornel'
 					document.querySelector('#townContainer').style="display:normal";
 					document.querySelector('#countryContainer').style="display:none";					
 				}
+				*/
 			
 				$scope.dataTableView=[];
 				console.log('Town 1:',town.keyentity)
@@ -1095,7 +1158,39 @@ var tester2='Hornel'
 									{ "data": "sulfate" }
 									
 								],
-								
+								 "rowCallback": function(row, data, index){
+									 
+									  	if(data.agefloc>10000){
+									    	$(row).find('td:eq(1)').css('background-color', 'rgba(1, 178, 16, 0.68)');
+									    	//$(row).find('td:eq(1)').css('color', 'white');
+									    }
+									  	
+									  	if(data.chaux>10000){
+									    	$(row).find('td:eq(2)').css('background-color', 'rgba(6, 117, 0, 1)');
+									    	//$(row).find('td:eq(2)').css('color', 'white');
+									    }
+									  	if(data.chlore>10000){
+									    	$(row).find('td:eq(3)').css('background-color', 'rgba(9, 179, 0, 0.55)');
+									    	//$(row).find('td:eq(3)').css('color', 'white');
+									    }
+									  	if(data.gasoil>10000){
+									    	$(row).find('td:eq(4)').css('background-color', 'rgba(1, 152, 13, 0.46)');
+									    	//$(row).find('td:eq(4)').css('color', 'white');
+									    }
+									  	if(data.kwh>10000){
+									    	$(row).find('td:eq(5)').css('background-color', 'rgba(1, 152, 13, 0.30)');
+									    	//$(row).find('td:eq(5)').css('color', 'white');
+									    }
+									  	if(data.sel>10000){
+									    	$(row).find('td:eq(6)').css('background-color', 'rgba(6, 117, 0, 1)');
+									    	//$(row).find('td:eq(6)').css('color', 'black');
+									    }
+									  	if(data.sulfate>10000){
+									    	$(row).find('td:eq(7)').css('background-color', 'rgba(1, 152, 13, 0.10)');
+									    //	$(row).find('td:eq(7)').css('color', 'black');
+									    }
+									  
+									  },
 								"footerCallback": function ( row, data, start, end, display ) {
 									var api = this.api(), data;
 									var result=0.0;
@@ -1207,6 +1302,10 @@ var tester2='Hornel'
 								var tjson=document.querySelector("#datajson");
 								tjson.value=JSON.stringify($scope.tabDefaultDataTable);
 								//console.log(tjson.value)
+								document.querySelector('#countryContainer').style="display:normal";
+								document.querySelector('#townContainer').style="display:none";
+								document.querySelector('#pb').style="display:none";
+								
 								
 						}catch(e){
 							console.log(e)
@@ -1255,7 +1354,39 @@ var tester2='Hornel'
 									   { "data": "FactoryName" }
 									   
 								   ],
-								   
+								   "rowCallback": function(row, data, index){
+										 console.log('Data HeatMap :',data)
+									  	if(data.aflc>100){
+									    	$(row).find('td:eq(3)').css('background-color', 'rgba(1, 178, 16, 0.68)');
+									    	//$(row).find('td:eq(1)').css('color', 'white');
+									    }
+									  	
+									  	if(data.chaux>1000){
+									    	$(row).find('td:eq(4)').css('background-color', 'rgba(6, 117, 0, 1)');
+									    	//$(row).find('td:eq(2)').css('color', 'white');
+									    }
+									  	if(data.Chlore>1000){
+									    	$(row).find('td:eq(5)').css('background-color', 'rgba(9, 179, 0, 0.55)');
+									    	//$(row).find('td:eq(3)').css('color', 'white');
+									    }
+									  	if(data.Gasoil>1000){
+									    	$(row).find('td:eq(6)').css('background-color', 'rgba(1, 152, 13, 0.46)');
+									    	//$(row).find('td:eq(4)').css('color', 'white');
+									    }
+									  	if(data.Kwh>1000){
+									    	$(row).find('td:eq(7)').css('background-color', 'rgba(1, 152, 13, 0.30)');
+									    	//$(row).find('td:eq(5)').css('color', 'white');
+									    }
+									  	if(data.Sel>1000){
+									    	$(row).find('td:eq(8)').css('background-color', 'rgba(6, 117, 0, 1)');
+									    	//$(row).find('td:eq(6)').css('color', 'black');
+									    }
+									  	if(data.Sulfate>1000){
+									    	$(row).find('td:eq(9)').css('background-color', 'rgba(1, 152, 13, 0.10)');
+									    //	$(row).find('td:eq(7)').css('color', 'black');
+									    }
+									  
+									  },
 								   "footerCallback": function ( row, data, start, end, display ) {
 									   var api = this.api(), data;
 									   var result=0.0;
@@ -1367,6 +1498,9 @@ var tester2='Hornel'
 								   var tjson=document.querySelector("#datajson");
 								   tjson.value=JSON.stringify($scope.tabDefaultDataTable);
 								   //console.log(tjson.value)
+								    document.querySelector('#countryContainer').style="display:none";
+									document.querySelector('#townContainer').style="display:normal";
+									document.querySelector('#pb').style="display:none";
 								   
 						   }catch(e){
 							   console.log(e)

@@ -194,12 +194,43 @@
   button:hover {
   color: green;
   }
-   
+ .loading-wheel {
+    width: 20px;
+    height: 20px;
+    margin-top: -40px;
+    margin-left: -40px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    border-width: 30px;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+}
+.style-2 .loading-wheel {
+    border-style: double;
+    border-color: #ccc transparent;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}
 
     </style>
 
   </head>
 <body  ng-controller="datasyncCtrl">
+<div id="pbar" style="display:none;" class="loading style-2">
+		<div class="loading-wheel">
+		
+		</div>
+		
+</div>
  <div class="mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-color--teal-700" style="color:white;">
     <div class="mdl-layout__header-row">
@@ -296,9 +327,7 @@
 	
 	 </div>
 	  <div style="float:left;width:100%;display:inline-block;width:70%;">
-     <div class="progress" id="pbar" style="width:70%;margin:0 auto;display:none;">
-        <div class="indeterminate"></div>
-    </div>
+   
 	  <div style="">
   <table class="display" id="Tdatafile" border="0.2" style="cursor:pointer;width:100%;float:left">
   <thead>

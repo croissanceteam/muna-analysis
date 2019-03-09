@@ -34,7 +34,7 @@ app.controller('datataskCtrl',function($scope,$http) {
     $scope.dataExport=dataExport;
    $scope.Init();
     document.querySelector('#pb').style="width:100%;display:none;margin-top:20%;"
-    document.querySelector('#indicatorContainer').style="display:normal;margin-top:4em;padding:2em;"
+    document.querySelector('#dataTaskContainer').style="display:normal;margin-top:2em;padding:2em;padding-top:0;"
     document.querySelector('#view-source').style="display:normal";
     document.querySelector('#demo-menu-lower-right').style="display:normal;padding:1.2em";
     $http.get('/api/statustypefiles/1').then(function(response){
