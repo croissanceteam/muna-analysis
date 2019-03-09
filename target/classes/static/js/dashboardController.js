@@ -211,6 +211,7 @@ var tester2='Hornel'
 			];
 		//	alert(rules)
 		$scope.visible_config=false;
+		$scope.year_datacollected=2018;
 		$scope.DataOrgunitsFilter=[];
 		document.querySelector('#datafactory').value=orgunitLogName.toString().toUpperCase();
 		console.log("datafactory :",orgunitLogName.toString().toUpperCase())
@@ -1719,7 +1720,9 @@ var tester2='Hornel'
 					console.log('value is :',searchText.value.toString().trim())
 					if (isNaN(searchText.value.toString().trim())) {
 						console.log('Is Not a Numeric')
+						alert('Cette valeur est erronée');
 					} else {
+						$scope.year_datacollected=searchText.value.toString().trim();
 						$scope.loadDataFilterYear(searchText.value.toString().trim());
 						$scope.yearFilter=searchText.value.toString().trim();
 						console.log('Is a Numeric')
