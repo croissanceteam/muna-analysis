@@ -55,7 +55,7 @@ $scope.DataOrgunits=
 	},
 	{
 			"id": 5,
-			"keyentity": "Kat",
+			"keyentity": "kat",
 			"labelentity": "Katanga",
 			"category": "Child",
 			"idparent": {
@@ -913,7 +913,7 @@ $scope.DataOrgunits=
 					"category": "Child",
 					"idparent": {
 							"id": 5,
-							"keyentity": "Kat",
+							"keyentity": "kat",
 							"labelentity": "Katanga",
 							"category": "Child",
 							"idparent": {
@@ -1685,7 +1685,7 @@ $scope.getFullNameFactory=function(keyname){
 								{
 									"text":e.childs[i].labelentity,
 									"keyname":e.childs[i].keyentity,
-									"category":"town",
+									"category":"district",
 									"parent":e.keyname,
 									"children":childFunc2
 								}
@@ -1738,7 +1738,7 @@ $scope.getFullNameFactory=function(keyname){
 				//alert('The selected node is: ' + data.instance.get_node(data.selected[0]).text);
 				//console.log(data.instance.get_node(data.selected[0]).original);
 				$scope.orgunitSelected=data.instance.get_node(data.selected[0]).original;
-				console.log($scope.orgunitSelected);
+				console.log('Orgunit selected :',$scope.orgunitSelected);
 				
 				btnRunproc.disabled=false;
 				
@@ -1834,6 +1834,22 @@ $scope.getFullNameFactory=function(keyname){
 				$scope.orgunitSelected.keyname=$scope.orgunitSelected.parent;
 				$scope.orguniFactory=$scope.orgunitSelected.keyname
 				break;
+			case 'district':
+				console.log('District selected :',$scope.orgunitSelected.keyname)
+				if ($scope.monthdatasync!=undefined && year_collected!='') {
+					url="/api/datasync/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname+"/"+$scope.indexMonth+'/'+year_collected;
+				}else if($scope.monthdatasync==undefined && year_collected==''){
+					url="/api/datasync/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname
+				}else{
+					if($scope.monthdatasync!=undefined){
+						url="/api/datasync/month/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname+"/"+$scope.indexMonth
+					}else{
+						url="/api/datasync/year/ctr_"+$scope.orgunitSelected.parent+"/"+$scope.orgunitSelected.keyname+"/"+year_collected;
+					}
+				}
+				
+				console.log(url)
+				break;
 			default:
 				url="/api/datasync/alls";
 				$scope.orgunitSelected.keyname=$scope.orgunitSelected.keyname;
@@ -1864,6 +1880,13 @@ $scope.getFullNameFactory=function(keyname){
 					factory=$scope.getFullNameFactory(e._children.ctr_mat._value);
 					
 					break;
+				case 'lsh':
+					usine=e._children.ctr_lsh._value;
+					factory=$scope.getFullNameFactory(e._children.ctr_lsh._value);
+					console.log('Name Usine by district: ',e._children.ctr_lsh._value)
+					console.log('Name Usine by district 2: ',factory)
+					break;
+				
 				case 'kng':
 					if (e._children.ctr_mat!=undefined) {
 						usine=e._children.ctr_mat._value;
@@ -1879,7 +1902,7 @@ $scope.getFullNameFactory=function(keyname){
 					factory=$scope.getFullNameFactory(e._children.ctr_bdd._value);
 					
 					break;
-				case 'Kat':
+				case 'kat':
 					usine=e._children.ctr_kat._value;
 					if (e._children.ctr_lsh!=undefined) {
 						usine=e._children.ctr_lsh._value;
@@ -1898,7 +1921,7 @@ $scope.getFullNameFactory=function(keyname){
 							}
 						}
 					}
-					factory=$scope.getFullNameFactory(e._children.ctr_kat._value);
+					//factory=$scope.getFullNameFactory(e._children.ctr_kat._value);
 					break;
 				case 'eqt':
 					usine=e._children.ctr_eqt._value;
