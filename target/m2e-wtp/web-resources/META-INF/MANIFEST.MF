@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: muna
+Implementation-Version: 1.0
+Built-By: Bluesquare-DRC
+Implementation-Vendor-Id: com.datavisualzer
+Build-Jdk: 1.8.0_172
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/regideso
+Created-By: Maven Integration for Eclipse
+
