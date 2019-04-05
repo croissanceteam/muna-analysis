@@ -248,6 +248,7 @@ var tester2='Hornel'
 		})
 		console.log('Menu datas :',$scope.DataOrgunitsFilter);
 		$scope.loadDataDefault=function(){
+			$scope.dataface="Tableau de complétude";
 			$http.get('/api/export/data/2018')
 				 .then(function(response){
 					 $scope.dataCountry=response.data;
@@ -1047,7 +1048,9 @@ var tester2='Hornel'
 		$scope.controlView=function(view){
 			switch (view) {
 				case 'graph':
+					$scope.dataface="Histogramme des données";
 				if ($scope.townCurrent=='RD Congo') {
+
 					document.querySelector('#countryContainer').style="display:normal";
 					document.querySelector('#townContainer').style="display:none";
 				} else {
@@ -1060,6 +1063,7 @@ var tester2='Hornel'
 				$scope.controlGraphVisible=true;
 					break;
 				case 'geo':
+					$scope.dataface="Données SIG";
 				if ($scope.townCurrent=='RD Congo') {
 					document.querySelector('#countryContainer').style="display:norne";
 					document.querySelector('#townContainer').style="display:none";
@@ -1077,6 +1081,7 @@ var tester2='Hornel'
 				
 					break;
 				default:
+					$scope.dataface="Tableau de complétude";
 				if ($scope.townCurrent=='RD Congo') {
 					document.querySelector('#countryContainer').style="display:normal";
 					document.querySelector('#townContainer').style="display:none";
