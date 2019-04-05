@@ -34,6 +34,7 @@ com\datavisualzer\regideso\process\ExportFile.class
 com\datavisualzer\regideso\web\adminController.class
 com\datavisualzer\regideso\web\ErrorControllerViewer.class
 com\datavisualzer\regideso\repositories\DataExportRepository.class
+com\datavisualzer\regideso\web\DataAnalysisController.class
 com\datavisualzer\regideso\web\ExportController.class
 com\datavisualzer\regideso\web\HomeController.class
 com\datavisualzer\regideso\web\RestClient.class
