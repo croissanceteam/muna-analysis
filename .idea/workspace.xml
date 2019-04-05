@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c21cbd72-a285-46e6-b148-2d8ed093e98d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/DataAnalysisController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/analysisController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/analysis/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/dashboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/dashboardController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/admin/datasync.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/admin/datasync.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/indicators/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/indicators/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/dashboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/dashboardController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/views/admin/datasync.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/admin/datasync.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/home.html" afterDir="false" />
@@ -54,11 +47,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/typeFileController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
               <caret line="69" column="27" lean-forward="true" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="77" column="75" lean-forward="true" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/repositories/TypeFileIndicatorRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/TypeFileIndicators.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -195,7 +215,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554504674591" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554504965932" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -229,12 +249,20 @@
       <option name="presentableId" value="Default" />
       <updated>1553108388479</updated>
       <workItem from="1553108395382" duration="7826000" />
-      <workItem from="1554393605683" duration="17963000" />
+      <workItem from="1554393605683" duration="18250000" />
     </task>
+    <task id="LOCAL-00001" summary="Design view page for analyze">
+      <created>1554504957375</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554504957375</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25789000" />
+    <option name="totallyTimeSpent" value="26076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -277,6 +305,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Design view page for analyze" />
+    <option name="LAST_COMMIT_MESSAGE" value="Design view page for analyze" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/dataSyncController.js">
@@ -562,6 +594,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="69" column="27" lean-forward="true" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="77" column="75" lean-forward="true" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/repositories/TypeFileIndicatorRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/TypeFileIndicators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
