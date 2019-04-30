@@ -113,4 +113,10 @@ public class indicatorController {
 		}
 		return "redirect:/";
 	}
+
+	@RequestMapping(value = "/api/typefilesid/{id}",method = RequestMethod.GET,produces = "application/json")
+	@ResponseBody
+	public LinkedList<TypeFileIndicators> getIndicatorsByTypeFileId(@PathVariable int id){
+	    return typeFileIndicatorRepository.getTypeFileIndicatorByIdTypefile(id);
+    }
 }

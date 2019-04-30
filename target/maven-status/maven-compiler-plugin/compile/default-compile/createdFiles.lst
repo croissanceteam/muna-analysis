@@ -26,6 +26,7 @@ com\datavisualzer\regideso\web\dataTask.class
 com\datavisualzer\regideso\models\TypeFileIndicators.class
 com\datavisualzer\regideso\models\Users.class
 com\datavisualzer\regideso\models\DataFile.class
+com\datavisualzer\regideso\models\datastorage.class
 com\datavisualzer\regideso\models\ProductDataParser.class
 com\datavisualzer\regideso\repositories\PermissionRepository.class
 com\datavisualzer\regideso\RegidesoApplication.class

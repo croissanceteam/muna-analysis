@@ -10,7 +10,17 @@ app.controller('analysisCtrl',function($scope,$http){
     },function(error){
 
     });
-    $scope.selectYear=function(){
+    $scope.selectTypeFile=function(){
+        $scope.typefilelist.forEach(function(elt){
+            if (elt.typefilename==$scope.tfilemodel.toString().trim()){
+                console.log('Id :',elt.id)
+                $http.get('/api/typefilesid/'+elt.id).then(function(response){
+                   console.log('response :',response.data);
+                   $scope.indicators=response.data;
+                },function(error){
 
+                });
+            }
+        });
     }
 });

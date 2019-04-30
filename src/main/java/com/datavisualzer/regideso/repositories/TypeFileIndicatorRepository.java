@@ -18,4 +18,7 @@ public interface TypeFileIndicatorRepository extends CrudRepository<TypeFileIndi
 
     @Query("select t from TypeFileIndicators t where t.idindicator.id=:id")
     TypeFileIndicators getOneTypeFileIndicator(@Param("id") int id);
+
+    @Query("select t from TypeFileIndicators t where t.idtypefile.id=:id")
+    LinkedList<TypeFileIndicators> getTypeFileIndicatorByIdTypefile(@Param("id") int id);
 }
