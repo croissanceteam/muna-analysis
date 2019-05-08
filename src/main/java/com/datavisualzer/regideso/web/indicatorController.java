@@ -65,12 +65,6 @@ public class indicatorController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "api/indicators")
-	@ResponseBody
-	public LinkedList<Indicators> getIndicatorsList(HttpSession session, HttpServletRequest request) {
-		return indicatorRepository.getIndicators();
-	}
-
 	@RequestMapping(value = "indicators/{id}")
 	public String viewIndicator(HttpSession session, HttpServletRequest request, ModelMap model,
 			@PathVariable String id) {
@@ -114,9 +108,4 @@ public class indicatorController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "/api/typefilesid/{id}",method = RequestMethod.GET,produces = "application/json")
-	@ResponseBody
-	public LinkedList<TypeFileIndicators> getIndicatorsByTypeFileId(@PathVariable int id){
-	    return typeFileIndicatorRepository.getTypeFileIndicatorByIdTypefile(id);
-    }
 }

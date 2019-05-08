@@ -2,9 +2,8 @@ package com.datavisualzer.regideso.repositories;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import java.util.List;
+import java.util.Optional;
 
-import com.datavisualzer.regideso.models.PermissionTypeFileOrgunitUser;
 import com.datavisualzer.regideso.models.Users;
 
 public interface UserRepository extends CrudRepository<Users,Long> {
@@ -16,5 +15,6 @@ public interface UserRepository extends CrudRepository<Users,Long> {
 	String findusernameById(int id);
 
 	Users findByUsername(String username);
+	Optional<Users> findById(Long id);
 	
 }

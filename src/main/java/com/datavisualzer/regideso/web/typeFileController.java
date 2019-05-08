@@ -53,30 +53,6 @@ public class typeFileController {
 		typeFileRepository.save(typeFile);
 		return "OK";
 	}
-	
-	@RequestMapping(value="api/typefiles",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public List<TypeFile> getTypeFiles(HttpSession session, HttpServletRequest request){
-		return (List<TypeFile>)typeFileRepository.findAll();
-	}
-	
-	
-	@RequestMapping(value="api/typefilesindicators",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public LinkedList<TypeFileIndicators> getTypeFilesIndicators(HttpSession session, HttpServletRequest request){
-		return typeFileIndicatorRepository.getTypeFileIndicator();
-	}
 
-	@RequestMapping(value="api/statustypefiles/{status}",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public LinkedList<TypeFile> getTypeFileStatus(HttpSession session, HttpServletRequest request,@PathVariable("status") String status){
-		String valueStatus=(Integer.parseInt(status)==1?"active":"desactive");
-		return typeFileRepository.findBystatus(valueStatus);
-	}
-	@RequestMapping(value="api/statustypefileindicators/{status}",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public LinkedList<TypeFileIndicators> getTypeFileIndicatorStatus(HttpSession session, HttpServletRequest request,@PathVariable("status") int status){
-		String valueStatus=(status==1?"active":"desactive");
-		return typeFileIndicatorRepository.getTypeFileIndicatorByStatus(valueStatus);
-	}
+
 }

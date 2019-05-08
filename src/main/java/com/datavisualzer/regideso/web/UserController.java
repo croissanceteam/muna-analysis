@@ -12,11 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.datavisualzer.regideso.models.Factory;
 import com.datavisualzer.regideso.models.PermissionTypeFileOrgunitUser;
@@ -42,47 +38,8 @@ public class UserController {
 	
 	@Autowired
 	private FactoryRepository factoryRepository;
-	
-	@RequestMapping(value="api/permissions",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public List<PermissionTypeFileOrgunitUser> getUsersPermissions(){
-		return (List<PermissionTypeFileOrgunitUser>)permissionTypeFileOrgunitUserRepository.findAll();
-	}
-	
-	 
-	@RequestMapping(value="api/permissions/{rule}",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public List<PermissionTypeFileOrgunitUser> getUsersByPermissions(@PathVariable int rule){
-		Permissions rules=permissionRepository.findById(rule).get();
-		return (List<PermissionTypeFileOrgunitUser>)permissionTypeFileOrgunitUserRepository.findByidPermission(rules);
-		//return "lama";
-	}
-	
-	
-	@RequestMapping(value="api/permissionsout",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public List<Users> getUsersWithOutPermissions(){
-		List<Users>usersWithOut=new LinkedList<>();
-		Iterable<Users> iterableUsers=userRepository.findAll();
-		for(Users u:iterableUsers) {
-			PermissionTypeFileOrgunitUser permissionTypeFileOrgunitUser=permissionTypeFileOrgunitUserRepository.findByidUsers(u);
-			if (permissionTypeFileOrgunitUser==null) {
-				usersWithOut.add(u);
-			}
-		}
-		return usersWithOut;
-		//return "lama";
-	}
-	
-	@RequestMapping(value="api/permissionfactory/{id}",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public List<PermissionTypeFileOrgunitUser> getUsersByFactory(@PathVariable int id){
-		Factory f=factoryRepository.findById(id).get();
-		return permissionTypeFileOrgunitUserRepository.findByidFactory(f);
-		//return "lama";
-	}
 
-	@RequestMapping(value="users/management",method=RequestMethod.GET)
+	@GetMapping("users/management")
 	public String viewFormsUsers(HttpSession session,ModelMap model){
 		if(session.getAttribute("uid")!=null) {
     		model.put("uid", session.getAttribute("uid").toString());
@@ -167,6 +124,17 @@ public class UserController {
 		return "redirect:/users/management";
 		//return null;
 	}
+	@GetMapping("user/myinfo")
+	 public String viewUserInfos(HttpSession session, HttpServletRequest request,ModelMap model){
+		 if(session.getAttribute("uid")!=null) {
+			 model.put("uid", session.getAttribute("uid").toString());
+			 model.put("username", session.getAttribute("username").toString());
+
+		 }else{
+			 return "redirect:/";
+		 }
+		return "views/";
+	 }
 	private String formatFullname(String name){
 		String nameFormatted="";
 		for (String partialName : name.split(" ")) {
