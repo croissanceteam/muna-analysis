@@ -2,35 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b7d08c7-5821-4a2b-a72d-72c97392b684" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/IndicatorApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/TypeFileApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/UserApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/AnalysisApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/FactoryApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/userAccount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/ApiDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/ApiDashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/typeFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/typeFileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/factoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/factoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/userController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/models/datastorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/models/datastorage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/process/CryptoSHA512.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/process/CryptoSHA512.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/process/ExportFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/process/ExportFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/repositories/TypeFileIndicatorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/repositories/TypeFileIndicatorRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ApiClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ApiClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ApiDataSync.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ApiDataSync.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/DataAnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/DataAnalysisController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ErrorControllerViewer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ErrorControllerViewer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ExportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ExportController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ApiDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/ApiDashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/adminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/adminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/indicatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/indicatorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/typeFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/typeFileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/factoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/factoryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/home.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,23 +30,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+            <state relative-caret-position="286">
+              <caret line="354" column="17" lean-forward="true" selection-start-line="354" selection-start-column="17" selection-end-line="354" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#label#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#label#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#li#0;n#ul#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#li#1;n#ul#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#li#2;n#ul#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/IndicatorApi.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/userController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+            <state relative-caret-position="327">
+              <caret line="194" column="13" lean-forward="true" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/AnalysisApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="384" column="4" selection-start-line="384" selection-start-column="4" selection-end-line="384" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#viewDashboardByTown#0;class#AnalysisApi#0" />
+                <element signature="method#viewDashboardByTownAndYear#0;class#AnalysisApi#0" />
+                <element signature="method#viewDashboardCountry#0;class#AnalysisApi#0" />
+                <element signature="method#viewDashboardCountry#1;class#AnalysisApi#0" />
+                <element signature="method#viewDashboardDatageo#0;class#AnalysisApi#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/userAccount.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -73,6 +126,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -87,14 +142,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/views/home.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/repositories/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/typeFileController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/TypeFileApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/apiUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/IndicatorApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/IndicatorApi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/factoryController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/FactoryApi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/ApiDashboard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/views/home.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/userAccount.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/userController.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/AnalysisApi.java" />
       </list>
     </option>
   </component>
@@ -113,17 +175,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="muna" type="b2602c69:ProjectViewProjectNode" />
-              <item name="muna-analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -149,6 +200,46 @@
               <item name="web" type="1f31426a:PackageElementNode" />
               <item name="api" type="1f31426a:PackageElementNode" />
             </path>
+            <path>
+              <item name="muna" type="58d84e3e:PackageViewProjectNode" />
+              <item name="muna" type="616d4139:PackageViewModuleNode" />
+              <item name="static" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="muna" type="58d84e3e:PackageViewProjectNode" />
+              <item name="muna" type="616d4139:PackageViewModuleNode" />
+              <item name="static" type="1f31426a:PackageElementNode" />
+              <item name="js" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="muna" type="58d84e3e:PackageViewProjectNode" />
+              <item name="muna" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="muna" type="58d84e3e:PackageViewProjectNode" />
+              <item name="muna" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="muna" type="58d84e3e:PackageViewProjectNode" />
+              <item name="muna" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
+              <item name="indicators" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="muna" type="b2602c69:ProjectViewProjectNode" />
+              <item name="muna-analysis" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -156,6 +247,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -198,18 +290,21 @@
       <updated>1557265022378</updated>
       <workItem from="1557265029241" duration="3323000" />
       <workItem from="1557272123443" duration="9729000" />
-      <workItem from="1557353970600" duration="4209000" />
+      <workItem from="1557353970600" duration="4788000" />
+      <workItem from="1557399803687" duration="1565000" />
+      <workItem from="1557426682805" duration="9458000" />
+      <workItem from="1557569449585" duration="14281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17261000" />
+    <option name="totallyTimeSpent" value="43144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -219,20 +314,19 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.053285968" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.053285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="right" id="Mongo Explorer" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -243,6 +337,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Mongo Explorer" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,13 +358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="400" selection-start-line="400" selection-end-line="400" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/repositories/PermissionTypeFileOrgunitUserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -277,13 +365,6 @@
           <folding>
             <element signature="e#0#70#1" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="41" column="34" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -323,8 +404,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/IndicatorApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        <state relative-caret-position="-61">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -333,8 +414,202 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+        <state relative-caret-position="1309">
+          <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/FactoryApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/factoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/adminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5729">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/DataAnalysisController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/ApiDataSync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/ApiDashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/ExportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1377">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="141" column="22" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="177" column="41" selection-start-line="177" selection-start-column="41" selection-end-line="177" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/users/manages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="230" column="10" lean-forward="true" selection-end-line="454" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="397" selection-start-line="397" selection-end-line="397" selection-end-column="173" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#span#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/indicators/update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="262" column="42" selection-start-line="262" selection-start-column="42" selection-end-line="262" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/userAccount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="354" column="17" lean-forward="true" selection-start-line="354" selection-start-column="17" selection-end-line="354" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#label#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#label#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#li#0;n#ul#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#li#1;n#ul#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#li#2;n#ul#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#li#3;n#ul#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/userController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="194" column="13" lean-forward="true" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/AnalysisApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="384" column="4" selection-start-line="384" selection-start-column="4" selection-end-line="384" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#viewDashboardByTown#0;class#AnalysisApi#0" />
+            <element signature="method#viewDashboardByTownAndYear#0;class#AnalysisApi#0" />
+            <element signature="method#viewDashboardCountry#0;class#AnalysisApi#0" />
+            <element signature="method#viewDashboardCountry#1;class#AnalysisApi#0" />
+            <element signature="method#viewDashboardDatageo#0;class#AnalysisApi#0" />
+          </folding>
         </state>
       </provider>
     </entry>

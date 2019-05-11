@@ -189,8 +189,8 @@ app.controller('userCtrl',function($scope,$http){
                     delete:(element.idPermission.delete==1?'Oui':'Non'),
                     geolevel:element.idFactory.labelentity,
                     status:element.idUsers.status
-                }
-                
+                };
+
                 $scope.tabPermissions.push($scope.userPermission);
             });
             console.log($scope.tabPermissions)
@@ -203,7 +203,7 @@ app.controller('userCtrl',function($scope,$http){
                 bAutoWidth:false,
                 responsive:'true',
                 aoColumns:[
-                    
+
                     { "data": "id"},
                     { "data": "username" },
                     { "data": "fullname" },
@@ -216,20 +216,20 @@ app.controller('userCtrl',function($scope,$http){
 	                    "mData": null,
 	                    "bSortable": false,
 	                    "sWidth":"5%",
-	                   "mRender": function (data, type, row) { 
-	                	   				
-	                	  
+	                   "mRender": function (data, type, row) {
+
+
 	                	 	//console.log('data :',data);
 	                	   if (data.status==1) {
                             return ('<i class="material-icons" style="color:#008080">done</i>');
                            }else{
                             return ('<i class="material-icons" style="color:darkred">clear</i>');
                            }
-	                	   				
+
 	                	   				//return dataHTML;
 	                	   }
 	                }
-                    
+
                 ]
             });
             document.querySelector('#pb').style="display:none;";

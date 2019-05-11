@@ -83,29 +83,7 @@ public class factoryController {
 		return "redirect:/dashboard";
 	}
 	*/
-	
-	@RequestMapping(value="factory/list",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public List<Factory> getFactories() {
-		return (List<Factory>)factoryRepository.findAll();
-	}
-	@RequestMapping(value="factory/{id}",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public Optional<Factory> getFactory(@PathVariable("id")int id) {
-		return factoryRepository.findById(id);
-	}
-	
-	@RequestMapping(value="factory/parent/{id}",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public List<Factory> getFactoryByParent(@PathVariable("id")int id) {
-		Factory factory=factoryRepository.findById(id).get();
-		return (List<Factory>)factoryRepository.findByidparent(factory); 
-	}
-	@RequestMapping(value="factory/orgunits",method=RequestMethod.GET,produces="application/json")
-	@ResponseBody
-	public List<Factory> getOrgunits(HttpSession session){
-		return (List<Factory>)factoryRepository.findAll();
-	}
+
 	@RequestMapping(value="/tablesorgunits",method=RequestMethod.GET)
 	public String OrguniTables() {
 		return "views/factory/partials/OrgunitTables";
@@ -115,12 +93,7 @@ public class factoryController {
 	public String OrgunitFactory() {
 		return "views/factory/partials/OrgunitsFactory";
 	}
-	@RequestMapping(value="/factoryunit/{key}")
-	@ResponseBody
-	public Factory getFactory(@PathVariable("key") String key) {
-		return factoryRepository.findBykeyentity(key);
-	}
-	
+
 	@RequestMapping(value="/path")
 	@ResponseBody
 	public String getPath(HttpServletRequest req) {

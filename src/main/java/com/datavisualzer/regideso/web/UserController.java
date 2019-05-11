@@ -129,11 +129,23 @@ public class UserController {
 		 if(session.getAttribute("uid")!=null) {
 			 model.put("uid", session.getAttribute("uid").toString());
 			 model.put("username", session.getAttribute("username").toString());
+			 model.put
+					 (
+			 			"userinfo",
+							 permissionTypeFileOrgunitUserRepository.findByidUsers
+									 (
+											 userRepository.findById
+													 (
+															 Long.parseLong(session.getAttribute("uid").toString())
+													 ).get()
+									 )
+			 		);
+
 
 		 }else{
 			 return "redirect:/";
 		 }
-		return "views/";
+		return "views/admin/users/useraccount";
 	 }
 	private String formatFullname(String name){
 		String nameFormatted="";
