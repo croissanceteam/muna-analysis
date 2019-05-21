@@ -155,4 +155,30 @@ public class UserController {
 		}
 		return nameFormatted.trim();
 	}
+
+
+	@PostMapping("user/myinfo")
+	public String UpdateUserOwner(@RequestParam String iduser,
+								  @RequestParam String username,
+								  @RequestParam String fullname,
+								  @RequestParam String pwd){
+
+		Users owner=userRepository.findById(Long.parseLong(iduser)).get();
+		if (owner!=null) {
+
+			try {
+				owner.setFullname(fullname);
+				owner.setUsername(username);
+				if (!pwd.toString().trim().equals("")){
+					owner.setPassword(CryptoSHA512.getPassWord(pwd));
+				}
+				userRepository.save(owner);
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}
+
+		}
+
+		return "redirect:/logout.do";
+	}
 }
