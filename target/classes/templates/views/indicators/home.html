@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/css/polyfill.css"/>
     <link rel="stylesheet" href="/css/mdDateTimePicker.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
     #view-source {
       position: fixed;
@@ -253,7 +254,7 @@ th{
 		
 		</div>
 </div> 
-<form action="/export/exportdataraw" method="post" >
+<form action="" method="post" >
   <dialog id="dialogexport" class="mdl-dialog" style="width:40%;">
     <h4>
    			 Ajouter un indicateur   <hr/>
@@ -268,27 +269,25 @@ th{
             <label  style="float:left;color:rgb(0, 188, 212);"><i class="material-icons" style="font-size:16px;">font_download</i> Indicator name</label>    
             <input class="mdl-textfield__input" type="text" required ng-model="indicatorname" name="indicatorname" id="indicatorname">
         </div>
-        <div id="date_container" style="display:normal;width:100%;" class="mdl-textfield mdl-js-textfield">
+        <div id="date_container_begin" style="display:normal;width:100%;" class="mdl-textfield mdl-js-textfield">
           <label  style="float:left;color:rgb(0, 188, 212);"><i class="material-icons" style="font-size:16px;">date_range</i> Begin date validity</label>    
           <input class="mdl-textfield__input" type="text" id="datefilter1" name="datefilter1" required readonly />     
         </div>
 
-        <div id="date_container" style="display:normal;width:100%;" class="mdl-textfield mdl-js-textfield">
+        <div id="date_container_ended" style="display:normal;width:100%;" class="mdl-textfield mdl-js-textfield">
           <label  style="float:left;color:rgb(0, 188, 212);"><i class="material-icons" style="font-size:16px;">date_range</i> End date validity</label>    
           <input class="mdl-textfield__input" type="text" id="datefilter2" name="datefilter2" required readonly />     
         </div>
-        <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width:100%">
-          <input type="text"ng-model="monthdatasync" class="mdl-textfield__input" id="sample2" readonly>
-          <input type="hidden"  value="" name="month">
-          
-          <label for="sample2" class="mdl-textfield__label"><i class="material-icons" style="font-size:16px;">list</i>Typefile list</label>
-          <ul for="sample2"  class="mdl-menu mdl-menu--bottom-left mdl-js-menu" ng-model="monthdatasync" style="height:150px;overflow:auto;font-weight:lighter;">
-              <li  class="mdl-menu__item" >
-                
-              </li>
-              
-          </ul>
-      </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fiche des Données</button>
+                <div class="dropdown-menu">
+
+                </div>
+            </div>
+            <input type="text" class="form-control" disabled aria-label="Text input with dropdown button" id="typefile" name="typefile">
+        </div>
+        <input style="display: none;" type="number" id="idtypefile" name="idtypefile">
     </div>
     <div class="mdl-dialog__actions">
       <button type="submit" class="mdl-button mdl-color--teal-700" style="color:white;">AJOUTER</button>
@@ -408,6 +407,8 @@ th{
     <script src="/js/scroll-into-view-if-needed.min.js"></script>
     <script src="/js/draggabilly.pkgd.min.js"></script>
     <script src="/js/mdDateTimePicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script>
     var dialog = document.querySelector('#dialogexport');
@@ -441,21 +442,17 @@ th{
               moment.locale(locale);
               // rest of the demo logic
               var x = new mdDateTimePicker.default({
-                  type: 'date'
+                  type: 'date',
+                  init: moment('2020-12-31', 'YYYY-MM-DD'),
+                  orientation: 'PORTRAIT'
               });
 
               var x2 = new mdDateTimePicker.default({
-                type: 'date'
-            });
-              var y = new mdDateTimePicker.default({
-                  type: 'date',
-                  init: moment('2016-02-29', 'YYYY-MM-DD')
-              });
-              var z = new mdDateTimePicker.default({
-                  type: 'date',
-                  init: moment('2016-03-3', 'YYYY-MM-DD'),
+                type: 'date',
+                  init: moment('2020-12-31', 'YYYY-MM-DD'),
                   orientation: 'PORTRAIT'
-              });
+            });
+
               var date1=document.getElementById('datefilter1');
               date1.style="z-index:9999;"
               

@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.datavisualzer.regideso.models.Indicators;
+import com.datavisualzer.regideso.models.TypeFile;
 import com.datavisualzer.regideso.models.TypeFileIndicators;
 import com.datavisualzer.regideso.repositories.IndicatorRepository;
 import com.datavisualzer.regideso.repositories.TypeFileIndicatorRepository;
 
+import com.datavisualzer.regideso.repositories.TypeFileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,6 +31,8 @@ public class indicatorController {
 	private IndicatorRepository indicatorRepository;
 	@Autowired
 	private TypeFileIndicatorRepository typeFileIndicatorRepository;
+	@Autowired
+	private TypeFileRepository typeFileRepository;
 
 	@RequestMapping(value = "/indicators/index")
 	public String index(HttpSession session, HttpServletRequest request, ModelMap model) {
@@ -49,7 +53,15 @@ public class indicatorController {
 	
 	
 	@RequestMapping(value = "/indicators/index",method=RequestMethod.POST)
-	public String doPost(HttpSession session, HttpServletRequest request, ModelMap model) {
+	public String doPost(
+							HttpSession session,
+							HttpServletRequest request,
+							ModelMap model,
+							@RequestParam String keyname,
+							@RequestParam  String indicatorname,
+							@RequestParam Date datefilter1,
+							@RequestParam Date datefilter2,
+							@RequestParam int idtypefile) {
 		if (session.getAttribute("uid") != null) {
 			model.put("uid", session.getAttribute("uid").toString());
 			model.put("username", session.getAttribute("username").toString());
@@ -59,7 +71,25 @@ public class indicatorController {
 					&& !session.getAttribute("rule").toString().equals("superadmin")) {
 				return "views/errors/error-403";
 			}
-			return "views/indicators/home";
+			Indicators indicators=new Indicators();
+			indicators.setDatebegin(datefilter1);
+			indicators.setDateend(datefilter2);
+			indicators.setKeycode(keyname);
+			indicators.setIndicatorname(indicatorname);
+			//indicators.setId(18);
+			indicators.setDatecreated(new Date());
+			indicatorRepository.save(indicators);
+			typeFileIndicatorRepository.save
+					(
+							new TypeFileIndicators
+									(
+											indicators,
+											typeFileRepository.findByid(idtypefile),
+											new Date()
+
+									)
+					);
+			return "redirect:/indicators/index";
 		}
 
 		return "redirect:/";
@@ -98,6 +128,7 @@ public class indicatorController {
 				indicatorsUpdate.setDatebegin(new SimpleDateFormat("YYYY-MM-DD").parse(datefilter1));
 				indicatorsUpdate.setDateend(new SimpleDateFormat("YYYY-MM-DD").parse(datefilter2));
 				indicatorRepository.save(indicatorsUpdate);
+
 			}
 			
 			if (!session.getAttribute("orgunitkey").toString().equals("rdc") && !session.getAttribute("rule").toString().equals("superadmin")) {

@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0b7d08c7-5821-4a2b-a72d-72c97392b684" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/userAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/userAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/api/AnalysisApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/api/AnalysisApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/userAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/userAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/admin/users/useraccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/admin/users/useraccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Indicators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Indicators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/indicatorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/indicatorController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/views/indicators/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/views/indicators/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/models/Indicators.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/models/Indicators.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/indicatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/indicatorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/indicatorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/indicatorController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/views/indicators/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/views/indicators/home.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,65 +26,58 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="307" column="100" lean-forward="true" selection-start-line="307" selection-start-column="100" selection-end-line="307" selection-end-column="100" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/FactoryApi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="2567">
               <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/userController.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3298">
-              <caret line="194" column="13" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
+            <state relative-caret-position="676">
+              <caret line="90" column="22" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/AnalysisApi.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/TypeFileIndicators.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="98" column="58" selection-start-line="98" selection-start-column="58" selection-end-line="98" selection-end-column="58" />
+            <state relative-caret-position="-102">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Indicators.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/indicators/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="454" selection-start-line="454" selection-end-line="454" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#viewDashboardByTown#0;class#AnalysisApi#0" />
-                <element signature="method#viewDashboardByTownAndYear#0;class#AnalysisApi#0" />
-                <element signature="method#viewDashboardCountry#0;class#AnalysisApi#0" />
-                <element signature="method#viewDashboardCountry#1;class#AnalysisApi#0" />
-                <element signature="method#viewDashboardDatageo#0;class#AnalysisApi#0" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#dialog#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/indicatorController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="72" column="68" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -100,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/UserApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
+            <state relative-caret-position="952">
               <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -135,7 +129,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/typeFileController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/TypeFileApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/apiUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/IndicatorApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/factoryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/FactoryApi.java" />
@@ -146,14 +139,18 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/userAccount.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/indicatorController.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Indicators.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/views/indicators/home.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="15" />
-    <option name="y" value="30" />
-    <option name="width" value="1890" />
-    <option name="height" value="960" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1943" />
+    <option name="height" value="1103" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -163,7 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,14 +187,13 @@
               <item name="muna" type="58d84e3e:PackageViewProjectNode" />
               <item name="muna" type="616d4139:PackageViewModuleNode" />
               <item name="com.datavisualzer.regideso" type="1f31426a:PackageElementNode" />
-              <item name="web" type="1f31426a:PackageElementNode" />
+              <item name="models" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="muna" type="58d84e3e:PackageViewProjectNode" />
               <item name="muna" type="616d4139:PackageViewModuleNode" />
               <item name="com.datavisualzer.regideso" type="1f31426a:PackageElementNode" />
               <item name="web" type="1f31426a:PackageElementNode" />
-              <item name="api" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="muna" type="58d84e3e:PackageViewProjectNode" />
@@ -233,6 +228,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,12 +283,14 @@
       <workItem from="1557746041449" duration="1889000" />
       <workItem from="1557754149230" duration="2161000" />
       <workItem from="1558035952727" duration="8905000" />
-      <workItem from="1558378285585" duration="4373000" />
+      <workItem from="1558378285585" duration="5024000" />
+      <workItem from="1558462508735" duration="11177000" />
+      <workItem from="1558617731459" duration="4744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61513000" />
+    <option name="totallyTimeSpent" value="78085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -308,7 +306,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5204263" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22202487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -393,20 +391,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="97" column="37" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -500,8 +484,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/users/useraccount.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="307" column="100" lean-forward="true" selection-start-line="307" selection-start-column="100" selection-end-line="307" selection-end-column="100" />
+        <state relative-caret-position="5219">
+          <caret line="307" column="100" selection-start-line="307" selection-start-column="100" selection-end-line="307" selection-end-column="100" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -545,6 +529,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/orgunits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2567">
+          <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/userAccount.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -554,7 +566,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/api/UserApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
+        <state relative-caret-position="952">
           <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -562,10 +574,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/indicatorController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="173" column="17" selection-start-line="173" selection-start-column="17" selection-end-line="173" selection-end-column="17" />
+        <state relative-caret-position="441">
+          <caret line="72" column="68" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/Indicators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/models/TypeFileIndicators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/indicators/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="454" selection-start-line="454" selection-end-line="454" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#dialog#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/indicatorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="90" column="22" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
         </state>
       </provider>
     </entry>

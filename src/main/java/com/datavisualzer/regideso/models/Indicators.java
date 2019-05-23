@@ -1,5 +1,7 @@
 package com.datavisualzer.regideso.models;
 
+import sun.rmi.runtime.Log;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -13,14 +15,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name="t_indicators")
 public class Indicators implements Serializable{
-	@Column(name="id")
+
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
-	public int getId() {
+	//@Column(name="id")
+	private Long id;
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getKeycode() {

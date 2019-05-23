@@ -56,8 +56,23 @@ app.controller('indicatorCtrl',function($scope,$http) {
     $http.get('/api/statustypefiles/1').then(function(response){
         $scope.datatypefiles=response.data;
         console.log('TypeFiles :',$scope.datatypefiles)
-        var li=document.createElement('li');
-        var ul=document.querySelector('#sample2');
+
+        var container=document.querySelector('.dropdown-menu');
+        $scope.datatypefiles.forEach(function (data) {
+            var link=document.createElement('a');
+            link.setAttribute("class","dropdown-item");
+           // link.setAttribute("href","#");
+            link.innerHTML=data.typefilename;
+            container.appendChild(link);
+            var separator=document.createElement('div');
+                separator.setAttribute("role","separator");
+                separator.setAttribute("class","dropdown-divider")
+            container.appendChild(separator);
+            link.onclick=function (e) {
+                document.querySelector("#typefile").value=data.typefilename;
+                document.querySelector('#idtypefile').value=data.id;
+            }
+        })
     },function(error){
         console.error(error)
     });
