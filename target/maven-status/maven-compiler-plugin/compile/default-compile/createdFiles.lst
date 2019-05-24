@@ -38,6 +38,11 @@ com\datavisualzer\regideso\repositories\DataExportRepository.class
 com\datavisualzer\regideso\web\DataAnalysisController.class
 com\datavisualzer\regideso\web\ExportController.class
 com\datavisualzer\regideso\web\HomeController.class
+com\datavisualzer\regideso\web\api\AnalysisApi.class
 com\datavisualzer\regideso\web\RestClient.class
+com\datavisualzer\regideso\web\api\TypeFileApi.class
+com\datavisualzer\regideso\web\api\IndicatorApi.class
+com\datavisualzer\regideso\web\api\FactoryApi.class
+com\datavisualzer\regideso\web\api\UserApi.class
 com\datavisualzer\regideso\repositories\TypeFileIndicatorRepository.class
 com\datavisualzer\regideso\models\PermissionTypeFileOrgunitUser.class

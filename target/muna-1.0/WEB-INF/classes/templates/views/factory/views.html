@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html ng-app="app-orgunit">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <title>Views factories</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <link rel="icon" sizes="192x192" href="images/icon.png"/>
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite"/>
+    <link rel="apple-touch-icon-precomposed" href="images/icon.png"/>
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"/>
+    <meta name="msapplication-TileColor" content="#3372DF"/>
+
+    <link rel="shortcut icon" href="images/icon.png"/>
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="/css/material.cyan-light_blue.min.css"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/datatables.css"/>
+    <link rel="stylesheet" href="/css/polyfill.css"/>
+    <link rel="stylesheet" href="/css/getmdl-selec.min.css"/>
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+     
+}
+    </style>
+  </head>
+<body  ng-controller="orgunitCtrl">
+ <div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-color--teal-700" style="color:white;">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title" style="color:white;font-weight:lighter;">Table Organization Unit</span>
+      <div class="mdl-layout-spacer"></div>
+          <div class="mdl-layout__header-row" >
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search">
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="color:white;" id="hdrbtn">
+            <i style="color:white;" class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+            <li class="mdl-menu__item">About</li>
+            <li class="mdl-menu__item">Contact</li>
+            <hr/>
+            <li class="mdl-menu__item"><a href="../logout.do">Deconnexion</a></li>
+          </ul>
+        </div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title" style="font-weight:lighter;color:#00897b;" th:text="${username}">Acme</span>
+     <nav class="mdl-navigation">
+      <a style="font-weight:lighter;" class="mdl-navigation__link" href="/"><i class="material-icons">home</i> Dashboard</a>
+      <a ng-hide="visible_config" style="font-weight:lighter;" class="mdl-navigation__link" href="/admin"><i class="material-icons">data_usage</i>Configuration</a>
+      <a style="font-weight:lighter;" class="mdl-navigation__link" href="/factory/views.do"><i class="material-icons">people</i> Usines</a>
+      <a class="mdl-navigation__link" href="#"><i class="material-icons">trending_up</i> Tracker datas</a>
+      <a class="mdl-navigation__link" href="#"><i class="material-icons">assignment</i> Data Storage</a>
+    </nav>
+  </div>
+  </div>
+  <br/><br/><br/><br/>
+  <div style="padding-left:3em;padding-right:3em;">
+  <table class="display" id="datatables-orgunit" border="0.2" style="cursor:pointer">
+  <thead>
+    <tr>
+      <!-- class "mdl-data-table__cell--non-numeric", align values to left -->
+      <th style="text-align:left">Id Entity</th>
+      <th style="text-align:left">Organzation Unit</th>
+      <th style="text-align:left">Provincial Division</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      
+  </tbody>
+</table>
+</div>
+<dialog class="mdl-dialog" id="viewOrgunit" style="width:800px;height:inherit">
+ <div class="mdl-dialog__actions" style="width:auto;float:right;">
+      <button id="btnClose" onclick="closeView()" type="button" class="mdl-button close">Close</button>
+ </div>
+    <h4 class="mdl-dialog__title" id="headerModal">Allow data collection?</h4>
+    <h6 id-"lblparent"></h6>
+    <div class="mdl-dialog__content">
+      <div id="map">
+     	<label>Loading MapView</label>
+      </div>
+    </div>
+   
+  </dialog>
+  
+  
+  <dialog class="mdl-dialog" id="addOrgunit" style="width:400px;">
+ <div class="mdl-dialog__actions" style="width:auto;float:right;">
+      <button id="btnClose" onclick="closeViewAdd()" type="button" class="mdl-button close">Close</button>
+ </div>
+    <h4 class="mdl-dialog__title" id="header">Add factory</h4>
+    <form method="post" action="" id='form' ng-submit="addFactory()">
+    
+    
+    <div class="mdl-dialog__content" style="">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+   		 <input class="mdl-textfield__input" type="text" ng-model="factoryname" name="factoryname" id="factoryname">
+    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">work</i>Factory Name</label>
+  	  </div>
+  	   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+   		 <input class="mdl-textfield__input" type="text" ng-model="keyfactoryname" name="keyfactoryname" id="keyfactoryname">
+    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">work</i>Key FactoryName</label>
+  	  </div>
+  	 <!-- Simple Select with arrow -->
+    <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width:100%">
+        <input type="text" value="" class="mdl-textfield__input" id="sample2" readonly>
+        <input type="hidden" value="" name="parentid">
+        
+        <label for="sample2" class="mdl-textfield__label"><i class="material-icons" style="font-size:16px;">account_balance</i>Provincial division</label>
+        <ul for="sample2" ng-model="listpd" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+            <li class="mdl-menu__item" data-val="{{dp.id}}" ng-repeat="dp in listProvincial">{{dp.name}}</li>
+        </ul>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+   		 <input class="mdl-textfield__input" type="number" ng-model="factorylat" name="factorylat" id="factorylat">
+    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:14px;">location_on</i>Latitude</label>
+  	  </div>
+  	  
+  	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+   		 <input class="mdl-textfield__input" type="number" ng-model="factorylng" name="factorylng" id="factorylng">
+    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">location_on</i>Longitude</label>
+  	  </div>
+  	  
+  	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+   		 <input class="mdl-textfield__input" type="text" ng-model="factorymap" name="factorymap" id="factorymap">
+    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">map</i> Google MapView</label>
+  	  </div>
+  	  
+    </div>
+      <div class="mdl-dialog__actions" style="">
+      <button id="btnAdd"  type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--teal-800"><i class="material-icons">add</i> SAVE A NEW</button>
+ </div> 
+ </form>
+  </dialog>
+
+      <a href="#" ng-click="addFactory()" ng-hide="visible_config" id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700">
+      	<i class="material-icons">add</i>
+      </a>
+      <script th:inline="javascript">
+        /*<![CDATA[*/
+        
+        var orgunitLogName = [[${orgunitkey}]];
+        var rule = [[${rule}]];
+
+       // console.log('')
+        /*]]>*/
+        </script>
+    <script src="/js/material.js"></script>
+     <script src="/js/jquery.js"></script>
+      <script src="/js/datatables.js"></script>
+      <script src="/js/angular.min.js"></script>
+      <script src="/js/angular-route.min.js"></script>      
+      <script src="/js/orgunitController.js"></script>
+      <script src="/js/getmdl-select.min.js"></script>
+      <script src="/js/polyfill.js"></script>
+  </body>
+</html>
