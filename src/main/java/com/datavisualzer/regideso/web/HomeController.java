@@ -39,7 +39,7 @@ public class HomeController{
     public String Home(HttpSession session,ModelMap model){
     	String route="";
     	if (session.getAttribute("uid")==null) {
-			route="login";
+			route="index";
 			model.put("login", "root");
 		}else {
 			model.put("uid", session.getAttribute("uid").toString());
