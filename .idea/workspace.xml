@@ -2,67 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b7d08c7-5821-4a2b-a72d-72c97392b684" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/intro.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/noscript.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/b1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pic01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pic02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pic03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pic04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pic05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/pic06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/breakpoints.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/browser.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.scrollex.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.scrolly.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/base/_page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/base/_reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/base/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_actions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_box.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_contact.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_features.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_form.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_icon.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_image.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_menu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_row.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_section.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_split.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_spotlights.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_table.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/components/_wrapper.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/layout/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/layout/_header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/layout/_intro.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/layout/_sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/layout/_wrapper.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/libs/_breakpoints.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/libs/_functions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/libs/_html-grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/libs/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/libs/_vars.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/libs/_vendor.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/sass/noscript.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datavisualzer/regideso/web/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/datavisualzer/regideso/web/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/b1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/user2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -80,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+            <state relative-caret-position="63">
+              <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -317,18 +261,18 @@
       <workItem from="1558733628096" duration="1435000" />
       <workItem from="1558740785543" duration="3053000" />
       <workItem from="1559166429187" duration="902000" />
-      <workItem from="1559204549908" duration="4546000" />
+      <workItem from="1559204549908" duration="5431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90552000" />
+    <option name="totallyTimeSpent" value="91437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -338,7 +282,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3374778" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3374778" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -679,8 +623,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+        <state relative-caret-position="63">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
