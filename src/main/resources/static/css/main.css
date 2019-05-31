@@ -3865,6 +3865,7 @@ input, select, textarea {
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		background-color: white;
+		opacity: 0.8;
 		color: rgb(0,150,136) !important;
 	}
 
