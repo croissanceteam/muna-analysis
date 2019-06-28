@@ -52,7 +52,7 @@ $scope.addFactory=function(){
 		try{
 			var table=$('#datatables-orgunit').DataTable({
 	            ajax: {
-	                url: "/api/typefiles/",
+	                url: "/typefile/list/",
 	                dataSrc:'',
 	                cache:false
 	                

@@ -6,6 +6,7 @@ import com.datavisualzer.regideso.repositories.IndicatorRepository;
 import com.datavisualzer.regideso.repositories.TypeFileIndicatorRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.LinkedList;
 
 @RestController
+@RequestMapping("/indicator")
 public class IndicatorApi {
 
     private IndicatorRepository indicatorRepository;
@@ -24,12 +26,12 @@ public class IndicatorApi {
         this.typeFileIndicatorRepository=typeFileIndicator;
     }
 
-    @GetMapping("api/indicators")
+    @GetMapping("/list")
     public LinkedList<Indicators> getIndicatorsList(HttpSession session, HttpServletRequest request) {
         return indicatorRepository.getIndicators();
     }
 
-    @GetMapping("api/typefilesid/{id}")
+    @GetMapping("/typefilesid/{id}")
     public LinkedList<TypeFileIndicators> getIndicatorsByTypeFileId(@PathVariable int id){
         return typeFileIndicatorRepository.getTypeFileIndicatorByIdTypefile(id);
     }

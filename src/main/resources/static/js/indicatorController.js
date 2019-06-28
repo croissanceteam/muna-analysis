@@ -1,6 +1,6 @@
 var app=angular.module('indicator',[]);
 app.controller('indicatorCtrl',function($scope,$http) {
-    $http.get('/api/typefilesindicators').then(function(response) {
+    $http.get('/typefiles/typefilesindicators').then(function(response) {
         console.log('Raw Data :',response.data);
         $scope.dataIndicators=[];
         response.data.forEach(function(elt){
@@ -49,11 +49,11 @@ app.controller('indicatorCtrl',function($scope,$http) {
         //var data = table.data();
         console.log('index is :',$scope.dataIndicators[index])
         var linkOpen=document.querySelector('link');
-        linkOpen.href="/indicators/"+$scope.dataIndicators[index].idindicator;
+        linkOpen.href="/indicator/typefilesid/"+$scope.dataIndicators[index].idindicator;
         linkOpen.click();
         
     });
-    $http.get('/api/statustypefiles/1').then(function(response){
+    $http.get('/typefiles/statustypefiles/1').then(function(response){
         $scope.datatypefiles=response.data;
         console.log('TypeFiles :',$scope.datatypefiles)
 

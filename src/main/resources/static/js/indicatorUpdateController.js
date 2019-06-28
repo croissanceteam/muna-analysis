@@ -1,6 +1,6 @@
 var app=angular.module('indicator',[]);
 app.controller('indicatorCtrl',function($scope,$http) {
-    $http.get('/api/typefilesindicators').then(function(response) {
+    $http.get('/typefiles/typefilesindicators').then(function(response) {
         console.log('Raw Data :',response.data);
         $scope.dataIndicators=[];
         response.data.forEach(function(elt){

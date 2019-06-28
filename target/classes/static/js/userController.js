@@ -172,7 +172,7 @@ app.controller('userCtrl',function($scope,$http){
 			    }
 
 			];
-    $http.get('/api/permissions')
+    $http.get('/userapi/permissions')
          .then(function(response){
             console.log('Response :',response.data);
             $scope.dataPermissions=response.data;

@@ -37,7 +37,7 @@ app.controller('datataskCtrl',function($scope,$http) {
     document.querySelector('#dataTaskContainer').style="display:normal;margin-top:2em;padding:2em;padding-top:0;"
     document.querySelector('#view-source').style="display:normal";
     document.querySelector('#demo-menu-lower-right').style="display:normal;padding:1.2em";
-    $http.get('/api/statustypefiles/1').then(function(response){
+    $http.get('/typefiles/statustypefiles/1').then(function(response){
         $scope.datatypefiles=response.data;
         console.log('TypeFiles :',$scope.datatypefiles)
     },function(error){
