@@ -37,6 +37,10 @@ app.controller('configCtrl',function($http,$scope){
 	             	  if (data.icon=='mobile') {
 	                     return ('<i class="material-icons" style="color:#008080">screen_rotation</i>');
 	                    }//return dataHTML;
+	             	  if(data.icon=="doc"){
+	             		 return ('<i class="material-icons" style="color:#008080">collections_bookmark</i>');
+	             	  }
+	             	  
 	             	   }
 	             },  
 	             { "data": "name"},
@@ -81,6 +85,7 @@ app.controller('configCtrl',function($http,$scope){
 			linkOpen.target='_blank';
 			linkOpen.click();
 			console.log(" Data :",data[index])
+			console.log('Url :',data[index].url);
      });
      
 })

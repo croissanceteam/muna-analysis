@@ -249,7 +249,7 @@ var tester2='Hornel'
 		console.log('Menu datas :',$scope.DataOrgunitsFilter);
 		$scope.loadDataDefault=function(){
 			$scope.dataface="Tableau de complétude";
-			$http.get('/api/export/data/2018')
+			$http.get('/api/dashboard/export/data/2018')
 				 .then(function(response){
 					 $scope.dataCountry=response.data;
 					 $scope.townCurrent="RD Congo";
@@ -579,7 +579,7 @@ var tester2='Hornel'
 
 				// Get data for DRC Cartography data intra
 
-				$http.get("/api/geo/2018")
+				$http.get("/api/dashboard/geo/2018")
 					 .then(function(data){
 						console.log('Data carto :',data.data);
 						$scope.cartoCountry=data.data;
@@ -751,7 +751,7 @@ var tester2='Hornel'
 				$scope.controlVisible=true;	
 				console.log('can view drawer....')
 			} else {
-				$http.get("/api/dashboard")
+				$http.get("/api/dashboard/default")
 				.then(function(response) {
 					$scope.dataResponse=response.data[0];
 					
@@ -915,7 +915,7 @@ var tester2='Hornel'
 				   console.error(error)
 			   });
 
-			   $http.get("/api/geo/2018")
+			   $http.get("/api/dashboard/geo/2018")
 					 .then(function(data){
 						console.log('Data carto :',data.data);
 						$scope.cartoCountry=data.data;
@@ -1557,7 +1557,7 @@ var tester2='Hornel'
 			}
 
 			$scope.loadDataFilterYear=function(year){
-				$http.get('/api/export/data/'+year)
+				$http.get('/api/dashboard/export/data/'+year)
 					 .then(function(response){
 						 $scope.dataCountry=response.data;
 						 $scope.townCurrent="RD Congo";
@@ -1855,7 +1855,7 @@ var tester2='Hornel'
 	
 					// Get data for DRC Cartography data intra
 	
-					$http.get("/api/geo/"+year)
+					$http.get("/api/dashboard/geo/"+year)
 						 .then(function(data){
 							console.log('Data carto :',data.data);
 							$scope.cartoCountry=data.data;
@@ -2191,7 +2191,7 @@ var tester2='Hornel'
 					   console.error(error)
 				   });
 	
-				   $http.get("/api/geo/"+year)
+				   $http.get("/api/dashboard/geo/"+year)
 						 .then(function(data){
 							console.log('Data carto :',data.data);
 							$scope.cartoCountry=data.data;
