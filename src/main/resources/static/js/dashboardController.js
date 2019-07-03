@@ -248,7 +248,6 @@ var tester2='Hornel'
 		})
 		console.log('Menu datas :',$scope.DataOrgunitsFilter);
 		$scope.loadDataDefault=function(){
-			$scope.dataface="Tableau de complétude";
 			$http.get('/api/dashboard/export/data/2018')
 				 .then(function(response){
 					 $scope.dataCountry=response.data;
@@ -408,14 +407,25 @@ var tester2='Hornel'
 							 
 						 }
 					 });
-					 console.log("dashboard country :",$scope.tabDefaultDataTableCountry);
+					// console.log("dashboard country :",$scope.tabDefaultDataTableCountry);
+						document.querySelector('#title-bar').style="color:white;font-weight:lighter;";
+						document.querySelector('#title-bar').innerHTML="Tableau des données";
+						var scriptLoad=document.createElement('script');
+							scriptLoad.src='/js/loader.js'
+							scriptLoad.type='text/javascript';
+							document.head.appendChild(scriptLoad);
+							
+							var script=document.createElement('script');
+							script.src='/js/loadmap.js'
+							script.type='text/javascript';
+							document.head.appendChild(script);
+					 
 				 },function(error){
 
 				 });
-			if (typeof localStorage!='undefined') {
-				console.log('Local storrage!!!')
-				if (localStorage.getItem('defaultData')==null) {
-					$http.get("/api/dashboard")
+			
+				
+					$http.get("/api/dashboard/default")
 				 .then(function(response) {
 					 $scope.dataResponse=response.data[0];
 					 
@@ -429,7 +439,7 @@ var tester2='Hornel'
 					$scope.graphicsDrawIntra('rdc');
 						$(document).ready(function() {
 					try{
-						localStorage.setItem('defaultData',JSON.stringify($scope.tabDefaultDataTable))
+					//	localStorage.setItem('defaultData',JSON.stringify($scope.tabDefaultDataTable))
 						$("#Tdatafile").dataTable().fnDestroy()
 						var table=$('#Tdatafile').DataTable({
 							oLanguage:{
@@ -573,6 +583,8 @@ var tester2='Hornel'
 				} );
 					$scope.isVisible=true;
 					$scope.controlVisible=true;	
+					document.querySelector('#title-bar').style="color:white;font-weight:lighter;";
+					document.querySelector('#title-bar').innerHTML="Tableau des données";
 				},function(error){
 					console.error(error)
 				});
@@ -592,157 +604,7 @@ var tester2='Hornel'
 						console.error(error)
 					 });
 					 
-				} else {
-					$(document).ready(function() {
-						try{
-							
-							$scope.dataLocalStorage=JSON.parse(localStorage.getItem('defaultData').toString());
-							$scope.cartoCountry=JSON.parse(localStorage.getItem('cartoCountry').toString());
-							console.log('data LocalStorage :',$scope.dataLocalStorage)
-							$scope.graphicsDrawIntra('rdc');
-							$("#Tdatafile").dataTable().fnDestroy()
-							var table=$('#Tdatafile').DataTable({
-								oLanguage:{
-									sSearch:''
-								},
-								aaData:$scope.dataLocalStorage,
-								bAutoWidth:false,
-								responsive:'true',
-								aoColumns:[
-									
-									{ "data": "week" },
-									{ "data": "month" },
-									{ "data": "year"},
-									{ "data": "aflc" },
-									{ "data": "chaux" },
-									{ "data": "Chlore" },
-									{ "data": "Gasoil" },
-									{ "data": "Kwh" },
-									{ "data": "Sel" },
-									{ "data": "Sulfate" },
-									{ "data": "FactoryName" }
-									
-								],
-								
-								"footerCallback": function ( row, data, start, end, display ) {
-									var api = this.api(), data;
-									var result=0.0;
-									// Remove the formatting to get integer data for summation
-									var intVal = function ( i ) {
-										return typeof i === 'string' ?
-											i.replace(/[\$,]/g, '')*1 :
-											typeof i === 'number' ?
-											i : 0;
-									};
-		 
-									// Total over all pages
-								   
-									// Total over this page
-									pageTotalagflc = api
-										.column( 3, { page: 'current'} )
-										.data()
-										.reduce( function (a, b) {
-											return parseFloat(a) + parseFloat(b);
-										}, 0 );
-									
-									pageTotalchaux = api
-									.column( 4, { page: 'current'} )
-									.data()
-									.reduce( function (a, b) {
-										return parseFloat(a) + parseFloat(b);
-									}, 0 );
-									
-									pageTotalchlore = api
-									.column( 5, { page: 'current'} )
-									.data()
-									.reduce( function (a, b) {
-										return parseFloat(a) + parseFloat(b);
-									}, 0 );
-									
-									pageTotalgasoil = api
-									.column( 6, { page: 'current'} )
-									.data()
-									.reduce( function (a, b) {
-										return parseFloat(a) + parseFloat(b);
-									}, 0 );
-									
-									pageTotalkwh = api
-									.column( 7, { page: 'current'} )
-									.data()
-									.reduce( function (a, b) {
-										return parseFloat(a) + parseFloat(b);
-									}, 0 );
-									
-									pageTotalsel = api
-									.column( 8, { page: 'current'} )
-									.data()
-									.reduce( function (a, b) {
-										return parseFloat(a) + parseFloat(b);
-									}, 0 );
-									
-									pageTotalsulfate = api
-									.column( 9, { page: 'current'} )
-									.data()
-									.reduce( function (a, b) {
-										return parseFloat(a) + parseFloat(b);
-									}, 0 );
-		 
-									// Update footer
-								 
-									$( api.column(3).footer() ).html(
-										//'$'+pageTotal +' ( $'+ total +' total)'
-											pageTotalagflc
-									);
-									
-									$( api.column(4).footer() ).html(
-											//'$'+pageTotal +' ( $'+ total +' total)'
-												pageTotalchaux
-										);
-									$( api.column(5).footer() ).html(
-											//'$'+pageTotal +' ( $'+ total +' total)'
-												pageTotalchlore
-										);
-									$( api.column(6).footer() ).html(
-											//'$'+pageTotal +' ( $'+ total +' total)'
-												pageTotalgasoil
-										);
-									$( api.column(7).footer() ).html(
-											//'$'+pageTotal +' ( $'+ total +' total)'
-												pageTotalkwh
-										);
-									
-									$( api.column(8).footer() ).html(
-											//'$'+pageTotal +' ( $'+ total +' total)'
-												pageTotalsel
-										);
-									$( api.column(9).footer() ).html(
-											//'$'+pageTotal +' ( $'+ total +' total)'
-												pageTotalsulfate
-										);
-									
-									
-								}
-							});
-								console.log('')
-							/*$('#datatables-orgunit tbody').on('click', 'tr', function (e) {
-								var data = table.data();
-								var index=e.target._DT_CellIndex.row;
-								//console.log(data);
-							//    alert( 'You clicked on '+data[index].id+'\'s row' );
-								console.log(data);
-								
-						} );
-						*/
-								
-							//	tjson.value=JSON.stringify($scope.tabDefaultDataTable);
-								//console.log(tjson.value)
-					
-						}catch(e){
-							console.log(e)
-						}
-		
-					} );
-				}
+				
 				document.querySelector('#drawer').style="normal";
 				document.querySelector('#view-source').style="normal";
 				document.querySelector('#contentView').style="normal";
@@ -750,184 +612,6 @@ var tester2='Hornel'
 				$scope.isVisible=true;
 				$scope.controlVisible=true;	
 				console.log('can view drawer....')
-			} else {
-				$http.get("/api/dashboard/default")
-				.then(function(response) {
-					$scope.dataResponse=response.data[0];
-					
-					response.data.forEach(function(e){
-					   e.content=JSON.parse(e.content.replace('"\"',""));
-					   $scope.tabDefault.push(e)
-					   $scope.tabDefaultDataTable=$scope.tabDefaultDataTable.concat(e.content)
-					});
-   
-				   console.log($scope.tabDefaultDataTable)
-				   $scope.graphicsDrawIntra('rdc');
-					   $(document).ready(function() {
-				   try{
-					   localStorage.setItem('defaultData',JSON.stringify($scope.tabDefaultDataTable))
-					   $("#Tdatafile").dataTable().fnDestroy()
-					   var table=$('#Tdatafile').DataTable({
-						   oLanguage:{
-							   sSearch:''
-						   },
-						   aaData:$scope.tabDefaultDataTable,
-						   bAutoWidth:false,
-						   responsive:'true',
-						   aoColumns:[
-							   
-							   { "data": "week" },
-							   { "data": "month" },
-							   { "data": "year"},
-							   { "data": "aflc" },
-							   { "data": "chaux" },
-							   { "data": "Chlore" },
-							   { "data": "Gasoil" },
-							   { "data": "Kwh" },
-							   { "data": "Sel" },
-							   { "data": "Sulfate" },
-							   { "data": "FactoryName" }
-							   
-						   ],
-						   
-						   "footerCallback": function ( row, data, start, end, display ) {
-							   var api = this.api(), data;
-							   var result=0.0;
-							   // Remove the formatting to get integer data for summation
-							   var intVal = function ( i ) {
-								   return typeof i === 'string' ?
-									   i.replace(/[\$,]/g, '')*1 :
-									   typeof i === 'number' ?
-									   i : 0;
-							   };
-	
-							   // Total over all pages
-							  
-							   // Total over this page
-							   pageTotalagflc = api
-								   .column( 3, { page: 'current'} )
-								   .data()
-								   .reduce( function (a, b) {
-									   return parseFloat(a) + parseFloat(b);
-								   }, 0 );
-							   
-							   pageTotalchaux = api
-							   .column( 4, { page: 'current'} )
-							   .data()
-							   .reduce( function (a, b) {
-								   return parseFloat(a) + parseFloat(b);
-							   }, 0 );
-							   
-							   pageTotalchlore = api
-							   .column( 5, { page: 'current'} )
-							   .data()
-							   .reduce( function (a, b) {
-								   return parseFloat(a) + parseFloat(b);
-							   }, 0 );
-							   
-							   pageTotalgasoil = api
-							   .column( 6, { page: 'current'} )
-							   .data()
-							   .reduce( function (a, b) {
-								   return parseFloat(a) + parseFloat(b);
-							   }, 0 );
-							   
-							   pageTotalkwh = api
-							   .column( 7, { page: 'current'} )
-							   .data()
-							   .reduce( function (a, b) {
-								   return parseFloat(a) + parseFloat(b);
-							   }, 0 );
-							   
-							   pageTotalsel = api
-							   .column( 8, { page: 'current'} )
-							   .data()
-							   .reduce( function (a, b) {
-								   return parseFloat(a) + parseFloat(b);
-							   }, 0 );
-							   
-							   pageTotalsulfate = api
-							   .column( 9, { page: 'current'} )
-							   .data()
-							   .reduce( function (a, b) {
-								   return parseFloat(a) + parseFloat(b);
-							   }, 0 );
-	
-							   // Update footer
-							
-							   $( api.column(3).footer() ).html(
-								   //'$'+pageTotal +' ( $'+ total +' total)'
-									   pageTotalagflc
-							   );
-							   
-							   $( api.column(4).footer() ).html(
-									   //'$'+pageTotal +' ( $'+ total +' total)'
-										   pageTotalchaux
-								   );
-							   $( api.column(5).footer() ).html(
-									   //'$'+pageTotal +' ( $'+ total +' total)'
-										   pageTotalchlore
-								   );
-							   $( api.column(6).footer() ).html(
-									   //'$'+pageTotal +' ( $'+ total +' total)'
-										   pageTotalgasoil
-								   );
-							   $( api.column(7).footer() ).html(
-									   //'$'+pageTotal +' ( $'+ total +' total)'
-										   pageTotalkwh
-								   );
-							   
-							   $( api.column(8).footer() ).html(
-									   //'$'+pageTotal +' ( $'+ total +' total)'
-										   pageTotalsel
-								   );
-							   $( api.column(9).footer() ).html(
-									   //'$'+pageTotal +' ( $'+ total +' total)'
-										   pageTotalsulfate
-								   );
-							   
-							   
-						   }
-					   });
-
-					   //document.querySelector('#drawer').getElementsByClassName.display="normal";
-					   /*$('#datatables-orgunit tbody').on('click', 'tr', function (e) {
-						   var data = table.data();
-						   var index=e.target._DT_CellIndex.row;
-						   //console.log(data);
-					   //    alert( 'You clicked on '+data[index].id+'\'s row' );
-						   console.log(data);
-						   
-				   } );
-				   */
-						   
-					   //	tjson.value=JSON.stringify($scope.tabDefaultDataTable);
-						   //console.log(tjson.value)
-						   
-				   }catch(e){
-					   console.log(e)
-				   }
-   
-			   } );
-				   $scope.isVisible=true;
-				   $scope.controlVisible=true;	
-			   },function(error){
-				   console.error(error)
-			   });
-
-			   $http.get("/api/dashboard/geo/2018")
-					 .then(function(data){
-						console.log('Data carto :',data.data);
-						$scope.cartoCountry=data.data;
-						document.querySelector('#drawer').style="normal";
-						document.querySelector('#view-source').style="normal";
-						document.querySelector('#contentView').style="normal";
-						document.querySelector('#pb').style="display:none";
-						//localStorage.setItem('cartoCountry',JSON.stringify(data.data));						document.querySelector('#drawer').getElementsByClassName.display="normal";
-					 },function(error){
-						console.error(error)
-					 });
-			}
 			
 			
 		}
@@ -957,7 +641,7 @@ var tester2='Hornel'
 		  region: 'CD',
 		  resolution:'provinces',
            width: 800, 
-		   height: 600,
+		   height: 500,
 		   tooltip: {
             isHtml: true
         },
@@ -1048,7 +732,9 @@ var tester2='Hornel'
 		$scope.controlView=function(view){
 			switch (view) {
 				case 'graph':
-					$scope.dataface="Histogramme des données";
+				
+					 document.querySelector('#title-bar').style="color:white;font-weight:lighter;";
+					 document.querySelector('#title-bar').innerHTML="Histogramme des données";
 				if ($scope.townCurrent=='RD Congo') {
 
 					document.querySelector('#countryContainer').style="display:normal";
@@ -1063,7 +749,13 @@ var tester2='Hornel'
 				$scope.controlGraphVisible=true;
 					break;
 				case 'geo':
-					$scope.dataface="Données SIG";
+					document.querySelector('#title-bar').style="color:white;font-weight:lighter;";
+					 document.querySelector('#title-bar').innerHTML="Tableau de complétude";
+				
+
+					    
+					document.querySelector('#title-bar').style="color:white;font-weight:lighter;";
+					 document.querySelector('#title-bar').innerHTML="Données sur carte";
 				if ($scope.townCurrent=='RD Congo') {
 					document.querySelector('#countryContainer').style="display:norne";
 					document.querySelector('#townContainer').style="display:none";
@@ -1081,7 +773,8 @@ var tester2='Hornel'
 				
 					break;
 				default:
-					$scope.dataface="Tableau de complétude";
+					document.querySelector('#title-bar').style="color:white;font-weight:lighter;";
+				 document.querySelector('#title-bar').innerHTML="Tableau de complétude";
 				if ($scope.townCurrent=='RD Congo') {
 					document.querySelector('#countryContainer').style="display:normal";
 					document.querySelector('#townContainer').style="display:none";

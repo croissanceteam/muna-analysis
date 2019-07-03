@@ -238,6 +238,9 @@ th{
     *zoom:.9;
     zoom: .9;
 }
+#visualization svg {
+margin-left:25%;
+}
 
     </style>
   
@@ -358,10 +361,10 @@ th{
 </dialog>
      
 </form>
- <div class="mdl-layout mdl-js-layout">
+ <div class="mdl-layout mdl-js-layout" style="overflow:hidden">
   <header class="mdl-layout__header mdl-color--teal-700" style="color:white;">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title" style="color:white;font-weight:lighter;">{{dataface}}</span>
+      <span id ="title-bar" class="mdl-layout-title" style="color:white;font-weight:lighter;padding:.6em;border-radius:3em;background-color:black;opacity:.2;width:20%;text-align:center">Loading Title bar</span>
       <div class="mdl-layout-spacer"></div>
           <div class="mdl-layout__header-row" >
           <div class="mdl-layout-spacer"></div>
@@ -387,7 +390,7 @@ th{
     </div>
     
   </header>
-  <div class="mdl-layout__drawer" id="drawer" style="display:none;">
+  <div class="mdl-layout__drawer" id="drawer" style="display:normal;">
     <span class="mdl-layout-title" style="color:#00897b;font-size:20px;font-weight:lighter;" th:text="${username}"></span>
     <nav class="mdl-navigation" style="font-weight:lighter;">
       <a class="mdl-navigation__link" href="#" style="font-weight:lighter;"><i class="material-icons">home</i> Dashboard</a>
@@ -538,7 +541,10 @@ th{
         
         /*]]>*/
         </script>
- <script defer src="/js/material.js"></script> 
+ 	 <script defer src="/js/material.js"></script> 
+     
+ 	<!--	<script type="text/javascript" src="/js/loader.js"></script> 	 <script defer src="/js/loadmap.js"></script> -->
+ 	
      <script src="/js/jquery.js"></script>
       <script src="/js/datatables.js"></script>
       <script src="/js/angular.min.js"></script>
@@ -546,7 +552,7 @@ th{
       <script src="/js/dashboardController.js"></script>
       <script src="/js/getmdl-select.min.js"></script>
       <script src="/js/polyfill.js"></script>
- <script type="text/javascript" src="/js/Chart.2.7.2.min.js"></script>
+      <script type="text/javascript" src="/js/Chart.2.7.2.min.js"></script>
     <script>
     var dialog = document.querySelector('#dialogexport');
     var showDialogButton = document.querySelector('#show-dialog');
@@ -559,21 +565,10 @@ th{
     dialog.querySelector('.close').addEventListener('click', function() {
       dialog.close();
     });
-
+/*
+ 
+*/
 </script>
-
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {
-        'packages':['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-      });
-
-
-
-    </script>
 
   </body>
 </html>
