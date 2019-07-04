@@ -410,15 +410,7 @@ var tester2='Hornel'
 					// console.log("dashboard country :",$scope.tabDefaultDataTableCountry);
 						document.querySelector('#title-bar').style="color:white;font-weight:lighter;";
 						document.querySelector('#title-bar').innerHTML="Tableau des données";
-						var scriptLoad=document.createElement('script');
-							scriptLoad.src='/js/loader.js'
-							scriptLoad.type='text/javascript';
-							document.head.appendChild(scriptLoad);
-							
-							var script=document.createElement('script');
-							script.src='/js/loadmap.js'
-							script.type='text/javascript';
-							document.head.appendChild(script);
+				
 					 
 				 },function(error){
 
