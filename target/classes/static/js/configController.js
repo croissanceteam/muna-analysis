@@ -80,7 +80,7 @@ app.controller('configCtrl',function($http,$scope){
      $('#Tconfig tbody').on('click', 'tr', function (e){
     	 	var data = $scope.tableConfig.data();
 			var index=e.target._DT_CellIndex.row;
-			var linkOpen=document.createElement('a');
+			var linkOpen=document.querySelector('#lnk');
 			linkOpen.href=data[index].url;
 			linkOpen.target='_blank';
 			linkOpen.click();
