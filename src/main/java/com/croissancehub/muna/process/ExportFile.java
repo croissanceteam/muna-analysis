@@ -157,6 +157,7 @@ public class ExportFile {
 				workbook.write(fileOut);
 				workbook.close();
 				fileOut.close();
+				System.out.println("Le path :"+fullpath);
 				
 			
 		

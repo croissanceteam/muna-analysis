@@ -6,7 +6,7 @@
 	<groupId>com.croissancehub</groupId>
 	<artifactId>muna</artifactId>
 	<version>1.0</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>muna</name>
 	<description>
