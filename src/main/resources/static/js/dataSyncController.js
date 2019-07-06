@@ -1602,6 +1602,7 @@ $scope.DataOrgunits=
 
 $scope.getFullNameFactory=function(keyname){
 	var value=''
+	console.log('keyname param :',keyname)
 	$scope.DataOrgunits.forEach(function(e) {
 		if (e.keyentity.toString().toLowerCase()==keyname.toString().toLowerCase()) 
 			value=e.labelentity;
@@ -1859,10 +1860,10 @@ $scope.getFullNameFactory=function(keyname){
 		
 		console.log(url);
 		$http.get(url).then(function(response){
-			$scope.dataSync=response.data._children;
-			console.log('Children :',response.data._children)
+			$scope.dataSync=response.data;
+			console.log('Children :',response.data)
 			$scope.dataSync.forEach(function(e,i){
-				//console.log($scope.getFullNameFactory(e._children.ctr_kin._value))
+				//console.log($scope.getFullNameFactory(e.ctr_kin))
 				var dataSync={};
 				var dataSync2={};
 				var dataSync3={};
@@ -1872,78 +1873,78 @@ $scope.getFullNameFactory=function(keyname){
 				console.log('District',$scope.orgunitSelected.keyname)
 				switch ($scope.orgunitSelected.keyname) {
 				case 'kin':
-						usine=e._children.ctr_kin._value;
-						factory=$scope.getFullNameFactory(e._children.ctr_kin._value);
+						usine=e.ctr_kin;
+						factory=$scope.getFullNameFactory(e.ctr_kin);
 					break;
 				case 'mat':
-					usine=e._children.ctr_mat._value;
-					factory=$scope.getFullNameFactory(e._children.ctr_mat._value);
+					usine=e.ctr_mat;
+					factory=$scope.getFullNameFactory(e.ctr_mat);
 					
 					break;
 				case 'lsh':
-					usine=e._children.ctr_lsh._value;
-					factory=$scope.getFullNameFactory(e._children.ctr_lsh._value);
-					console.log('Name Usine by district: ',e._children.ctr_lsh._value)
+					usine=e.ctr_lsh;
+					factory=$scope.getFullNameFactory(e.ctr_lsh);
+					console.log('Name Usine by district: ',e.ctr_lsh)
 					console.log('Name Usine by district 2: ',factory)
 					break;
 				
 				case 'kng':
-					if (e._children.ctr_mat!=undefined) {
-						usine=e._children.ctr_mat._value;
-						factory=$scope.getFullNameFactory(e._children.ctr_mat._value);
+					if (e.ctr_mat!=undefined) {
+						usine=e.ctr_mat;
+						factory=$scope.getFullNameFactory(e.ctr_mat);
 					} else {
-						usine=e._children.ctr_kng._value;
-						factory=$scope.getFullNameFactory(e._children.ctr_kng._value);
+						usine=e.ctr_kng;
+						factory=$scope.getFullNameFactory(e.ctr_kng);
 					}
 					
 					break;
 				case 'bdd':
-					usine=e._children.ctr_bdd._value;
-					factory=$scope.getFullNameFactory(e._children.ctr_bdd._value);
+					usine=e.ctr_bdd;
+					factory=$scope.getFullNameFactory(e.ctr_bdd);
 					
 					break;
 				case 'kat':
-					usine=e._children.ctr_kat._value;
-					if (e._children.ctr_lsh!=undefined) {
-						usine=e._children.ctr_lsh._value;
-						factory=$scope.getFullNameFactory(e._children.ctr_lsh._value);
+					usine=e.ctr_kat;
+					if (e.ctr_lsh!=undefined) {
+						usine=e.ctr_lsh;
+						factory=$scope.getFullNameFactory(e.ctr_lsh);
 					}else {
-						if (e._children.ctr_lks!=undefined) {
-							usine=e._children.ctr_lks._value;
-							factory=$scope.getFullNameFactory(e._children.ctr_lks._value);
+						if (e.ctr_lks!=undefined) {
+							usine=e.ctr_lks;
+							factory=$scope.getFullNameFactory(e.ctr_lks);
 						} else {
-							if (e._children.ctr_klz!=undefined) {
-								usine=e._children.ctr_klz._value;
-								factory=$scope.getFullNameFactory(e._children.ctr_klz._value);
+							if (e.ctr_klz!=undefined) {
+								usine=e.ctr_klz;
+								factory=$scope.getFullNameFactory(e.ctr_klz);
 							} else {
-								usine=e._children.ctr_kat._value;
-								factory=$scope.getFullNameFactory(e._children.ctr_kat._value);
+								usine=e.ctr_kat;
+								factory=$scope.getFullNameFactory(e.ctr_kat);
 							}
 						}
 					}
-					//factory=$scope.getFullNameFactory(e._children.ctr_kat._value);
+					//factory=$scope.getFullNameFactory(e.ctr_kat);
 					break;
 				case 'eqt':
-					usine=e._children.ctr_eqt._value;
-					factory=$scope.getFullNameFactory(e._children.ctr_eqt._value);
+					usine=e.ctr_eqt;
+					factory=$scope.getFullNameFactory(e.ctr_eqt);
 					break;
 				case 'kao':
-					usine=e._children.ctr_kao._value;
-					factory=$scope.getFullNameFactory(e._children.ctr_kao._value);
+					usine=e.ctr_kao;
+					factory=$scope.getFullNameFactory(e.ctr_kao);
 					break;
 					
 				case 'kac':
-					usine=e._children.ctr_kac._value;
-					factory=$scope.getFullNameFactory(e._children.ctr_kac._value);
+					usine=e.ctr_kac;
+					factory=$scope.getFullNameFactory(e.ctr_kac);
 					break;
 					
 				case 'nkv':
-					usine=e._children.ctr_nkv._value;
-					factory=$scope.getFullNameFactory(e._children.ctr_nkv._value);
+					usine=e.ctr_nkv;
+					factory=$scope.getFullNameFactory(e.ctr_nkv);
 					break;
 				case 'skv':
-					usine=e._children.ctr_skv._value;
-					factory=$scope.getFullNameFactory(e._children.ctr_skv._value);
+					usine=e.ctr_skv;
+					factory=$scope.getFullNameFactory(e.ctr_skv);
 					break;
 				default:
 					console.log($scope.dataSync)
@@ -1952,104 +1953,104 @@ $scope.getFullNameFactory=function(keyname){
 				}
 				 
 				dataSync.week=1;
-				dataSync.aflc=e._children.val_s1_aflc._value;
-				dataSync.chaux=e._children.val_s1_chx._value;
-				dataSync.Chlore=e._children.val_s1_clre._value;
-				dataSync.Gasoil=e._children.val_s1_gsl._value;
-				dataSync.Kwh=e._children.val_s1_kwh._value;
-				dataSync.Sel=e._children.val_s1_sel._value,
-				dataSync.Sulfate=e._children.val_s1_sfte._value;
-				dataSync.year=e._children.year_prd_chq._value;
+				dataSync.aflc=e.val_s1_aflc;
+				dataSync.chaux=e.val_s1_chx;
+				dataSync.Chlore=e.val_s1_clre;
+				dataSync.Gasoil=e.val_s1_gsl;
+				dataSync.Kwh=e.val_s1_kwh;
+				dataSync.Sel=e.val_s1_sel,
+				dataSync.Sulfate=e.val_s1_sfte;
+				dataSync.year=e.year_prd_chq;
 				dataSync.Usine=usine;
 				dataSync.FactoryName=factory;	
-				dataSync.month=e._children.mois_prd_chq._value
+				dataSync.month=e.mois_prd_chq
 				$scope.tabDataSync.push(dataSync);
 				
 				dataSync2.week=2;
-				dataSync2.aflc=e._children.val_s2_aflc._value;
-				dataSync2.chaux=e._children.val_s2_chx._value;
-				dataSync2.Chlore=e._children.val_s2_clre._value;
-				dataSync2.Gasoil=e._children.val_s2_gsl._value;
-				dataSync2.Kwh=e._children.val_s2_kwh._value;
-				dataSync2.Sel=e._children.val_s2_sel._value,
-				dataSync2.Sulfate=e._children.val_s2_sfte._value;
-				dataSync2.month=e._children.mois_prd_chq._value
-				dataSync2.year=e._children.year_prd_chq._value;
+				dataSync2.aflc=e.val_s2_aflc;
+				dataSync2.chaux=e.val_s2_chx;
+				dataSync2.Chlore=e.val_s2_clre;
+				dataSync2.Gasoil=e.val_s2_gsl;
+				dataSync2.Kwh=e.val_s2_kwh;
+				dataSync2.Sel=e.val_s2_sel,
+				dataSync2.Sulfate=e.val_s2_sfte;
+				dataSync2.month=e.mois_prd_chq
+				dataSync2.year=e.year_prd_chq;
 				dataSync2.Usine=usine;
 				dataSync2.FactoryName=factory;	
 				$scope.tabDataSync.push(dataSync2);
 				
 				dataSync3.week=3;
-				dataSync3.aflc=e._children.val_s3_aflc._value;
-				dataSync3.chaux=e._children.val_s3_chx._value;
-				dataSync3.Chlore=e._children.val_s3_clre._value;
-				dataSync3.Gasoil=e._children.val_s3_gsl._value;
-				dataSync3.Kwh=e._children.val_s3_kwh._value;
-				dataSync3.Sel=e._children.val_s3_sel._value,
-				dataSync3.Sulfate=e._children.val_s3_sfte._value;
-				dataSync3.month=e._children.mois_prd_chq._value;
-				dataSync3.year=e._children.year_prd_chq._value;
+				dataSync3.aflc=e.val_s3_aflc;
+				dataSync3.chaux=e.val_s3_chx;
+				dataSync3.Chlore=e.val_s3_clre;
+				dataSync3.Gasoil=e.val_s3_gsl;
+				dataSync3.Kwh=e.val_s3_kwh;
+				dataSync3.Sel=e.val_s3_sel,
+				dataSync3.Sulfate=e.val_s3_sfte;
+				dataSync3.month=e.mois_prd_chq;
+				dataSync3.year=e.year_prd_chq;
 				dataSync3.Usine=usine;
 				dataSync3.FactoryName=factory;	
 				$scope.tabDataSync.push(dataSync3);
 				
 				dataSync4.week=4;
-				dataSync4.aflc=e._children.val_s4_aflc._value;
-				dataSync4.chaux=e._children.val_s4_chx._value;
-				dataSync4.Chlore=e._children.val_s4_clre._value;
-				dataSync4.Gasoil=e._children.val_s4_gsl._value;
-				dataSync4.Kwh=e._children.val_s4_kwh._value;
-				dataSync4.Sel=e._children.val_s4_sel._value,
-				dataSync4.Sulfate=e._children.val_s4_sfte._value;
-				dataSync4.year=e._children.year_prd_chq._value;
-				dataSync4.month=e._children.mois_prd_chq._value
+				dataSync4.aflc=e.val_s4_aflc;
+				dataSync4.chaux=e.val_s4_chx;
+				dataSync4.Chlore=e.val_s4_clre;
+				dataSync4.Gasoil=e.val_s4_gsl;
+				dataSync4.Kwh=e.val_s4_kwh;
+				dataSync4.Sel=e.val_s4_sel,
+				dataSync4.Sulfate=e.val_s4_sfte;
+				dataSync4.year=e.year_prd_chq;
+				dataSync4.month=e.mois_prd_chq
 				dataSync4.Usine=usine;
 				dataSync4.FactoryName=factory;	
 				$scope.tabDataSync.push(dataSync4);
 				
 				
 				dataSync5.week=5;
-				if (e._children.s5_aflc._value=="oui") {
-					dataSync5.aflc=e._children.val_s5_aflc._value;
+				if (e.s5_aflc=="oui") {
+					dataSync5.aflc=e.val_s5_aflc;
 				}else {
 					dataSync5.aflc=0;
 				}
 				
-				if (e._children.s5_chx._value=="oui") {
-					dataSync5.chaux=e._children.val_s5_chx._value;
+				if (e.s5_chx=="oui") {
+					dataSync5.chaux=e.val_s5_chx;
 				}else {
 					dataSync5.chaux=0;
 				}
-				if (e._children.s5_clre._value=="oui") {
-					dataSync5.Chlore=e._children.val_s5_clre._value;
+				if (e.s5_clre=="oui") {
+					dataSync5.Chlore=e.val_s5_clre;
 				}else {
 					dataSync5.Chlore=0;
 				}
 				
-				if (e._children.s5_gsl._value=="oui") {
-					dataSync5.Gasoil=e._children.val_s5_gsl._value;
+				if (e.s5_gsl=="oui") {
+					dataSync5.Gasoil=e.val_s5_gsl;
 				}else {
 					dataSync5.Gasoil=0;
 				}
-				if (e._children.s5_kwh._value=="oui") {
-					dataSync5.Kwh=e._children.val_s5_kwh._value;
+				if (e.s5_kwh=="oui") {
+					dataSync5.Kwh=e.val_s5_kwh;
 				}else {
 					dataSync5.Kwh=0;
 				}
-				if (e._children.s5_sel._value=="oui") {
-					dataSync5.Sel=e._children.val_s5_sel._value;
+				if (e.s5_sel=="oui") {
+					dataSync5.Sel=e.val_s5_sel;
 				}else {
 					dataSync5.Sel=0;
 				}
-				if (e._children.s5_sfte._value=="oui") {
-					dataSync5.Sulfate=e._children.val_s5_sfte._value;
+				if (e.s5_sfte=="oui") {
+					dataSync5.Sulfate=e.val_s5_sfte;
 				}else {
 					dataSync5.Sulfate=0;
 				}
-				dataSync5.year=e._children.year_prd_chq._value;
+				dataSync5.year=e.year_prd_chq;
 				dataSync5.Usine=usine;
 				dataSync5.FactoryName=factory;
-				dataSync5.month=parseInt(e._children.mois_prd_chq._value)
+				dataSync5.month=parseInt(e.mois_prd_chq)
 				$scope.tabDataSync.push(dataSync5);
 			
 
