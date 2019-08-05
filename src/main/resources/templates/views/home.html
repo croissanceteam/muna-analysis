@@ -381,7 +381,7 @@ margin-left:25%;
             <i style="color:white;" class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item">About</li>
+            <li class="mdl-menu__item">A propos</li>
             <li class="mdl-menu__item">Contact</li>
             <hr/>
             <li class="mdl-menu__item"><a href="../logout.do">Deconnexion</a></li>
@@ -393,7 +393,7 @@ margin-left:25%;
   <div class="mdl-layout__drawer" id="drawer" style="display:normal;">
     <span class="mdl-layout-title" style="color:#00897b;font-size:20px;font-weight:lighter;" th:text="${username}"></span>
     <nav class="mdl-navigation" style="font-weight:lighter;">
-      <a class="mdl-navigation__link" href="#" style="font-weight:lighter;"><i class="material-icons">home</i> Dashboard</a>
+      <a class="mdl-navigation__link" href="#" style="font-weight:lighter;"><i class="material-icons">home</i> Tableau de bord</a>
       <a ng-hide="visible_config" class="mdl-navigation__link" href="/admin" style="font-weight:lighter;"><i class="material-icons" >data_usage</i> Configuration</a>
       <a class="mdl-navigation__link" href="/factory/views.do" style="font-weight:lighter;"><i class="material-icons">people</i> Usines</a>
       <a class="mdl-navigation__link" href="/analysis/index.do" style="font-weight:lighter;"><i class="material-icons">trending_up</i> Tracker datas</a>
@@ -515,9 +515,9 @@ margin-left:25%;
 
   <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
       for="demo-menu-lower-right">
-    <li class="mdl-menu__item" ng-click="controlView('graph')"><i class="material-icons" style="float:left">timeline</i> <span style="float:left;width:auto;margin-top:-10px;"> Graph</span></li>
+    <li class="mdl-menu__item" ng-click="controlView('graph')"><i class="material-icons" style="float:left">timeline</i> <span style="float:left;width:auto;margin-top:-10px;"> Graphique</span></li>
     <li class="mdl-menu__item" ng-click="controlView('geo')" ><i class="material-icons" style="float:left">location_on</i> <span style="float:left;width:auto;margin-top:-10px;"> Geo Chart</span></li>
-    <li class="mdl-menu__item" ng-click="controlView('table')" ><i class="material-icons" style="float:left">table_chart</i> <span style="float:left;width:auto;margin-top:-10px;"> TableView</span></li>
+    <li class="mdl-menu__item" ng-click="controlView('table')" ><i class="material-icons" style="float:left">table_chart</i> <span style="float:left;width:auto;margin-top:-10px;">Tableau</span></li>
   </ul>
       <br/>
       <button type="button"   id="show-dialog" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color-text--white mdl-color--teal-700">
