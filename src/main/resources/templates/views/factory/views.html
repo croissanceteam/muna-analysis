@@ -131,35 +131,34 @@
     <div class="mdl-dialog__content" style="">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
    		 <input class="mdl-textfield__input" type="text" ng-model="factoryname" name="factoryname" id="factoryname">
-    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">work</i>?om de l'usine</label>
+    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">work</i>Nom de l'usine</label>
   	  </div>
   	   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
    		 <input class="mdl-textfield__input" type="text" ng-model="keyfactoryname" name="keyfactoryname" id="keyfactoryname">
     	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">work</i>Mot clé</label>
   	  </div>
-  	 <!-- Simple Select with arrow -->
-    <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width:100%">
-        <input type="text" value="" class="mdl-textfield__input" id="sample2" readonly>
-        <input type="hidden" value="" name="parentid">
-        
-        <label for="sample2" class="mdl-textfield__label"><i class="material-icons" style="font-size:16px;">account_balance</i>Provinces</label>
-        <ul for="sample2" ng-model="listpd" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-            <li class="mdl-menu__item" data-val="{{dp.id}}" ng-repeat="dp in listProvincial">{{dp.name}}</li>
-        </ul>
-    </div>
+
+       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
+            <input class="mdl-textfield__input" list="towns" type="text" id="town" />
+            <datalist id="towns">
+                <option class="mdl-list__item" ng-repeat="dp in listProvincial">{{dp.labelentity}}</option>
+            </datalist>
+            <label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">map</i> Provinces</label>
+        </div>
+
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
    		 <input class="mdl-textfield__input" type="number" ng-model="factorylat" name="factorylat" id="factorylat">
-    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:14px;">location_on</i>Latitude</label>
+    	<label class="mdl-textfield__label" for="factorylat"><i class="material-icons" style="font-size:14px;">location_on</i>Latitude</label>
   	  </div>
   	  
   	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
    		 <input class="mdl-textfield__input" type="number" ng-model="factorylng" name="factorylng" id="factorylng">
-    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">location_on</i>Longitude</label>
+    	<label class="mdl-textfield__label" for="factorylng"><i class="material-icons" style="font-size:16px;">location_on</i>Longitude</label>
   	  </div>
   	  
   	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width:100%">
    		 <input class="mdl-textfield__input" type="text" ng-model="factorymap" name="factorymap" id="factorymap">
-    	<label class="mdl-textfield__label" for="sample3"><i class="material-icons" style="font-size:16px;">map</i> Google MapView</label>
+    	<label class="mdl-textfield__label" for="factorymap"><i class="material-icons" style="font-size:16px;">map</i> Google MapView</label>
   	  </div>
   	  
     </div>

@@ -180,53 +180,19 @@ app.controller("orgunitCtrl",function($scope,$http){
 		$scope.visible_config=true;
 
 	var dialogAddView = document.querySelector('#addOrgunit');
-	$scope.listProvincial=[
-		{
-			id:2,
-			name:'Kinshasa'
-		},
-		{
-			id:3,
-			name:'Kongo Central'
-		},
-		{
-			id:4,
-			name:'Bandundu'
-		},
-		{
-			id:5,
-			name:'Katanga'
-		},
-		{
-			id:6,
-			name:'Equateur'
-		},
-		{
-			id:7,
-			name:'Kasai Oriental'
-		},
-		{
-			id:8,
-			name:'Kasai Occidental'
-		},
-		{
-			id:9,
-			name:'Nord Kivu'
-		},
-		{
-			id:10,
-			name:'Sud Kivu'
-		},
-		{
-			id:11,
-			name:'Province Oriental'
-		},
-		{
-			id:12,
-			name:'Maniema'
-		}
-	];
-	console.log($scope.listProvincial)
+	$http.get("/factory/list").then(function(response){
+
+		$scope.listProvincial=response.data;
+		console.log($scope.listProvincial)
+	},function(error){
+		console.log(error)
+	})
+
+	$scope.selectedSearch=function(obj){
+		console.log('Object :',obj)
+		console.log('DataList :',$scope.datalist)
+	}
+
 $scope.addFactory=function(){
 
 	if (!dialogAddView.showModal) {

@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69f13943-bcbd-4c1b-a15d-e441fe8795c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/croissancehub/muna/process/ExportFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/croissancehub/muna/process/ExportFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/croissancehub/muna/process/ExportFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/croissancehub/muna/process/ExportFile.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,224 +12,35 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/home.html">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4964">
-              <caret line="292" column="66" selection-start-line="292" selection-start-column="66" selection-end-line="292" selection-end-column="66" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/dataSyncController.js">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/models/Factory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1893" column="67" selection-start-line="1893" selection-start-column="67" selection-end-line="1893" selection-end-column="67" />
-              <folding>
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/web/ExportController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/process/ExportFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="151" column="27" lean-forward="true" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="85" />
+            <state relative-caret-position="102">
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -240,17 +48,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="323">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/configController.js">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/api/AnalysisApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="82" column="56" selection-start-line="82" selection-start-column="56" selection-end-line="82" selection-end-column="56" />
+            <state relative-caret-position="102">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/repositories/FactoryRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -262,6 +79,13 @@
       <find>_children</find>
       <find>path</find>
       <find>Le path</find>
+      <find>town</find>
+      <find>search</find>
+      <find>$scope.selectTown</find>
+      <find>searc</find>
+      <find>Collect</find>
+      <find>year_datacollected</find>
+      <find>select</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -275,6 +99,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/dataSyncController.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/croissancehub/muna/process/ExportFile.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/views/home.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/dashboardController.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/orgunitController.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/views/admin/datasync.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/views/factory/views.html" />
       </list>
     </option>
   </component>
@@ -293,7 +122,7 @@
     <option name="height" value="960" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -308,18 +137,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="muna" type="58d84e3e:PackageViewProjectNode" />
-              <item name="muna" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,6 +149,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -365,12 +185,18 @@
       <workItem from="1562364560137" duration="4039000" />
       <workItem from="1562415411945" duration="1198000" />
       <workItem from="1562426045345" duration="1712000" />
-      <workItem from="1562448996667" duration="3182000" />
+      <workItem from="1562448996667" duration="33666000" />
+      <workItem from="1562588943303" duration="3075000" />
+      <workItem from="1562625465744" duration="12965000" />
+      <workItem from="1562756086146" duration="91000" />
+      <workItem from="1562770280891" duration="1263000" />
+      <workItem from="1563303762469" duration="1037000" />
+      <workItem from="1565005369515" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10131000" />
+    <option name="totallyTimeSpent" value="59059000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,9 +209,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25506073" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2777328" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -395,13 +220,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4724689" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5381883" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3285968" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3285968" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3285968" />
@@ -424,21 +249,31 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4964">
-          <caret line="292" column="66" selection-start-line="292" selection-start-column="66" selection-end-line="292" selection-end-column="66" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/configController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
           <caret line="82" column="56" selection-start-line="82" selection-start-column="56" selection-end-line="82" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/web/ExportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/process/ExportFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="151" column="27" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/api/SettingsApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -629,24 +464,147 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="292" column="66" selection-start-line="292" selection-start-column="66" selection-end-line="292" selection-end-column="66" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="476" column="92" lean-forward="true" selection-start-line="476" selection-start-column="92" selection-end-line="476" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/dashboardController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="1242" column="90" selection-start-line="1242" selection-start-column="90" selection-end-line="1242" selection-end-column="90" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/indicatorController.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/typefile/views.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="141" column="23" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/indicators/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="487" column="32" selection-start-line="487" selection-start-column="26" selection-end-line="487" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/indicators/update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="336" column="37" selection-start-line="336" selection-start-column="31" selection-end-line="336" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/admin/datasync.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="357" column="44" lean-forward="true" selection-start-line="357" selection-start-column="44" selection-end-line="357" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/views/factory/views.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/orgunitController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="190" column="11" lean-forward="true" selection-start-line="190" selection-start-column="11" selection-end-line="190" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/models/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="323">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/web/ExportController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/api/AnalysisApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+        <state relative-caret-position="102">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/process/ExportFile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/croissancehub/muna/repositories/FactoryRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="151" column="27" lean-forward="true" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="85" />
+        <state relative-caret-position="68">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#44#1" expanded="true" />
+            <element signature="e#0#46#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
