@@ -82,6 +82,7 @@ public class UserApi {
 
     @GetMapping("/permissions")
     public List<PermissionTypeFileOrgunitUser> getUsersPermissions(){
+    	// retrun List permission
         return (List<PermissionTypeFileOrgunitUser>)permissionRepository.findAll();
     }
     
