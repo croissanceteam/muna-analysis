@@ -34,4 +34,6 @@ public interface DataExportRepository extends CrudRepository<DataExportation, In
 	@Query("select data from DataExportation data join Factory org on data.orgunitid=org.id where data.year=:year  and org.idparent=:org")
 	List<DataExportation> getExportDatasByParentOrgunit(@Param("year") int year,@Param("org") Factory org);
 
+	
+	List<DataExportation> findBycronjob(@Param("cronjob") Boolean cronjob);
 }

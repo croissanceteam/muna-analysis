@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.client.MultipartBodyBuilder.PublisherEntity;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.croissancehub.muna.models.DataExportation;
 import com.croissancehub.muna.models.PermissionTypeFileOrgunitUser;
 import com.croissancehub.muna.models.Users;
 import com.croissancehub.muna.process.CryptoSHA512;
+import com.croissancehub.muna.repositories.DataExportRepository;
 import com.croissancehub.muna.repositories.PermissionTypeFileOrgunitUserRepository;
 import com.croissancehub.muna.repositories.UserRepository;
 
@@ -32,6 +34,9 @@ public class HomeController{
 	private static final String ROOT="redirect:/";
 	@Autowired
 	UserRepository userRepository;
+
+	@Autowired
+	private DataExportRepository dataExport;
 
 	@Autowired
 	PermissionTypeFileOrgunitUserRepository permissionTypeFileOrgunitUserRepository;
@@ -116,7 +121,14 @@ public class HomeController{
     public String doLogout(HttpSession session) {
     	session.invalidate();
     	return "redirect:/";
-    }
+	}
+	
+
+	@RequestMapping(value = "/cronjob/{id}",method = RequestMethod.GET,produces = "application/json")
+	@ResponseBody
+	public List<DataExportation> getCronJobData(@PathVariable("id") String id){
+		return dataExport.findBycronjob(Boolean.parseBoolean(id));
+	}
     
   
 }
