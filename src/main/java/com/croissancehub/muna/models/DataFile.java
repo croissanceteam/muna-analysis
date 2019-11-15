@@ -75,6 +75,14 @@ public class DataFile implements Serializable {
 	public void setDatestorage(Date datestorage) {
 		this.datestorage = datestorage;
 	}
+	public DataExportation getDataExportation(){
+		return this.dataExportation;
+	}
+
+	public void setDataExportation(DataExportation dExportation){
+		this.dataExportation=dExportation;
+	}
+	
 	@Column(name="month")
 	private String month;
 	

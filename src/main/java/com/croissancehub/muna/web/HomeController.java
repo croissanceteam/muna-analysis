@@ -20,10 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.croissancehub.muna.models.DataExportation;
+import com.croissancehub.muna.models.Indicators;
 import com.croissancehub.muna.models.PermissionTypeFileOrgunitUser;
 import com.croissancehub.muna.models.Users;
 import com.croissancehub.muna.process.CryptoSHA512;
 import com.croissancehub.muna.repositories.DataExportRepository;
+import com.croissancehub.muna.repositories.IndicatorRepository;
 import com.croissancehub.muna.repositories.PermissionTypeFileOrgunitUserRepository;
 import com.croissancehub.muna.repositories.UserRepository;
 
@@ -40,6 +42,10 @@ public class HomeController{
 
 	@Autowired
 	PermissionTypeFileOrgunitUserRepository permissionTypeFileOrgunitUserRepository;
+
+	@Autowired
+	IndicatorRepository indicatorRepository;
+
     @RequestMapping("/")
     public String Home(HttpSession session,ModelMap model){
     	String route="";
@@ -128,6 +134,13 @@ public class HomeController{
 	@ResponseBody
 	public List<DataExportation> getCronJobData(@PathVariable("id") String id){
 		return dataExport.findBycronjob(Boolean.parseBoolean(id));
+	}
+
+
+	@RequestMapping(value = "api/keycode/{keycode}",method = RequestMethod.GET,produces = "application/json")
+	@ResponseBody
+	public Indicators getKeyCode(@PathVariable("keycode") String id){
+		return indicatorRepository.findBykeycode("sel");
 	}
     
   
